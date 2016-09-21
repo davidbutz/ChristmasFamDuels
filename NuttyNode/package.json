@@ -1,0 +1,26 @@
+{
+  "name": "NuttyNode",
+  "version": "0.1.0",
+  "description": "Nutty Robot Node Web",
+  "main": "server.js",
+  "author": {
+    "name": "dbutz",
+    "email": "davidthomasbutz@gmail.com"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongoose": "^4.1.10",
+    "node-wifiscanner": "^0.2.1",
+    "python-shell": "^0.2.0",
+    "serialport": "^2.0.1",
+    "underscore": "^1.8.3",
+    "usb-detection": "^1.3.0",
+    "vash": "^0.9.3",
+    "wifi-control": "^1.0.1"
+  },
+  "devDependencies": {}
+}
