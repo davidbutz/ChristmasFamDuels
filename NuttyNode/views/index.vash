@@ -2,18 +2,9 @@
 
 	@html.block("body", function(model){
 
+		<img src="assets/fuzzytree.jpg"  alt="christmasfamduels logo">
 		<h1>@model.title</h1>
-		<p>Thrive Engineering</p>
-		<p>Welcome. This page should show the latest values from the modules responding</p>
-
-		if (model.error){
-		<p class="text-error"> Error occurred: @model.error </p>
-		}
-
-		@model.categories.forEach(function (category) {
-		<div><span>@(category.notes ? category.notes.length : 0) - </span><a href="#">@category.name</a></div>
-		})
-		
-
+		<p>Nutty Robot / Christmas Fam Duel API</p>
+		<h1>@model.controller</h1>
 	})
 })

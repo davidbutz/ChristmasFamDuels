@@ -6,6 +6,5 @@
 	</head>
 <body>
 	<div>@html.block("body")</div>
-
 </body>
 </html>
