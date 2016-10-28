@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderPasswordClaimType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderPasswordClaimType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="219"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderPasswordClaimType/setSecretBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSData *secretBlock</Declaration>
+			
+			
+			<Anchor>//api/name/secretBlock</Anchor>
+            <NodeRef refid="219"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderPasswordClaimType/secretBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSData *secretBlock</Declaration>
+			
+			
+			<Anchor>//api/name/secretBlock</Anchor>
+            <NodeRef refid="219"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderPasswordClaimType/secretBlock</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSData *secretBlock</Declaration>
+			
+			
+			<Anchor>//api/name/secretBlock</Anchor>
+            <NodeRef refid="219"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderPasswordClaimType/setSignature:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSData *signature</Declaration>
+			
+			
+			<Anchor>//api/name/signature</Anchor>
+            <NodeRef refid="219"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderPasswordClaimType/signature</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSData *signature</Declaration>
+			
+			
+			<Anchor>//api/name/signature</Anchor>
+            <NodeRef refid="219"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderPasswordClaimType/signature</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSData *signature</Declaration>
+			
+			
+			<Anchor>//api/name/signature</Anchor>
+            <NodeRef refid="219"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

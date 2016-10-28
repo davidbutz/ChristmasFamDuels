@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderRefreshTokensResponse.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderRefreshTokensResponse</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="222"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderRefreshTokensResponse/setAuthenticationResult:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderAuthenticationResultType *authenticationResult</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationResult</Anchor>
+            <NodeRef refid="222"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderRefreshTokensResponse/authenticationResult</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderAuthenticationResultType *authenticationResult</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationResult</Anchor>
+            <NodeRef refid="222"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderRefreshTokensResponse/authenticationResult</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderAuthenticationResultType *authenticationResult</Declaration>
+			
+			
+			<Anchor>//api/name/authenticationResult</Anchor>
+            <NodeRef refid="222"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

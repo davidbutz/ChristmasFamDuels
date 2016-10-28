@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderListUserPoolClientsRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolClientsRequest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="211"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsRequest/setMaxResults:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *maxResults</Declaration>
+			
+			
+			<Anchor>//api/name/maxResults</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsRequest/maxResults</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *maxResults</Declaration>
+			
+			
+			<Anchor>//api/name/maxResults</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderListUserPoolClientsRequest/maxResults</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *maxResults</Declaration>
+			
+			
+			<Anchor>//api/name/maxResults</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsRequest/setNextToken:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *nextToken</Declaration>
+			
+			
+			<Anchor>//api/name/nextToken</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsRequest/nextToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *nextToken</Declaration>
+			
+			
+			<Anchor>//api/name/nextToken</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderListUserPoolClientsRequest/nextToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *nextToken</Declaration>
+			
+			
+			<Anchor>//api/name/nextToken</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsRequest/setUserPoolId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsRequest/userPoolId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderListUserPoolClientsRequest/userPoolId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="211"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

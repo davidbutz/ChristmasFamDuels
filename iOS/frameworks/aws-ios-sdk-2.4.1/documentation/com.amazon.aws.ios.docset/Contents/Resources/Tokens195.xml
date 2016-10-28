@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderEnhanceAuthRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderEnhanceAuthRequest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="195"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/setAuthState:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *authState</Declaration>
+			
+			
+			<Anchor>//api/name/authState</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/authState</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *authState</Declaration>
+			
+			
+			<Anchor>//api/name/authState</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderEnhanceAuthRequest/authState</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *authState</Declaration>
+			
+			
+			<Anchor>//api/name/authState</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/setClientId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/clientId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderEnhanceAuthRequest/clientId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/setCode:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *code</Declaration>
+			
+			
+			<Anchor>//api/name/code</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/code</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *code</Declaration>
+			
+			
+			<Anchor>//api/name/code</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderEnhanceAuthRequest/code</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *code</Declaration>
+			
+			
+			<Anchor>//api/name/code</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/setSecretHash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *secretHash</Declaration>
+			
+			
+			<Anchor>//api/name/secretHash</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/secretHash</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *secretHash</Declaration>
+			
+			
+			<Anchor>//api/name/secretHash</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderEnhanceAuthRequest/secretHash</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *secretHash</Declaration>
+			
+			
+			<Anchor>//api/name/secretHash</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/setUsername:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderEnhanceAuthRequest/username</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderEnhanceAuthRequest/username</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="195"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

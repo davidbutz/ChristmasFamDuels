@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HomeViewController.(viewDidLoad(HomeViewController) -&gt; () -&gt; ()).(closure #1).(closure #2):HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.boat_image.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.(viewDidLoad(HomeViewController) -&gt; () -&gt; ()).(closure #2):HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Capability.init(capability : [String : AnyObject]) -&gt; Capability?:BoatAwareData.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.collectionView(UICollectionView, heightForPhotoAtIndexPath : NSIndexPath, withWidth : CGFloat) -&gt; CGFloat:HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapabilityCell.deviceCapability.didset:DeviceCapabilityCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deviceCapability.devicecapabilities[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.(viewDidLoad(HomeViewController) -&gt; () -&gt; ()).(closure #1):HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "marinaViewController.viewDidAppear(Bool) -&gt; ():marinaViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapability_AWSContent.(viewDidLoad() -&gt; ()).(closure #1).(closure #1):DeviceCapability_AWSContent.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapability_Camera.viewDidAppear(Bool) -&gt; ():DeviceCapability_Camera.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.viewDidLoad() -&gt; ():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "remoSelected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StatusView.layoutSubviews() -&gt; ():StatusView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String(format: &quot;%.2f&quot;, thisDeviceCapability.current_value)">
+            </PersistentString>
+            <PersistentString
+               value = "thisDeviceCapability.current_value">
+            </PersistentString>
+            <PersistentString
+               value = "String(thisDeviceCapability.current_value)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapabilityNew.init(devicecapability : [String : AnyObject]) -&gt; DeviceCapabilityNew?:BoatAwareData.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "devicecapability[&quot;last_updated&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "dateformatter.dateFromString(serializedDate)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.(viewDidLoad(HomeViewController) -&gt; () -&gt; ()).(closure #1).(closure #1):HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.(viewDidLoad() -&gt; ()).(closure #1).(closure #2):HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapability_Camera.(compareData() -&gt; ()).(closure #1):DeviceCapability_Camera.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.awsContents[0].key">
+            </PersistentString>
+            <PersistentString
+               value = "self.compareContents[0].key">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "menuTableViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:menuTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String(remo?.overall_status_id!)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Devices.init(devices_array : [AnyObject]) -&gt; Devices?:BoatAwareData.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Devices.init(devices_array : [[String : AnyObject]]) -&gt; Devices?:BoatAwareData.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapabilityTabBarController.viewDidLoad() -&gt; ():DeviceCapabilityTabBarConroller.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DeviceCapabilityViewController.(viewDidAppear(Bool) -&gt; ()).(closure #1):DeviceCapabilityViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String(self.selectedCapability?.devicecapabilities[0].current_state_id)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Device.init(devices : [String : AnyObject]) -&gt; Device?:BoatAwareData.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

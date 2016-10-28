@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		610115B31CCE9F94009A14E4 /* DeviceCapability_Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610115B21CCE9F94009A14E4 /* DeviceCapability_Camera.swift */; };
+		610115B51CD0002A009A14E4 /* DeviceCapability_AWSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610115B41CD0002A009A14E4 /* DeviceCapability_AWSContent.swift */; };
+		610115B71CD2454D009A14E4 /* RemoChangeWifiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610115B61CD2454D009A14E4 /* RemoChangeWifiViewController.swift */; };
+		610F9EEB1D09BB33008D96C3 /* DeviceCapability_Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F9EEA1D09BB33008D96C3 /* DeviceCapability_Alerts.swift */; };
+		6112344B1CF69B690040C6EE /* DeviceCapability_Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6112344A1CF69B690040C6EE /* DeviceCapability_Slider.swift */; };
+		6112344D1CF8A3090040C6EE /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6112344C1CF8A3090040C6EE /* RangeSlider.swift */; };
+		6112344F1CFE3C3E0040C6EE /* BoatAwareExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6112344E1CFE3C3E0040C6EE /* BoatAwareExtensions.swift */; };
+		611234511CFF84B50040C6EE /* RangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611234501CFF84B50040C6EE /* RangeSliderThumbLayer.swift */; };
+		611234531CFF91160040C6EE /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611234521CFF91160040C6EE /* RangeSliderTrackLayer.swift */; };
+		612BAA0F1D1C598100F00217 /* LoadingAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612BAA0E1D1C598100F00217 /* LoadingAppViewController.swift */; };
+		612BAA111D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */; };
+		6135DFE01D236A9700C58242 /* WifiSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */; };
+		6135DFE21D240B4A00C58242 /* WifiSelectUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */; };
+		615C3A0E1C88E91B0029F8AE /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */; };
+		6165C8701D0F010100F1F235 /* ForgotPasswordFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165C86F1D0F010100F1F235 /* ForgotPasswordFormViewController.swift */; };
+		6165C8721D0F014500F1F235 /* ResetPasswordFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165C8711D0F014500F1F235 /* ResetPasswordFormViewController.swift */; };
+		616F9DD81DC14C4C004CADD2 /* apiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DD71DC14C4C004CADD2 /* apiCalls.swift */; };
+		616F9DDA1DC14C6F004CADD2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DD91DC14C6F004CADD2 /* LoadingView.swift */; };
+		616F9DDC1DC14C8F004CADD2 /* BoatAwareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */; };
+		616F9DE11DC14CA7004CADD2 /* registerControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDD1DC14CA7004CADD2 /* registerControllerViewController.swift */; };
+		616F9DE21DC14CA7004CADD2 /* selectwifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDE1DC14CA7004CADD2 /* selectwifiTableViewController.swift */; };
+		616F9DE31DC14CA7004CADD2 /* SetUpWifiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDF1DC14CA7004CADD2 /* SetUpWifiViewController.swift */; };
+		616F9DE41DC14CA7004CADD2 /* testControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE01DC14CA7004CADD2 /* testControllerViewController.swift */; };
+		616F9DE71DC14CE7004CADD2 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */; };
+		616F9DE81DC14CE7004CADD2 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */; };
+		616F9DEA1DC14D10004CADD2 /* navigationControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE91DC14D10004CADD2 /* navigationControlViewController.swift */; };
+		61B2F38F1CB5B3B900DBC5BF /* remoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B2F38E1CB5B3B900DBC5BF /* remoNavigationController.swift */; };
+		61B437A61C93213F00B0DCC2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B437A51C93213F00B0DCC2 /* SWRevealViewController.m */; };
+		61F3A20F1CCABAC500159292 /* DeviceCapability_Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F3A20E1CCABAC500159292 /* DeviceCapability_Graph.swift */; };
+		6661B4D91D13385500055239 /* CameraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6661B4D81D13385500055239 /* CameraCollectionViewCell.swift */; };
+		6661B4DB1D148EAE00055239 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6661B4DA1D148EAE00055239 /* PhotoViewController.swift */; };
+		666CE7BF1C974127005863A9 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666CE7BE1C974127005863A9 /* FormViewController.swift */; };
+		66AEAE8F1CEA616B00A4A863 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8C1CEA616B00A4A863 /* AWSCore.framework */; };
+		66AEAE901CEA616B00A4A863 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8D1CEA616B00A4A863 /* AWSS3.framework */; };
+		66AEAE951CEA64B700A4A863 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8C1CEA616B00A4A863 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66AEAE971CEA64B700A4A863 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8D1CEA616B00A4A863 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66AEAE981CEA64B800A4A863 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8E1CEA616B00A4A863 /* Charts.framework */; };
+		66AEAE991CEA64B800A4A863 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8E1CEA616B00A4A863 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66B678E91C6A6FE9007963AA /* UIColor+Darken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B678E81C6A6FE9007963AA /* UIColor+Darken.swift */; };
+		66B678EB1C6A875E007963AA /* DeviceCapabilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B678EA1C6A875E007963AA /* DeviceCapabilityViewController.swift */; };
+		66B678ED1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B678EC1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift */; };
+		66E71FB31C691309004BB2C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FB21C691309004BB2C1 /* AppDelegate.swift */; };
+		66E71FBA1C691309004BB2C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E71FB81C691309004BB2C1 /* Main.storyboard */; };
+		66E71FBC1C691309004BB2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66E71FBB1C691309004BB2C1 /* Assets.xcassets */; };
+		66E71FBF1C691309004BB2C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66E71FBD1C691309004BB2C1 /* LaunchScreen.storyboard */; };
+		66E71FC81C69182A004BB2C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FC71C69182A004BB2C1 /* HomeViewController.swift */; };
+		66E71FCD1C692384004BB2C1 /* capabilityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FCC1C692384004BB2C1 /* capabilityCollectionViewCell.swift */; };
+		66E71FCF1C692607004BB2C1 /* HomeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FCE1C692607004BB2C1 /* HomeCollectionViewLayout.swift */; };
+		66E71FD31C693068004BB2C1 /* DeviceCapability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FD21C693068004BB2C1 /* DeviceCapability.swift */; };
+		66E71FD61C693199004BB2C1 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FD51C693199004BB2C1 /* UIImage+Decompression.swift */; };
+		66E71FD91C693260004BB2C1 /* DeviceCapabilities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66E71FD81C693260004BB2C1 /* DeviceCapabilities.plist */; };
+		66E71FDB1C693382004BB2C1 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FDA1C693382004BB2C1 /* RoundedCornersView.swift */; };
+		66E71FDD1C693D24004BB2C1 /* DeviceCapabilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FDC1C693D24004BB2C1 /* DeviceCapabilityCell.swift */; };
+		66E71FDF1C694947004BB2C1 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FDE1C694947004BB2C1 /* StatusView.swift */; };
+		66F1177D1D1C3952001EC81F /* CapabilityTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66F1177C1D1C3952001EC81F /* CapabilityTitleView.xib */; };
+		66F1177F1D1C3964001EC81F /* CapabilityTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F1177E1D1C3964001EC81F /* CapabilityTitleView.swift */; };
+		66F117811D1DCC07001EC81F /* ThresholdVisualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F117801D1DCC07001EC81F /* ThresholdVisualView.swift */; };
+		66F117831D1DCC22001EC81F /* ThresholdVisualView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66F117821D1DCC22001EC81F /* ThresholdVisualView.xib */; };
+		66F117851D22F963001EC81F /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F117841D22F963001EC81F /* LineView.swift */; };
+		66F117871D2304D3001EC81F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F117861D2304D3001EC81F /* HistoryViewController.swift */; };
+		66F117891D241350001EC81F /* ThresholdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F117881D241350001EC81F /* ThresholdViewController.swift */; };
+		66F83EC41C9354D400D5AB8B /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F83EC31C9354D400D5AB8B /* SegueFromLeft.swift */; };
+		66F83EC61C93565800D5AB8B /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F83EC51C93565800D5AB8B /* SegueFromRight.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66AEAE9A1CEA64B800A4A863 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				66AEAE991CEA64B800A4A863 /* Charts.framework in Embed Frameworks */,
+				66AEAE971CEA64B700A4A863 /* AWSS3.framework in Embed Frameworks */,
+				66AEAE951CEA64B700A4A863 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		610115B21CCE9F94009A14E4 /* DeviceCapability_Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability_Camera.swift; sourceTree = "<group>"; };
+		610115B41CD0002A009A14E4 /* DeviceCapability_AWSContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability_AWSContent.swift; sourceTree = "<group>"; };
+		610115B61CD2454D009A14E4 /* RemoChangeWifiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoChangeWifiViewController.swift; sourceTree = "<group>"; };
+		610F9EEA1D09BB33008D96C3 /* DeviceCapability_Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability_Alerts.swift; sourceTree = "<group>"; };
+		6112344A1CF69B690040C6EE /* DeviceCapability_Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability_Slider.swift; sourceTree = "<group>"; };
+		6112344C1CF8A3090040C6EE /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		6112344E1CFE3C3E0040C6EE /* BoatAwareExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatAwareExtensions.swift; sourceTree = "<group>"; };
+		611234501CFF84B50040C6EE /* RangeSliderThumbLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderThumbLayer.swift; sourceTree = "<group>"; };
+		611234521CFF91160040C6EE /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
+		612BAA0E1D1C598100F00217 /* LoadingAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAppViewController.swift; sourceTree = "<group>"; };
+		612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelWithBoatAwareNetworkViewController.swift; sourceTree = "<group>"; };
+		6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiSelectTableViewController.swift; sourceTree = "<group>"; };
+		6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiSelectUserInputViewController.swift; sourceTree = "<group>"; };
+		615C3A021C8884160029F8AE /* Boat Aware-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boat Aware-Bridging-Header.h"; sourceTree = "<group>"; };
+		615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
+		6165C86F1D0F010100F1F235 /* ForgotPasswordFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFormViewController.swift; sourceTree = "<group>"; };
+		6165C8711D0F014500F1F235 /* ResetPasswordFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordFormViewController.swift; sourceTree = "<group>"; };
+		616F9DD71DC14C4C004CADD2 /* apiCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiCalls.swift; sourceTree = "<group>"; };
+		616F9DD91DC14C6F004CADD2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatAwareData.swift; sourceTree = "<group>"; };
+		616F9DDD1DC14CA7004CADD2 /* registerControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerControllerViewController.swift; sourceTree = "<group>"; };
+		616F9DDE1DC14CA7004CADD2 /* selectwifiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectwifiTableViewController.swift; sourceTree = "<group>"; };
+		616F9DDF1DC14CA7004CADD2 /* SetUpWifiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpWifiViewController.swift; sourceTree = "<group>"; };
+		616F9DE01DC14CA7004CADD2 /* testControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testControllerViewController.swift; sourceTree = "<group>"; };
+		616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		616F9DE91DC14D10004CADD2 /* navigationControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navigationControlViewController.swift; sourceTree = "<group>"; };
+		61B2F38E1CB5B3B900DBC5BF /* remoNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = remoNavigationController.swift; sourceTree = "<group>"; };
+		61B437A41C93213F00B0DCC2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		61B437A51C93213F00B0DCC2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		61F3A20E1CCABAC500159292 /* DeviceCapability_Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability_Graph.swift; sourceTree = "<group>"; };
+		6661B4D81D13385500055239 /* CameraCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCollectionViewCell.swift; sourceTree = "<group>"; };
+		6661B4DA1D148EAE00055239 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		666CE7BE1C974127005863A9 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		66AEAE8C1CEA616B00A4A863 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = frameworks/AWSCore.framework; sourceTree = "<group>"; };
+		66AEAE8D1CEA616B00A4A863 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = frameworks/AWSS3.framework; sourceTree = "<group>"; };
+		66AEAE8E1CEA616B00A4A863 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = frameworks/Charts.framework; sourceTree = "<group>"; };
+		66B678E81C6A6FE9007963AA /* UIColor+Darken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Darken.swift"; sourceTree = "<group>"; };
+		66B678EA1C6A875E007963AA /* DeviceCapabilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapabilityViewController.swift; sourceTree = "<group>"; };
+		66B678EC1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapabilityTabBarConroller.swift; sourceTree = "<group>"; };
+		66E71FAF1C691309004BB2C1 /* Christmas Fam Duels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Christmas Fam Duels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E71FB21C691309004BB2C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		66E71FB91C691309004BB2C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		66E71FBB1C691309004BB2C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66E71FBE1C691309004BB2C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66E71FC01C691309004BB2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66E71FC71C69182A004BB2C1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		66E71FCC1C692384004BB2C1 /* capabilityCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = capabilityCollectionViewCell.swift; sourceTree = "<group>"; };
+		66E71FCE1C692607004BB2C1 /* HomeCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewLayout.swift; sourceTree = "<group>"; };
+		66E71FD21C693068004BB2C1 /* DeviceCapability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability.swift; sourceTree = "<group>"; };
+		66E71FD51C693199004BB2C1 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
+		66E71FD81C693260004BB2C1 /* DeviceCapabilities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceCapabilities.plist; sourceTree = "<group>"; };
+		66E71FDA1C693382004BB2C1 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		66E71FDC1C693D24004BB2C1 /* DeviceCapabilityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapabilityCell.swift; sourceTree = "<group>"; };
+		66E71FDE1C694947004BB2C1 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		66F1177C1D1C3952001EC81F /* CapabilityTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapabilityTitleView.xib; sourceTree = "<group>"; };
+		66F1177E1D1C3964001EC81F /* CapabilityTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapabilityTitleView.swift; sourceTree = "<group>"; };
+		66F117801D1DCC07001EC81F /* ThresholdVisualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdVisualView.swift; sourceTree = "<group>"; };
+		66F117821D1DCC22001EC81F /* ThresholdVisualView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThresholdVisualView.xib; sourceTree = "<group>"; };
+		66F117841D22F963001EC81F /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		66F117861D2304D3001EC81F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		66F117881D241350001EC81F /* ThresholdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdViewController.swift; sourceTree = "<group>"; };
+		66F83EC31C9354D400D5AB8B /* SegueFromLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
+		66F83EC51C93565800D5AB8B /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66E71FAC1C691309004BB2C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AEAE8F1CEA616B00A4A863 /* AWSCore.framework in Frameworks */,
+				66AEAE901CEA616B00A4A863 /* AWSS3.framework in Frameworks */,
+				66AEAE981CEA64B800A4A863 /* Charts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		612BAA0A1D1B0F0800F00217 /* RemoSetUp */ = {
+			isa = PBXGroup;
+			children = (
+				616F9DDD1DC14CA7004CADD2 /* registerControllerViewController.swift */,
+				616F9DDE1DC14CA7004CADD2 /* selectwifiTableViewController.swift */,
+				616F9DDF1DC14CA7004CADD2 /* SetUpWifiViewController.swift */,
+				616F9DE01DC14CA7004CADD2 /* testControllerViewController.swift */,
+				612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */,
+				6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */,
+				6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */,
+			);
+			name = RemoSetUp;
+			sourceTree = "<group>";
+		};
+		612BAA0C1D1B11F100F00217 /* ChangeWiFi */ = {
+			isa = PBXGroup;
+			children = (
+				610115B61CD2454D009A14E4 /* RemoChangeWifiViewController.swift */,
+			);
+			name = ChangeWiFi;
+			sourceTree = "<group>";
+		};
+		615C39EA1C87707A0029F8AE /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				612BAA0C1D1B11F100F00217 /* ChangeWiFi */,
+				612BAA0A1D1B0F0800F00217 /* RemoSetUp */,
+				6165C86C1D0EFFA700F1F235 /* ForgotPassword */,
+				612BAA0E1D1C598100F00217 /* LoadingAppViewController.swift */,
+				616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */,
+				616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */,
+			);
+			name = LoginRegister;
+			sourceTree = "<group>";
+		};
+		615C39FC1C87900B0029F8AE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				616F9DD91DC14C6F004CADD2 /* LoadingView.swift */,
+				616F9DD71DC14C4C004CADD2 /* apiCalls.swift */,
+				6112344E1CFE3C3E0040C6EE /* BoatAwareExtensions.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		615C3A011C8883CB0029F8AE /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				61B437A41C93213F00B0DCC2 /* SWRevealViewController.h */,
+				61B437A51C93213F00B0DCC2 /* SWRevealViewController.m */,
+				615C3A021C8884160029F8AE /* Boat Aware-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		6165C86C1D0EFFA700F1F235 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				6165C86F1D0F010100F1F235 /* ForgotPasswordFormViewController.swift */,
+				6165C8711D0F014500F1F235 /* ResetPasswordFormViewController.swift */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		61F3A2071CCAB97F00159292 /* DeviceViews */ = {
+			isa = PBXGroup;
+			children = (
+				66F117861D2304D3001EC81F /* HistoryViewController.swift */,
+				66B678EA1C6A875E007963AA /* DeviceCapabilityViewController.swift */,
+				61F3A20E1CCABAC500159292 /* DeviceCapability_Graph.swift */,
+				610115B21CCE9F94009A14E4 /* DeviceCapability_Camera.swift */,
+				610115B41CD0002A009A14E4 /* DeviceCapability_AWSContent.swift */,
+				6112344A1CF69B690040C6EE /* DeviceCapability_Slider.swift */,
+				610F9EEA1D09BB33008D96C3 /* DeviceCapability_Alerts.swift */,
+				6661B4DA1D148EAE00055239 /* PhotoViewController.swift */,
+				66F117881D241350001EC81F /* ThresholdViewController.swift */,
+			);
+			name = DeviceViews;
+			sourceTree = "<group>";
+		};
+		66E71FA61C691309004BB2C1 = {
+			isa = PBXGroup;
+			children = (
+				66E71FB11C691309004BB2C1 /* Christmas Fam Duels */,
+				66E71FB01C691309004BB2C1 /* Products */,
+				702B41E98F2427D74BBCEC89 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		66E71FB01C691309004BB2C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66E71FAF1C691309004BB2C1 /* Christmas Fam Duels.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66E71FB11C691309004BB2C1 /* Christmas Fam Duels */ = {
+			isa = PBXGroup;
+			children = (
+				66F83EC21C9354AF00D5AB8B /* Segues */,
+				615C3A011C8883CB0029F8AE /* SWRevealViewController */,
+				615C39FC1C87900B0029F8AE /* Utilities */,
+				66E71FD71C693242004BB2C1 /* Assets */,
+				66E71FD41C693184004BB2C1 /* Extensions */,
+				66E71FD11C693050004BB2C1 /* Layouts */,
+				66E71FD01C693046004BB2C1 /* Models */,
+				66E71FC91C692365004BB2C1 /* Views */,
+				66E71FC61C691817004BB2C1 /* View Controllers */,
+				66E71FB21C691309004BB2C1 /* AppDelegate.swift */,
+				616F9DE91DC14D10004CADD2 /* navigationControlViewController.swift */,
+				66E71FB81C691309004BB2C1 /* Main.storyboard */,
+				66E71FBD1C691309004BB2C1 /* LaunchScreen.storyboard */,
+				66E71FC01C691309004BB2C1 /* Info.plist */,
+			);
+			name = "Christmas Fam Duels";
+			path = "Boat Aware";
+			sourceTree = "<group>";
+		};
+		66E71FC61C691817004BB2C1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66E71FC71C69182A004BB2C1 /* HomeViewController.swift */,
+				61F3A2071CCAB97F00159292 /* DeviceViews */,
+				615C39EA1C87707A0029F8AE /* LoginRegister */,
+				66B678EC1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift */,
+				615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */,
+				666CE7BE1C974127005863A9 /* FormViewController.swift */,
+				61B2F38E1CB5B3B900DBC5BF /* remoNavigationController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		66E71FC91C692365004BB2C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6661B4D81D13385500055239 /* CameraCollectionViewCell.swift */,
+				66E71FCC1C692384004BB2C1 /* capabilityCollectionViewCell.swift */,
+				66E71FDA1C693382004BB2C1 /* RoundedCornersView.swift */,
+				66E71FDC1C693D24004BB2C1 /* DeviceCapabilityCell.swift */,
+				66E71FDE1C694947004BB2C1 /* StatusView.swift */,
+				66F1177C1D1C3952001EC81F /* CapabilityTitleView.xib */,
+				66F1177E1D1C3964001EC81F /* CapabilityTitleView.swift */,
+				66F117801D1DCC07001EC81F /* ThresholdVisualView.swift */,
+				66F117821D1DCC22001EC81F /* ThresholdVisualView.xib */,
+				66F117841D22F963001EC81F /* LineView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		66E71FD01C693046004BB2C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */,
+				66E71FD21C693068004BB2C1 /* DeviceCapability.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		66E71FD11C693050004BB2C1 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				66E71FCE1C692607004BB2C1 /* HomeCollectionViewLayout.swift */,
+				6112344C1CF8A3090040C6EE /* RangeSlider.swift */,
+				611234501CFF84B50040C6EE /* RangeSliderThumbLayer.swift */,
+				611234521CFF91160040C6EE /* RangeSliderTrackLayer.swift */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
+		66E71FD41C693184004BB2C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				66E71FD51C693199004BB2C1 /* UIImage+Decompression.swift */,
+				66B678E81C6A6FE9007963AA /* UIColor+Darken.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		66E71FD71C693242004BB2C1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				66E71FBB1C691309004BB2C1 /* Assets.xcassets */,
+				66E71FD81C693260004BB2C1 /* DeviceCapabilities.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		66F83EC21C9354AF00D5AB8B /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				66F83EC31C9354D400D5AB8B /* SegueFromLeft.swift */,
+				66F83EC51C93565800D5AB8B /* SegueFromRight.swift */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
+		702B41E98F2427D74BBCEC89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66AEAE8C1CEA616B00A4A863 /* AWSCore.framework */,
+				66AEAE8D1CEA616B00A4A863 /* AWSS3.framework */,
+				66AEAE8E1CEA616B00A4A863 /* Charts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66E71FAE1C691309004BB2C1 /* Christmas Fam Duels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66E71FC31C691309004BB2C1 /* Build configuration list for PBXNativeTarget "Christmas Fam Duels" */;
+			buildPhases = (
+				66E71FAB1C691309004BB2C1 /* Sources */,
+				66E71FAC1C691309004BB2C1 /* Frameworks */,
+				66E71FAD1C691309004BB2C1 /* Resources */,
+				66AEAE9A1CEA64B800A4A863 /* Embed Frameworks */,
+				6661B4DC1D19DC4E00055239 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Christmas Fam Duels";
+			productName = "Boat Aware";
+			productReference = 66E71FAF1C691309004BB2C1 /* Christmas Fam Duels.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66E71FA71C691309004BB2C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Thrive Engineering";
+				TargetAttributes = {
+					66E71FAE1C691309004BB2C1 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 79JL2LSC2W;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 66E71FAA1C691309004BB2C1 /* Build configuration list for PBXProject "Christmas Fam Duels" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66E71FA61C691309004BB2C1;
+			productRefGroup = 66E71FB01C691309004BB2C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66E71FAE1C691309004BB2C1 /* Christmas Fam Duels */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66E71FAD1C691309004BB2C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66F117831D1DCC22001EC81F /* ThresholdVisualView.xib in Resources */,
+				66E71FD91C693260004BB2C1 /* DeviceCapabilities.plist in Resources */,
+				66E71FBF1C691309004BB2C1 /* LaunchScreen.storyboard in Resources */,
+				66E71FBC1C691309004BB2C1 /* Assets.xcassets in Resources */,
+				66E71FBA1C691309004BB2C1 /* Main.storyboard in Resources */,
+				66F1177D1D1C3952001EC81F /* CapabilityTitleView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6661B4DC1D19DC4E00055239 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66E71FAB1C691309004BB2C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6165C8721D0F014500F1F235 /* ResetPasswordFormViewController.swift in Sources */,
+				61B2F38F1CB5B3B900DBC5BF /* remoNavigationController.swift in Sources */,
+				66B678EB1C6A875E007963AA /* DeviceCapabilityViewController.swift in Sources */,
+				610115B31CCE9F94009A14E4 /* DeviceCapability_Camera.swift in Sources */,
+				616F9DE21DC14CA7004CADD2 /* selectwifiTableViewController.swift in Sources */,
+				66E71FDF1C694947004BB2C1 /* StatusView.swift in Sources */,
+				616F9DDA1DC14C6F004CADD2 /* LoadingView.swift in Sources */,
+				66E71FCF1C692607004BB2C1 /* HomeCollectionViewLayout.swift in Sources */,
+				616F9DE81DC14CE7004CADD2 /* RegisterPageViewController.swift in Sources */,
+				616F9DE11DC14CA7004CADD2 /* registerControllerViewController.swift in Sources */,
+				610115B51CD0002A009A14E4 /* DeviceCapability_AWSContent.swift in Sources */,
+				61F3A20F1CCABAC500159292 /* DeviceCapability_Graph.swift in Sources */,
+				6135DFE01D236A9700C58242 /* WifiSelectTableViewController.swift in Sources */,
+				615C3A0E1C88E91B0029F8AE /* menuTableViewController.swift in Sources */,
+				616F9DE71DC14CE7004CADD2 /* LoginPageViewController.swift in Sources */,
+				66E71FDB1C693382004BB2C1 /* RoundedCornersView.swift in Sources */,
+				611234531CFF91160040C6EE /* RangeSliderTrackLayer.swift in Sources */,
+				61B437A61C93213F00B0DCC2 /* SWRevealViewController.m in Sources */,
+				66F117871D2304D3001EC81F /* HistoryViewController.swift in Sources */,
+				66E71FD31C693068004BB2C1 /* DeviceCapability.swift in Sources */,
+				6135DFE21D240B4A00C58242 /* WifiSelectUserInputViewController.swift in Sources */,
+				6661B4DB1D148EAE00055239 /* PhotoViewController.swift in Sources */,
+				66F117811D1DCC07001EC81F /* ThresholdVisualView.swift in Sources */,
+				66F83EC41C9354D400D5AB8B /* SegueFromLeft.swift in Sources */,
+				66E71FD61C693199004BB2C1 /* UIImage+Decompression.swift in Sources */,
+				616F9DDC1DC14C8F004CADD2 /* BoatAwareData.swift in Sources */,
+				666CE7BF1C974127005863A9 /* FormViewController.swift in Sources */,
+				66E71FB31C691309004BB2C1 /* AppDelegate.swift in Sources */,
+				6661B4D91D13385500055239 /* CameraCollectionViewCell.swift in Sources */,
+				610115B71CD2454D009A14E4 /* RemoChangeWifiViewController.swift in Sources */,
+				610F9EEB1D09BB33008D96C3 /* DeviceCapability_Alerts.swift in Sources */,
+				6165C8701D0F010100F1F235 /* ForgotPasswordFormViewController.swift in Sources */,
+				612BAA111D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift in Sources */,
+				6112344F1CFE3C3E0040C6EE /* BoatAwareExtensions.swift in Sources */,
+				66E71FDD1C693D24004BB2C1 /* DeviceCapabilityCell.swift in Sources */,
+				66F117851D22F963001EC81F /* LineView.swift in Sources */,
+				66B678ED1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift in Sources */,
+				612BAA0F1D1C598100F00217 /* LoadingAppViewController.swift in Sources */,
+				66E71FCD1C692384004BB2C1 /* capabilityCollectionViewCell.swift in Sources */,
+				616F9DEA1DC14D10004CADD2 /* navigationControlViewController.swift in Sources */,
+				6112344B1CF69B690040C6EE /* DeviceCapability_Slider.swift in Sources */,
+				66B678E91C6A6FE9007963AA /* UIColor+Darken.swift in Sources */,
+				66F117891D241350001EC81F /* ThresholdViewController.swift in Sources */,
+				616F9DE41DC14CA7004CADD2 /* testControllerViewController.swift in Sources */,
+				66F83EC61C93565800D5AB8B /* SegueFromRight.swift in Sources */,
+				616F9DE31DC14CA7004CADD2 /* SetUpWifiViewController.swift in Sources */,
+				611234511CFF84B50040C6EE /* RangeSliderThumbLayer.swift in Sources */,
+				66E71FC81C69182A004BB2C1 /* HomeViewController.swift in Sources */,
+				66F1177F1D1C3964001EC81F /* CapabilityTitleView.swift in Sources */,
+				616F9DD81DC14C4C004CADD2 /* apiCalls.swift in Sources */,
+				6112344D1CF8A3090040C6EE /* RangeSlider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		66E71FB81C691309004BB2C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66E71FB91C691309004BB2C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		66E71FBD1C691309004BB2C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66E71FBE1C691309004BB2C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66E71FC11C691309004BB2C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "d4c6d3a7-36aa-4a37-9eec-906861e1d12a";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66E71FC21C691309004BB2C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "d4c6d3a7-36aa-4a37-9eec-906861e1d12a";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66E71FC41C691309004BB2C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				INFOPLIST_FILE = "Boat Aware/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Christmas-Fam-Duels";
+				PRODUCT_NAME = "Christmas Fam Duels";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Boat Aware/Boat Aware-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		66E71FC51C691309004BB2C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/frameworks",
+				);
+				INFOPLIST_FILE = "Boat Aware/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Christmas-Fam-Duels";
+				PRODUCT_NAME = "Christmas Fam Duels";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Boat Aware/Boat Aware-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66E71FAA1C691309004BB2C1 /* Build configuration list for PBXProject "Christmas Fam Duels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66E71FC11C691309004BB2C1 /* Debug */,
+				66E71FC21C691309004BB2C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66E71FC31C691309004BB2C1 /* Build configuration list for PBXNativeTarget "Christmas Fam Duels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66E71FC41C691309004BB2C1 /* Debug */,
+				66E71FC51C691309004BB2C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66E71FA71C691309004BB2C1 /* Project object */;
+}

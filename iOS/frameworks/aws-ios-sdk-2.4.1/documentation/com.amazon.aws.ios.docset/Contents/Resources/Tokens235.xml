@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderUpdateUserPoolRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolRequest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="235"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setAutoVerifiedAttributes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *autoVerifiedAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/autoVerifiedAttributes</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/autoVerifiedAttributes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *autoVerifiedAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/autoVerifiedAttributes</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/autoVerifiedAttributes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *autoVerifiedAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/autoVerifiedAttributes</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setEmailVerificationMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *emailVerificationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/emailVerificationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/emailVerificationMessage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *emailVerificationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/emailVerificationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/emailVerificationMessage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *emailVerificationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/emailVerificationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setEmailVerificationSubject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *emailVerificationSubject</Declaration>
+			
+			
+			<Anchor>//api/name/emailVerificationSubject</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/emailVerificationSubject</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *emailVerificationSubject</Declaration>
+			
+			
+			<Anchor>//api/name/emailVerificationSubject</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/emailVerificationSubject</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *emailVerificationSubject</Declaration>
+			
+			
+			<Anchor>//api/name/emailVerificationSubject</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setLambdaConfig:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderLambdaConfigType *lambdaConfig</Declaration>
+			
+			
+			<Anchor>//api/name/lambdaConfig</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/lambdaConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderLambdaConfigType *lambdaConfig</Declaration>
+			
+			
+			<Anchor>//api/name/lambdaConfig</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/lambdaConfig</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderLambdaConfigType *lambdaConfig</Declaration>
+			
+			
+			<Anchor>//api/name/lambdaConfig</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setMfaConfiguration:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSCognitoIdentityProviderUserPoolMfaType mfaConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/mfaConfiguration</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/mfaConfiguration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSCognitoIdentityProviderUserPoolMfaType mfaConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/mfaConfiguration</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/mfaConfiguration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) AWSCognitoIdentityProviderUserPoolMfaType mfaConfiguration</Declaration>
+			
+			
+			<Anchor>//api/name/mfaConfiguration</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setPolicies:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderUserPoolPolicyType *policies</Declaration>
+			
+			
+			<Anchor>//api/name/policies</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/policies</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderUserPoolPolicyType *policies</Declaration>
+			
+			
+			<Anchor>//api/name/policies</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/policies</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) AWSCognitoIdentityProviderUserPoolPolicyType *policies</Declaration>
+			
+			
+			<Anchor>//api/name/policies</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setSmsAuthenticationMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *smsAuthenticationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/smsAuthenticationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/smsAuthenticationMessage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *smsAuthenticationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/smsAuthenticationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/smsAuthenticationMessage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *smsAuthenticationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/smsAuthenticationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setSmsVerificationMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *smsVerificationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/smsVerificationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/smsVerificationMessage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *smsVerificationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/smsVerificationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/smsVerificationMessage</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *smsVerificationMessage</Declaration>
+			
+			
+			<Anchor>//api/name/smsVerificationMessage</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/setUserPoolId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderUpdateUserPoolRequest/userPoolId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderUpdateUserPoolRequest/userPoolId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="235"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

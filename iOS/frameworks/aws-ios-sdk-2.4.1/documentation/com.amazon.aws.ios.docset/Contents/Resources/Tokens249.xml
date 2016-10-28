@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityUserPool.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityUserPool</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+            
+			
+			<NodeRef refid="249"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUserPool/setIdentityProviderName:</TokenIdentifier>
+			<Abstract type="html">The name of the identity provider. e.g. graph.facebook.com.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *identityProviderName</Declaration>
+			
+			
+			<Anchor>//api/name/identityProviderName</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUserPool/identityProviderName</TokenIdentifier>
+			<Abstract type="html">The name of the identity provider. e.g. graph.facebook.com.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *identityProviderName</Declaration>
+			
+			
+			<Anchor>//api/name/identityProviderName</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityUserPool/identityProviderName</TokenIdentifier>
+			<Abstract type="html">The name of the identity provider. e.g. graph.facebook.com.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *identityProviderName</Declaration>
+			
+			
+			<Anchor>//api/name/identityProviderName</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUserPool/signUp:password:userAttributes:validationData:</TokenIdentifier>
+			<Abstract type="html">Sign up a new user</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserPoolSignUpResponse*&gt; *)signUp:(NSString *)username password:(NSString *)password userAttributes:(nullable NSArray&lt;AWSCognitoIdentityUserAttributeType*&gt; *)userAttributes validationData:(nullable NSArray&lt;AWSCognitoIdentityUserAttributeType*&gt; *)validationData</Declaration>
+			
+			
+			<Anchor>//api/name/signUp:password:userAttributes:validationData:</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUserPool/currentUser</TokenIdentifier>
+			<Abstract type="html">Return the user who last authenticated.  Username may be nil if current user is unknown.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>- (nullable AWSCognitoIdentityUser *)currentUser</Declaration>
+			
+			<ReturnValue><Abstract type="html">The last authenticated user</Abstract></ReturnValue>
+			<Anchor>//api/name/currentUser</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUserPool/getUser</TokenIdentifier>
+			<Abstract type="html">Return the user without a username, when username is unknown.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>- (AWSCognitoIdentityUser *)getUser</Declaration>
+			
+			
+			<Anchor>//api/name/getUser</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUserPool/getUser:</TokenIdentifier>
+			<Abstract type="html">Return the user with a specific username</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>- (AWSCognitoIdentityUser *)getUser:(NSString *)username</Declaration>
+			
+			
+			<Anchor>//api/name/getUser:</Anchor>
+            <NodeRef refid="249"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

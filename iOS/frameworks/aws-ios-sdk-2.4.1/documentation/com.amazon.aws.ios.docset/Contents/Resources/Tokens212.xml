@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderListUserPoolClientsResponse.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolClientsResponse</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="212"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsResponse/setNextToken:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *nextToken</Declaration>
+			
+			
+			<Anchor>//api/name/nextToken</Anchor>
+            <NodeRef refid="212"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsResponse/nextToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *nextToken</Declaration>
+			
+			
+			<Anchor>//api/name/nextToken</Anchor>
+            <NodeRef refid="212"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderListUserPoolClientsResponse/nextToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *nextToken</Declaration>
+			
+			
+			<Anchor>//api/name/nextToken</Anchor>
+            <NodeRef refid="212"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsResponse/setUserPoolClients:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;AWSCognitoIdentityProviderUserPoolClientDescription*&gt; *userPoolClients</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolClients</Anchor>
+            <NodeRef refid="212"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderListUserPoolClientsResponse/userPoolClients</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;AWSCognitoIdentityProviderUserPoolClientDescription*&gt; *userPoolClients</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolClients</Anchor>
+            <NodeRef refid="212"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderListUserPoolClientsResponse/userPoolClients</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;AWSCognitoIdentityProviderUserPoolClientDescription*&gt; *userPoolClients</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolClients</Anchor>
+            <NodeRef refid="212"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

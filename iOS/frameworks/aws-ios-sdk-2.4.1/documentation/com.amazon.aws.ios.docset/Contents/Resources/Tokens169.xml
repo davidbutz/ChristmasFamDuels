@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="169"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/setUserAttributes:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;AWSCognitoIdentityProviderAttributeType*&gt; *userAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/userAttributes</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/userAttributes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;AWSCognitoIdentityProviderAttributeType*&gt; *userAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/userAttributes</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/userAttributes</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;AWSCognitoIdentityProviderAttributeType*&gt; *userAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/userAttributes</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/setUserPoolId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/userPoolId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/userPoolId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *userPoolId</Declaration>
+			
+			
+			<Anchor>//api/name/userPoolId</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/setUsername:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/username</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest/username</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="169"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

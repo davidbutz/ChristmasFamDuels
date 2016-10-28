@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderConfirmSignUpRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmSignUpRequest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="180"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/setClientId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/clientId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderConfirmSignUpRequest/clientId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *clientId</Declaration>
+			
+			
+			<Anchor>//api/name/clientId</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/setConfirmationCode:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *confirmationCode</Declaration>
+			
+			
+			<Anchor>//api/name/confirmationCode</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/confirmationCode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *confirmationCode</Declaration>
+			
+			
+			<Anchor>//api/name/confirmationCode</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderConfirmSignUpRequest/confirmationCode</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *confirmationCode</Declaration>
+			
+			
+			<Anchor>//api/name/confirmationCode</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/setForceAliasCreation:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *forceAliasCreation</Declaration>
+			
+			
+			<Anchor>//api/name/forceAliasCreation</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/forceAliasCreation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *forceAliasCreation</Declaration>
+			
+			
+			<Anchor>//api/name/forceAliasCreation</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderConfirmSignUpRequest/forceAliasCreation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSNumber *forceAliasCreation</Declaration>
+			
+			
+			<Anchor>//api/name/forceAliasCreation</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/setSecretHash:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *secretHash</Declaration>
+			
+			
+			<Anchor>//api/name/secretHash</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/secretHash</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *secretHash</Declaration>
+			
+			
+			<Anchor>//api/name/secretHash</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderConfirmSignUpRequest/secretHash</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *secretHash</Declaration>
+			
+			
+			<Anchor>//api/name/secretHash</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/setUsername:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderConfirmSignUpRequest/username</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderConfirmSignUpRequest/username</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="180"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
