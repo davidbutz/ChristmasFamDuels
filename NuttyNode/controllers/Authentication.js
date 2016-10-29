@@ -15,7 +15,6 @@
     var thisleagueid = "";
     
     
-    
     //Authentication is the mechanism for logging into the system.
     //This can be at the local network or production level.
     Authentication.authenticate = function (req, res) {
@@ -96,55 +95,41 @@
         if (req.cellphone) {
             cellPhone = req.cellphone
         }
-        if (req.userid) {
-            //i am syncing
-            var newuser = { "fname": req.fname, "lname": req.lname, "username": req.username, "password": req.password , "phonenumber": cellPhone }
-            var userobj = new User(newuser);
-        }
-        else {
-            var newuser = { "fname": req.fname, "lname": req.lname, "username": req.username, "password": req.password, "phonenumber": cellPhone }
-            var userobj = new User(newuser);
-        }
+       
+        var newuser = { "fname": req.fname, "lname": req.lname, "username": req.username, "password": req.password, "phonenumber": cellPhone }
+        var userobj = new User(newuser);
+        
         userobj.save(function (err) {
             if (err)
                 console.log(err);
-        })
-    }
-    
-    function associatusertoleague(leaguename, usrname) {
-        var leagueID;
-        var user_id;
-        League.findOne({ 'leaguename': leaguename }, function (err, leagues) {
-            if (err)
-                console.log(err);
-            
-            leagueID = leagues._id.toString();
-            Users.findOne({ 'username': usrname }, function (err, users) {
-                if (err)
-                    console.log(err);
-                
-                if (users) {
-                    user_id = users._id.toString();
-                    console.log(users._id);
-                    
-                    userxaccountj = { userxleague: [{ "userID": user_id, "leagueID": leagueID }] }
-                    userxaccountj.userxaccount.forEach(function (uxa) {
-                        var userxaccountobj = new UserXLeague(uxa);
-                        userxaccountobj.save(function (err) {
-                            if (err)
-                                console.log(err);
-                        });
-                    });
-                }
-                else {
-                    console.log("something is WRONG");
-                }
-            });
         });
-        return 1; //Eventually will return the id i just created...
     }
     
-
+    Authentication.addLeagueMember = function (leagueID, userID, callback) {
+        //what do we send back if something goes wrong?
+        var errorhandlingResponse = { "success": false };
+        
+        UserXLeague.find({ "userID": user_id, "leagueID": leagueID }, function (err, dataUserXLeague) {
+            
+            if (dataUserXLeague) {
+                console.log("addLeagueMember - user exists in league already.")
+                callback(errorhandlingResponse);
+            }
+            else {
+                var newUserXLeague = new UserXLeague({ "userID": user_id, "leagueID": leagueID, "roleID" : 2 });
+                newUserXLeague.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                        callback(errorhandlingResponse);
+                    }
+                    else {
+                        callback({ "success": true });
+                    }
+                });
+            }
+        });
+    }
+    
     Authentication.getAccountInformationFromToken = function (req, res, token, callback) {
         Login.findOne({ "login_token": token } , function (err, loginresult) {
             User.findOne({ _id : loginresult.user_id }, function (err, users) {
@@ -234,7 +219,6 @@
     }
     
     Authentication.register = function (req, res, callback) {
-        ////incoming {"account_name":"","fname":"Dave","lname":"Butz","username":"davidthomasbutz@gmail.com":,"password":"lockjaw"}
         return User.findOne({ "username": req.username, "password": req.password }, function (err, userresult) {
             if (err)
                 res.json({ "status": "fail", "message": err, "account_name": "", "email": req.username , "password": req.password });

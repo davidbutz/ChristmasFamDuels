@@ -2,7 +2,7 @@
 
 	@html.block("body", function(model){
 
-		<img src="assets/fuzzytree.jpg"  alt="christmasfamduels logo">
+		<img src="assets/fuzzytree.jpg"  height="42" width="42" alt="christmasfamduels logo">
 		<h1>@model.title</h1>
 		<p>Nutty Robot / Christmas Fam Duel API</p>
 		<h1>@model.controller</h1>

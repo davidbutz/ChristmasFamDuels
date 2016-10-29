@@ -4,4 +4,5 @@ module.exports = function (app, settings) {
     mongoose.connect(settings.config().MONGOCONN);
     require("./SetUpActivities")(app, settings);
     require("./Authentication")(app, settings);
+    require("./RegisterMobilePushService")(app, settings);
 }

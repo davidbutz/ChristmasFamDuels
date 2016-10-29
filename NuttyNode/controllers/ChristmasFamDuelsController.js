@@ -82,7 +82,7 @@
             var productionurl = settings.config().ProductionWeb.toString() + "/resetPassword?requesttoken=" + reset_token;
             var ses = new AWS.SES({ apiVersion: '2010-12-01' });
             var to = [email];
-            var from = cloudsettings.cloudconfig().boatawareemail;
+            var from = cloudsettings.cloudconfig().christmasFamDuelsEmail;
             var messagebody = "You have requested to reset your password.<br>";
             messagebody += "Please click <a href=\"" + productionurl + "\"> THIS LINK </a> to reset your password";
             messagebody += "<br><br>If you have not requested this reset, please contact NuttyRobot (emailresetconcern@nuttyrobot.com)";
@@ -119,7 +119,28 @@
             });
         });
     }
-
+    
+    //user has clicked the web page - or native app- and is pushing request back
+    ChristmasFamDuelsController.changePassword = function (req, res, token, password, callback) {
+        //Validate token:
+        var newpassword = password; // simply to avoid confusion...
+        PasswordResetRequest.findOne({ requesttoken: token }, function (err, request) {
+            if (request) {
+                // token valid, i have the username from the request.username...
+                // simply update the password here
+                var conditions = { username: request.username };
+                var update = { $set: { password: newpassword } };
+                var options = { upsert: true };
+                Users.update(conditions, update, options, mongocallback);
+                callback(res, { "status": "success", "message": "password changed" });
+            }
+            else {
+                callback(res, { "status": "fail", "message": "not a valid token" });
+            }
+        });
+    }
+    
+    //user simply logs in and we capture their unique_id
     ChristmasFamDuelsController.saveiOSNotificationToken = function (req, res, notification_token, controller_id, callback) {
         //see if it exists in Mongo.
         NotificationToken.findOne({ "notification_token_id" : notification_token, "type" : "iOS" }, function (err, notificationtoken) {

@@ -22,6 +22,20 @@
             //todo: validate requesttoken
             res.render("resetPassword/index", { title: "Reset Password", OS: getMobileOperatingSystem(req), token: requesttoken, productionurl: settings.config().ProductionWeb });
         });
+        app.get("/inviteUser", function (req, res) {
+            var requesttoken = req.query.requesttoken;
+            //console.log('*********** 1TOKEN  *******************');
+            //console.log(requesttoken);
+            if (requesttoken) {
+                //minor todo: validate requesttoken (we validate it on the post back)
+                console.log('token present, needs validation then rendering.');
+            }
+            else {
+                console.log('either no token in QS, or token invalid. Not handling for now.');
+            }
+            //todo: validate requesttoken
+            res.render("inviteUser/index", { title: "Accept Invitation", OS: getMobileOperatingSystem(req), token: requesttoken, productionurl: settings.config().ProductionWeb });
+        });
     };
     
     function getMobileOperatingSystem(req) {

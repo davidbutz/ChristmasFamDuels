@@ -34,7 +34,7 @@
         christmasfamduelcontroller.changePassword(req, res, token, password, sendresponse);
     });
 
-    //user logins
+    //user logins with token and supplies app with data
     rRouter.get("/loginTokenValid/:logintoken", function (req, res) {
         var login_token = req.params.logintoken;
         authentication.iftokenvalid(login_token, function (err, valid) {
@@ -42,16 +42,21 @@
                 authentication.getAccountInformationFromToken(req, res, login_token, sendresponse);
             }
             else {
-                res.json({ success: false, message: 'token not valid' });
+                sendresponse(res, { success: false, message: 'token not valid' });
             }
         });
     });
     
-    
+    //user authenticates themselves
     rRouter.post("/authenticate", function (req, res) {
         authentication.authenticate(req, res);
     });
     
+    //new user added to system
+    //users adds themselves to the system.
+    rRouter.put("/register", function (req, res) {
+        authentication.register(req.body, res, sendresponse);
+    });
 
     //generic send reponse.
     function sendresponse(res, response) {
