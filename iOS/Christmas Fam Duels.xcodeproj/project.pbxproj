@@ -20,6 +20,7 @@
 		612BAA111D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */; };
 		6135DFE01D236A9700C58242 /* WifiSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */; };
 		6135DFE21D240B4A00C58242 /* WifiSelectUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */; };
+		61382BB11DC3F8770093297D /* createLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61382BB01DC3F8770093297D /* createLeagueViewController.swift */; };
 		615C3A0E1C88E91B0029F8AE /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */; };
 		6165C8701D0F010100F1F235 /* ForgotPasswordFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165C86F1D0F010100F1F235 /* ForgotPasswordFormViewController.swift */; };
 		6165C8721D0F014500F1F235 /* ResetPasswordFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165C8711D0F014500F1F235 /* ResetPasswordFormViewController.swift */; };
@@ -57,7 +58,6 @@
 		66E71FCF1C692607004BB2C1 /* HomeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FCE1C692607004BB2C1 /* HomeCollectionViewLayout.swift */; };
 		66E71FD31C693068004BB2C1 /* DeviceCapability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FD21C693068004BB2C1 /* DeviceCapability.swift */; };
 		66E71FD61C693199004BB2C1 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FD51C693199004BB2C1 /* UIImage+Decompression.swift */; };
-		66E71FD91C693260004BB2C1 /* DeviceCapabilities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66E71FD81C693260004BB2C1 /* DeviceCapabilities.plist */; };
 		66E71FDB1C693382004BB2C1 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FDA1C693382004BB2C1 /* RoundedCornersView.swift */; };
 		66E71FDD1C693D24004BB2C1 /* DeviceCapabilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FDC1C693D24004BB2C1 /* DeviceCapabilityCell.swift */; };
 		66E71FDF1C694947004BB2C1 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E71FDE1C694947004BB2C1 /* StatusView.swift */; };
@@ -102,6 +102,7 @@
 		612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelWithBoatAwareNetworkViewController.swift; sourceTree = "<group>"; };
 		6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiSelectTableViewController.swift; sourceTree = "<group>"; };
 		6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiSelectUserInputViewController.swift; sourceTree = "<group>"; };
+		61382BB01DC3F8770093297D /* createLeagueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createLeagueViewController.swift; sourceTree = "<group>"; };
 		615C3A021C8884160029F8AE /* Boat Aware-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boat Aware-Bridging-Header.h"; sourceTree = "<group>"; };
 		615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
 		6165C86F1D0F010100F1F235 /* ForgotPasswordFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordFormViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +141,6 @@
 		66E71FCE1C692607004BB2C1 /* HomeCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewLayout.swift; sourceTree = "<group>"; };
 		66E71FD21C693068004BB2C1 /* DeviceCapability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapability.swift; sourceTree = "<group>"; };
 		66E71FD51C693199004BB2C1 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
-		66E71FD81C693260004BB2C1 /* DeviceCapabilities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceCapabilities.plist; sourceTree = "<group>"; };
 		66E71FDA1C693382004BB2C1 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		66E71FDC1C693D24004BB2C1 /* DeviceCapabilityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCapabilityCell.swift; sourceTree = "<group>"; };
 		66E71FDE1C694947004BB2C1 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
@@ -298,6 +298,7 @@
 				615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */,
 				666CE7BE1C974127005863A9 /* FormViewController.swift */,
 				61B2F38E1CB5B3B900DBC5BF /* remoNavigationController.swift */,
+				61382BB01DC3F8770093297D /* createLeagueViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -352,7 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				66E71FBB1C691309004BB2C1 /* Assets.xcassets */,
-				66E71FD81C693260004BB2C1 /* DeviceCapabilities.plist */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -443,7 +443,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F117831D1DCC22001EC81F /* ThresholdVisualView.xib in Resources */,
-				66E71FD91C693260004BB2C1 /* DeviceCapabilities.plist in Resources */,
 				66E71FBF1C691309004BB2C1 /* LaunchScreen.storyboard in Resources */,
 				66E71FBC1C691309004BB2C1 /* Assets.xcassets in Resources */,
 				66E71FBA1C691309004BB2C1 /* Main.storyboard in Resources */,
@@ -512,6 +511,7 @@
 				66F117851D22F963001EC81F /* LineView.swift in Sources */,
 				66B678ED1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift in Sources */,
 				612BAA0F1D1C598100F00217 /* LoadingAppViewController.swift in Sources */,
+				61382BB11DC3F8770093297D /* createLeagueViewController.swift in Sources */,
 				66E71FCD1C692384004BB2C1 /* capabilityCollectionViewCell.swift in Sources */,
 				616F9DEA1DC14D10004CADD2 /* navigationControlViewController.swift in Sources */,
 				6112344B1CF69B690040C6EE /* DeviceCapability_Slider.swift in Sources */,
