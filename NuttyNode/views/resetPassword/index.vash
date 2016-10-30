@@ -1,0 +1,87 @@
+﻿@html.extend('layout', function(model){
+	@html.block("body", function(model){
+		<img src="assets/Boat-Aware-Logo3x.png"  alt="boataware logo">
+		<h1>@model.title</h1>
+		<p>Passwords must be 7 characters and contain both an upper-case and lower-case character</p>
+		if (model.error){
+			<p class="text-error"> Error occurred: @model.error </p>
+		}
+		@html.block("scripts", function(model){
+			<script type="text/javascript">
+			if("@model.OS"=="iOS"){
+				//try to launch the app right here!
+				document.location = "christmasfamduels://begin/token/@model.token/end";
+			}
+			function onclickSave(){
+				//validate.
+				//alert("@model.token");
+				if(document.getElementById("password1").value.length < 7 || !hasLowerCase(document.getElementById("password1").value) || !hasUpperCase(document.getElementById("password1").value) ){
+					alert("Passwords must be 7 characters and contain both an upper-case and lower-case character");
+					return;
+				}
+				if(document.getElementById("password1").value != document.getElementById("password2").value){
+					alert("Passwords must match");
+					return;
+				}
+				//alert("ok...");
+				//now i need to send the validated email and token back to the server for more validation and action
+				var data = JSON.stringify({token: "@model.token", password: document.getElementById("password1").value });
+				//alert(data);
+				var url = "@model.productionurl" + "/api/accounts/changepassword";
+				//alert(url);
+				postToURL(url, data)
+				alert("Password has been reset.");
+				document.location = document.location.href;
+			}
+
+			function hasLowerCase(str) {
+				return (/[a-z]/.test(str));
+			}
+
+			function hasUpperCase(str) {
+				return (/[A-Z]/.test(str));
+			}
+
+
+			function postToURL(url, data) {
+				var req = false;
+				// For Safari, Firefox, and other non-MS browsers
+				if (window.XMLHttpRequest) {
+					try {
+						req = new XMLHttpRequest();
+					} catch (e) {
+						req = false;
+					}
+				} else if (window.ActiveXObject) {
+					// For Internet Explorer on Windows
+					try {
+						req = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch (e) {
+						try {
+							req = new ActiveXObject("Microsoft.XMLHTTP");
+						} catch (e) {
+							req = false;
+						}
+					}
+				}
+				req.open('POST', url, false);
+				req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+				req.send(data);
+			}
+
+			</script>
+		})
+		<table width="100%">
+			<tr>
+				<td><input type="password" placeholder="Enter new password:" id="password1"></td>
+			</tr>
+			<tr>
+				<td><input type="password" placeholder="Re-enter password:" id="password2"></td>
+			</tr>
+			<tr>
+				<td><input type="button" language="javascript" onclick="onclickSave()" value="Save" name="Save"></td>
+			</tr>
+		</table>
+	})
+})
+

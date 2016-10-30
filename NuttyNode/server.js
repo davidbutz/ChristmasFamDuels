@@ -1,18 +1,13 @@
-﻿// What is this page?:
-// Essentially it is the Web API layer to communicate with sensor data
-// Intended for prototyping the MongoDB on Controller/Hub Raspberry Pi.
+﻿
 var http = require('http');
 
-//TO DO : This could technically come from the pre-populated "Controllers" data model.
-var port = 80;//process.env.port || 1337;
+var port = 1337;//process.env.port || 1337;
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var config = require('./config/index.js');
 
-//var ejsEngine = require('ejs-locals');
 var controllers = require("./controllers");
-//var mongoose = require('mongoose');
 
 var settings = {
     config: config
@@ -29,12 +24,12 @@ controllers.init(app);
 
 // Below is a command that allows public exposure to items.
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/ReleaseScripts"));
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 //app.use('/api', require('./routes')(app,settings));
 routes = require('./routes')(app, settings);
-
 
 var server = http.createServer(app);
 server.listen(port);

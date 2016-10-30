@@ -3,10 +3,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var LeaguesSchema = new Schema({
-    leaguename: String,     
-    leagueownerid: String,  
-    leagueyear: Number,
-    leaguetype: Number
+    leagueName: String,     
+    leagueYear: Number
 });
 
 module.exports = mongoose.model('League', LeaguesSchema);
