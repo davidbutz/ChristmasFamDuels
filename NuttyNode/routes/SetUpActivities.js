@@ -25,7 +25,7 @@ module.exports = function (app, settings) {
                 leaguecontroller.addLeague(req, res, userID, leagueName, "2016", sendResponse);
             }
             else {
-                res.json({ status: 'error', message: 'token not valid' });
+                res.json({ "success": false , message: 'token not valid' });
             }
         });
     });
@@ -68,7 +68,7 @@ module.exports = function (app, settings) {
                 leaguecontroller.getLeagues(req, res, userID, sendResponse);
             }
             else {
-                res.json({ status: 'error', message: 'token not valid' });
+                res.json({ success: false, message: 'token not valid' });
             }
         });
     });

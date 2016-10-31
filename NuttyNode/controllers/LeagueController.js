@@ -20,7 +20,19 @@
             }
             else {
                 var new_id = league._id.toString();
-                var newUserXLeague = { "userID" : userID, "leagueID": new_id , "roleID" : 1};
+                var newUserXLeague = { "userID" : userID, "leagueID": new_id , "roleID" : 1 };
+                var objUserXLeague = UserXLeague(newUserXLeague);
+                objUserXLeague.save(function (err, userxleague) {
+                    if (err) {
+                        console.log("ERROR saving inviteToLeague: " + err);
+                        callback(res, errorhandlingResponse);
+                    }
+                    else {
+                        var new_userxleagueid = userxleague._id.toString();
+                        var responseJSON = { "success": true, "leagueID" : new_id, "leagueName" : leagueName, "leagueOwnerID" : new_userxleagueid };
+                        callback(res, responseJSON);
+                    }
+                });
             }
         });
     }

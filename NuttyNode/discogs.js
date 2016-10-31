@@ -7,8 +7,8 @@ var db = new Discogs({
 }).database();
 
 
-var artist = "the chipmunks";//"nat";//"gene";//"straight no chaser";//"toto";//"mariah carey";
-var song = "christmas";//"rudolph";//"12 days of christmas"//"africa";//"all i want for christmas";
+var artist = "michael b";//"nat";//"gene";//"straight no chaser";//"toto";//"mariah carey";
+var song = "baby it's cold outside";//"rudolph";//"12 days of christmas"//"africa";//"all i want for christmas";
 var track = song;// + "*";
 var artistsearch = artist;// + "*"
 
@@ -80,7 +80,7 @@ db.search(artist , { "type": "artist" } , function (err, data) {
     }
 });
 
-var testingboth = false;
+var testingboth = true;
 if (testingboth) {
     db.search(track, { "track" : track, "artist" : artist, "type": "master", "page" : 1, "perpage" : 1 }, function (err, data) {
         console.log(err);
@@ -150,6 +150,85 @@ if (testingboth) {
                 console.log("why here?");
             }
         }
+        else {
+            //we have a tricker situation. lets start with the song search first...
+            db.search(track, { "track" : track }, function (err, trackdata) {
+                console.log(err);
+                console.log("--------");
+                //console.log(trackdata);
+                console.log("--------");
+                var output;
+                if (trackdata.results.length > 0) {
+                    for (var y = 0; y < trackdata.results.length; y++) {
+                        if (trackdata.results[y].title.toLowerCase().includes(artist.toLowerCase())) {
+                            //console.log(trackdata.results[y]);
+                            output = trackdata.results[y];
+                            break;
+                        }
+                    }
+                    if (output !== undefined) {
+                        //console.log(output);
+                        if (output.type == "release") {
+                            getReleaseInformation(output.id, imagename);
+                        }
+                    }
+                    else {
+                        console.log({ "success": false, "message": "Could not find your results" });
+                    }
+                }
+                else {
+                    //an even tougher road here...
+                    console.log({ "success": false, "message": "Could not find your results" });
+                }
+            });
+        }
+    });
+}
+
+function getReleaseInformation(releaseID, imagename){
+    db.getRelease(releaseID, function (err, releasedata) {
+        //return to the user: 
+        var imageurl;
+        var videourl;
+        var title;
+        var artist;
+        var trackname;
+        //console.log(releasedata);
+        db.getMaster(releasedata.master_id, function (err, masterdata) {
+            //imageurl (to see the image of the release)
+            if (releasedata.images.length > 0) {
+                imageurl = releasedata.images[0].resource_url;
+                //console.log(releasedata);
+                //console.log("----------------");
+                getImagefromRelease(imageurl, imagename);
+            }
+            //videouri (to listen to the song...)
+            if (masterdata.videos) {
+                if (masterdata.videos.length > 0) {
+                    videourl = masterdata.videos[0].uri;
+                }
+            }
+            if (masterdata.title) {
+                title = masterdata.title;
+            }
+            if (masterdata.artists.length > 0) {
+                artist = masterdata.artists[0].name;
+            }
+            if (masterdata.tracklist) {
+                //console.log("********************************");
+                //console.log(masterdata.tracklist);
+                if (masterdata.tracklist.length > 0) {
+                    for (var i = 0; i < masterdata.tracklist.length; i++) {
+                        if (masterdata.tracklist[i].title.toLowerCase().includes(track.toLowerCase())) {
+                            trackname = masterdata.tracklist[i].title;
+                            break;
+                        }
+                    }
+                }
+            }
+            var buildJSON = { "imageurl" : imageurl, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
+            console.log(buildJSON);
+        });
     });
 }
 
