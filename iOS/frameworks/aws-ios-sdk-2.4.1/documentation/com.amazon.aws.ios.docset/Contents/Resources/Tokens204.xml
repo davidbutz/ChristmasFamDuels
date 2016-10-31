@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="204"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/setAuthorization_endpoint:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *authorization_endpoint</Declaration>
+			
+			
+			<Anchor>//api/name/authorization_endpoint</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/authorization_endpoint</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *authorization_endpoint</Declaration>
+			
+			
+			<Anchor>//api/name/authorization_endpoint</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/authorization_endpoint</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *authorization_endpoint</Declaration>
+			
+			
+			<Anchor>//api/name/authorization_endpoint</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/setId_token_signing_alg_values_supported:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *id_token_signing_alg_values_supported</Declaration>
+			
+			
+			<Anchor>//api/name/id_token_signing_alg_values_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/id_token_signing_alg_values_supported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *id_token_signing_alg_values_supported</Declaration>
+			
+			
+			<Anchor>//api/name/id_token_signing_alg_values_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/id_token_signing_alg_values_supported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *id_token_signing_alg_values_supported</Declaration>
+			
+			
+			<Anchor>//api/name/id_token_signing_alg_values_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/setIssuer:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *issuer</Declaration>
+			
+			
+			<Anchor>//api/name/issuer</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/issuer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *issuer</Declaration>
+			
+			
+			<Anchor>//api/name/issuer</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/issuer</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *issuer</Declaration>
+			
+			
+			<Anchor>//api/name/issuer</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/setJwks_uri:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *jwks_uri</Declaration>
+			
+			
+			<Anchor>//api/name/jwks_uri</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/jwks_uri</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *jwks_uri</Declaration>
+			
+			
+			<Anchor>//api/name/jwks_uri</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/jwks_uri</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *jwks_uri</Declaration>
+			
+			
+			<Anchor>//api/name/jwks_uri</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/setResponse_types_supported:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *response_types_supported</Declaration>
+			
+			
+			<Anchor>//api/name/response_types_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/response_types_supported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *response_types_supported</Declaration>
+			
+			
+			<Anchor>//api/name/response_types_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/response_types_supported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *response_types_supported</Declaration>
+			
+			
+			<Anchor>//api/name/response_types_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/setSubject_types_supported:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *subject_types_supported</Declaration>
+			
+			
+			<Anchor>//api/name/subject_types_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/subject_types_supported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *subject_types_supported</Declaration>
+			
+			
+			<Anchor>//api/name/subject_types_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse/subject_types_supported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSArray&lt;NSString*&gt; *subject_types_supported</Declaration>
+			
+			
+			<Anchor>//api/name/subject_types_supported</Anchor>
+            <NodeRef refid="204"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,2148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProvider</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+            
+			
+			<NodeRef refid="151"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/setConfiguration:</TokenIdentifier>
+			<Abstract type="html">The service configuration used to instantiate this service client.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) AWSServiceConfiguration *configuration</Declaration>
+			
+			
+			<Anchor>//api/name/configuration</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/configuration</TokenIdentifier>
+			<Abstract type="html">The service configuration used to instantiate this service client.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) AWSServiceConfiguration *configuration</Declaration>
+			
+			
+			<Anchor>//api/name/configuration</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityProvider/configuration</TokenIdentifier>
+			<Abstract type="html">The service configuration used to instantiate this service client.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) AWSServiceConfiguration *configuration</Declaration>
+			
+			
+			<Anchor>//api/name/configuration</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AWSCognitoIdentityProvider/defaultCognitoIdentityProvider</TokenIdentifier>
+			<Abstract type="html">Returns the singleton service client. If the singleton object does not exist, the SDK instantiates the default service client with defaultServiceConfiguration from [AWSServiceManager defaultServiceManager]. The reference to this object is maintained by the SDK, and you do not need to retain it manually.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)defaultCognitoIdentityProvider</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default service client.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultCognitoIdentityProvider</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AWSCognitoIdentityProvider/registerCognitoIdentityProviderWithConfiguration:forKey:</TokenIdentifier>
+			<Abstract type="html">Creates a service client with the given service configuration and registers it for the key.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>+ (void)registerCognitoIdentityProviderWithConfiguration:(AWSServiceConfiguration *)configuration forKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>configuration</Name>
+					<Abstract type="html">A service configuration object.</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract type="html">A string to identify the service client.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/registerCognitoIdentityProviderWithConfiguration:forKey:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AWSCognitoIdentityProvider/CognitoIdentityProviderForKey:</TokenIdentifier>
+			<Abstract type="html">Retrieves the service client associated with the key. You need to call + registerCognitoIdentityProviderWithConfiguration:forKey: before invoking this method.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)CognitoIdentityProviderForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">A string to identify the service client.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of the service client.</Abstract></ReturnValue>
+			<Anchor>//api/name/CognitoIdentityProviderForKey:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/AWSCognitoIdentityProvider/removeCognitoIdentityProviderForKey:</TokenIdentifier>
+			<Abstract type="html">Removes the service client associated with the key and release it.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+			<Declaration>+ (void)removeCognitoIdentityProviderForKey:(NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">A string to identify the service client.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeCognitoIdentityProviderForKey:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/addCustomAttributes:</TokenIdentifier>
+			<Abstract type="html">AddCustomAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAddCustomAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAddCustomAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAddCustomAttributesResponse*&gt; *)addCustomAttributes:(AWSCognitoIdentityProviderAddCustomAttributesRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AddCustomAttributes service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAddCustomAttributesResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/addCustomAttributes:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/addCustomAttributes:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AddCustomAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAddCustomAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAddCustomAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)addCustomAttributes:(AWSCognitoIdentityProviderAddCustomAttributesRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAddCustomAttributesResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AddCustomAttributes service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addCustomAttributes:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminConfirmSignUp:</TokenIdentifier>
+			<Abstract type="html">AdminConfirmSignUp</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminConfirmSignUpRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminConfirmSignUpResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminConfirmSignUpResponse*&gt; *)adminConfirmSignUp:(AWSCognitoIdentityProviderAdminConfirmSignUpRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminConfirmSignUp service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminConfirmSignUpResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyFailedAttempts, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminConfirmSignUp:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminConfirmSignUp:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminConfirmSignUp</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminConfirmSignUpRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminConfirmSignUpResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminConfirmSignUp:(AWSCognitoIdentityProviderAdminConfirmSignUpRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminConfirmSignUpResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminConfirmSignUp service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyFailedAttempts, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminConfirmSignUp:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminDeleteUser:</TokenIdentifier>
+			<Abstract type="html">AdminDeleteUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDeleteUserRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask *)adminDeleteUser:(AWSCognitoIdentityProviderAdminDeleteUserRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminDeleteUser service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will be nil. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminDeleteUser:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminDeleteUser:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminDeleteUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDeleteUserRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminDeleteUser:(AWSCognitoIdentityProviderAdminDeleteUserRequest *)request completionHandler:(void ( ^ _Nullable ) ( NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminDeleteUser service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminDeleteUser:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminDeleteUserAttributes:</TokenIdentifier>
+			<Abstract type="html">AdminDeleteUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDeleteUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDeleteUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminDeleteUserAttributesResponse*&gt; *)adminDeleteUserAttributes:(AWSCognitoIdentityProviderAdminDeleteUserAttributesRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminDeleteUserAttributes service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminDeleteUserAttributesResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminDeleteUserAttributes:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminDeleteUserAttributes:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminDeleteUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDeleteUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDeleteUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminDeleteUserAttributes:(AWSCognitoIdentityProviderAdminDeleteUserAttributesRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminDeleteUserAttributesResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminDeleteUserAttributes service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminDeleteUserAttributes:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminDisableUser:</TokenIdentifier>
+			<Abstract type="html">AdminDisableUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDisableUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDisableUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminDisableUserResponse*&gt; *)adminDisableUser:(AWSCognitoIdentityProviderAdminDisableUserRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminDisableUser service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminDisableUserResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminDisableUser:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminDisableUser:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminDisableUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDisableUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminDisableUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminDisableUser:(AWSCognitoIdentityProviderAdminDisableUserRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminDisableUserResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminDisableUser service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminDisableUser:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminEnableUser:</TokenIdentifier>
+			<Abstract type="html">AdminEnableUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminEnableUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminEnableUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminEnableUserResponse*&gt; *)adminEnableUser:(AWSCognitoIdentityProviderAdminEnableUserRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminEnableUser service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminEnableUserResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminEnableUser:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminEnableUser:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminEnableUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminEnableUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminEnableUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminEnableUser:(AWSCognitoIdentityProviderAdminEnableUserRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminEnableUserResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminEnableUser service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminEnableUser:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminGetUser:</TokenIdentifier>
+			<Abstract type="html">AdminGetUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminGetUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminGetUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminGetUserResponse*&gt; *)adminGetUser:(AWSCognitoIdentityProviderAdminGetUserRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminGetUser service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminGetUserResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminGetUser:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminGetUser:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminGetUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminGetUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminGetUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminGetUser:(AWSCognitoIdentityProviderAdminGetUserRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminGetUserResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminGetUser service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminGetUser:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminResetUserPassword:</TokenIdentifier>
+			<Abstract type="html">AdminResetUserPassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminResetUserPasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminResetUserPasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminResetUserPasswordResponse*&gt; *)adminResetUserPassword:(AWSCognitoIdentityProviderAdminResetUserPasswordRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminResetUserPassword service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminResetUserPasswordResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminResetUserPassword:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminResetUserPassword:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminResetUserPassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminResetUserPasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminResetUserPasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminResetUserPassword:(AWSCognitoIdentityProviderAdminResetUserPasswordRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminResetUserPasswordResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminResetUserPassword service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminResetUserPassword:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminSetUserSettings:</TokenIdentifier>
+			<Abstract type="html">AdminSetUserSettings</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminSetUserSettingsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminSetUserSettingsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminSetUserSettingsResponse*&gt; *)adminSetUserSettings:(AWSCognitoIdentityProviderAdminSetUserSettingsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminSetUserSettings service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminSetUserSettingsResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminSetUserSettings:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminSetUserSettings:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminSetUserSettings</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminSetUserSettingsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminSetUserSettingsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminSetUserSettings:(AWSCognitoIdentityProviderAdminSetUserSettingsRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminSetUserSettingsResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminSetUserSettings service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminSetUserSettings:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminUpdateUserAttributes:</TokenIdentifier>
+			<Abstract type="html">AdminUpdateUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminUpdateUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAdminUpdateUserAttributesResponse*&gt; *)adminUpdateUserAttributes:(AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminUpdateUserAttributes service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAdminUpdateUserAttributesResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorAliasExists, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/adminUpdateUserAttributes:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/adminUpdateUserAttributes:completionHandler:</TokenIdentifier>
+			<Abstract type="html">AdminUpdateUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAdminUpdateUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)adminUpdateUserAttributes:(AWSCognitoIdentityProviderAdminUpdateUserAttributesRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAdminUpdateUserAttributesResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the AdminUpdateUserAttributes service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorAliasExists, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/adminUpdateUserAttributes:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/authenticate:</TokenIdentifier>
+			<Abstract type="html">Authenticate</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAuthenticateRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAuthenticateResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAuthenticateResponse*&gt; *)authenticate:(AWSCognitoIdentityProviderAuthenticateRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the Authenticate service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderAuthenticateResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/authenticate:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/authenticate:completionHandler:</TokenIdentifier>
+			<Abstract type="html">Authenticate</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAuthenticateRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderAuthenticateResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)authenticate:(AWSCognitoIdentityProviderAuthenticateRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderAuthenticateResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the Authenticate service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/authenticate:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/changePassword:</TokenIdentifier>
+			<Abstract type="html">ChangePassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderChangePasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderChangePasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderChangePasswordResponse*&gt; *)changePassword:(AWSCognitoIdentityProviderChangePasswordRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ChangePassword service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderChangePasswordResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorInvalidPassword, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/changePassword:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/changePassword:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ChangePassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderChangePasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderChangePasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)changePassword:(AWSCognitoIdentityProviderChangePasswordRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderChangePasswordResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ChangePassword service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorInvalidPassword, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/changePassword:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/confirmForgotPassword:</TokenIdentifier>
+			<Abstract type="html">ConfirmForgotPassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmForgotPasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmForgotPasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderConfirmForgotPasswordResponse*&gt; *)confirmForgotPassword:(AWSCognitoIdentityProviderConfirmForgotPasswordRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ConfirmForgotPassword service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderConfirmForgotPasswordResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorInvalidPassword, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorTooManyFailedAttempts, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/confirmForgotPassword:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/confirmForgotPassword:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ConfirmForgotPassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmForgotPasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmForgotPasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)confirmForgotPassword:(AWSCognitoIdentityProviderConfirmForgotPasswordRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderConfirmForgotPasswordResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ConfirmForgotPassword service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorInvalidPassword, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorTooManyFailedAttempts, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/confirmForgotPassword:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/confirmSignUp:</TokenIdentifier>
+			<Abstract type="html">ConfirmSignUp</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmSignUpRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmSignUpResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderConfirmSignUpResponse*&gt; *)confirmSignUp:(AWSCognitoIdentityProviderConfirmSignUpRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ConfirmSignUp service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderConfirmSignUpResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyFailedAttempts, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorAliasExists, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/confirmSignUp:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/confirmSignUp:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ConfirmSignUp</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmSignUpRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderConfirmSignUpResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)confirmSignUp:(AWSCognitoIdentityProviderConfirmSignUpRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderConfirmSignUpResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ConfirmSignUp service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyFailedAttempts, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorAliasExists, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/confirmSignUp:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/createUserPool:</TokenIdentifier>
+			<Abstract type="html">CreateUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderCreateUserPoolResponse*&gt; *)createUserPool:(AWSCognitoIdentityProviderCreateUserPoolRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the CreateUserPool service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderCreateUserPoolResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/createUserPool:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/createUserPool:completionHandler:</TokenIdentifier>
+			<Abstract type="html">CreateUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)createUserPool:(AWSCognitoIdentityProviderCreateUserPoolRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderCreateUserPoolResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the CreateUserPool service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createUserPool:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/createUserPoolClient:</TokenIdentifier>
+			<Abstract type="html">CreateUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolClientRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolClientResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderCreateUserPoolClientResponse*&gt; *)createUserPoolClient:(AWSCognitoIdentityProviderCreateUserPoolClientRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the CreateUserPoolClient service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderCreateUserPoolClientResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/createUserPoolClient:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/createUserPoolClient:completionHandler:</TokenIdentifier>
+			<Abstract type="html">CreateUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolClientRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderCreateUserPoolClientResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)createUserPoolClient:(AWSCognitoIdentityProviderCreateUserPoolClientRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderCreateUserPoolClientResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the CreateUserPoolClient service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/createUserPoolClient:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUser:</TokenIdentifier>
+			<Abstract type="html">DeleteUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask *)deleteUser:(AWSCognitoIdentityProviderDeleteUserRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUser service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will be nil. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteUser:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUser:completionHandler:</TokenIdentifier>
+			<Abstract type="html">DeleteUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)deleteUser:(AWSCognitoIdentityProviderDeleteUserRequest *)request completionHandler:(void ( ^ _Nullable ) ( NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUser service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteUser:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUserAttributes:</TokenIdentifier>
+			<Abstract type="html">DeleteUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderDeleteUserAttributesResponse*&gt; *)deleteUserAttributes:(AWSCognitoIdentityProviderDeleteUserAttributesRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUserAttributes service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderDeleteUserAttributesResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteUserAttributes:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUserAttributes:completionHandler:</TokenIdentifier>
+			<Abstract type="html">DeleteUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)deleteUserAttributes:(AWSCognitoIdentityProviderDeleteUserAttributesRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderDeleteUserAttributesResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUserAttributes service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteUserAttributes:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUserPool:</TokenIdentifier>
+			<Abstract type="html">DeleteUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserPoolRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask *)deleteUserPool:(AWSCognitoIdentityProviderDeleteUserPoolRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUserPool service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will be nil. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteUserPool:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUserPool:completionHandler:</TokenIdentifier>
+			<Abstract type="html">DeleteUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserPoolRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)deleteUserPool:(AWSCognitoIdentityProviderDeleteUserPoolRequest *)request completionHandler:(void ( ^ _Nullable ) ( NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUserPool service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteUserPool:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUserPoolClient:</TokenIdentifier>
+			<Abstract type="html">DeleteUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserPoolClientRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask *)deleteUserPoolClient:(AWSCognitoIdentityProviderDeleteUserPoolClientRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUserPoolClient service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will be nil. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteUserPoolClient:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/deleteUserPoolClient:completionHandler:</TokenIdentifier>
+			<Abstract type="html">DeleteUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDeleteUserPoolClientRequest</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)deleteUserPoolClient:(AWSCognitoIdentityProviderDeleteUserPoolClientRequest *)request completionHandler:(void ( ^ _Nullable ) ( NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DeleteUserPoolClient service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteUserPoolClient:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/describeUserPool:</TokenIdentifier>
+			<Abstract type="html">DescribeUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderDescribeUserPoolResponse*&gt; *)describeUserPool:(AWSCognitoIdentityProviderDescribeUserPoolRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DescribeUserPool service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderDescribeUserPoolResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/describeUserPool:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/describeUserPool:completionHandler:</TokenIdentifier>
+			<Abstract type="html">DescribeUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)describeUserPool:(AWSCognitoIdentityProviderDescribeUserPoolRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderDescribeUserPoolResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DescribeUserPool service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/describeUserPool:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/describeUserPoolClient:</TokenIdentifier>
+			<Abstract type="html">DescribeUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolClientRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolClientResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderDescribeUserPoolClientResponse*&gt; *)describeUserPoolClient:(AWSCognitoIdentityProviderDescribeUserPoolClientRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DescribeUserPoolClient service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderDescribeUserPoolClientResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/describeUserPoolClient:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/describeUserPoolClient:completionHandler:</TokenIdentifier>
+			<Abstract type="html">DescribeUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolClientRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderDescribeUserPoolClientResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)describeUserPoolClient:(AWSCognitoIdentityProviderDescribeUserPoolClientRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderDescribeUserPoolClientResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the DescribeUserPoolClient service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/describeUserPoolClient:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/enhanceAuth:</TokenIdentifier>
+			<Abstract type="html">EnhanceAuth</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderEnhanceAuthRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderEnhanceAuthResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderEnhanceAuthResponse*&gt; *)enhanceAuth:(AWSCognitoIdentityProviderEnhanceAuthRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the EnhanceAuth service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderEnhanceAuthResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/enhanceAuth:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/enhanceAuth:completionHandler:</TokenIdentifier>
+			<Abstract type="html">EnhanceAuth</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderEnhanceAuthRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderEnhanceAuthResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)enhanceAuth:(AWSCognitoIdentityProviderEnhanceAuthRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderEnhanceAuthResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the EnhanceAuth service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/enhanceAuth:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/forgotPassword:</TokenIdentifier>
+			<Abstract type="html">ForgotPassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderForgotPasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderForgotPasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderForgotPasswordResponse*&gt; *)forgotPassword:(AWSCognitoIdentityProviderForgotPasswordRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ForgotPassword service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderForgotPasswordResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/forgotPassword:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/forgotPassword:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ForgotPassword</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderForgotPasswordRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderForgotPasswordResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)forgotPassword:(AWSCognitoIdentityProviderForgotPasswordRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderForgotPasswordResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ForgotPassword service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/forgotPassword:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getAuthenticationDetails:</TokenIdentifier>
+			<Abstract type="html">GetAuthenticationDetails</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetAuthenticationDetailsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetAuthenticationDetailsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderGetAuthenticationDetailsResponse*&gt; *)getAuthenticationDetails:(AWSCognitoIdentityProviderGetAuthenticationDetailsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetAuthenticationDetails service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderGetAuthenticationDetailsResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/getAuthenticationDetails:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getAuthenticationDetails:completionHandler:</TokenIdentifier>
+			<Abstract type="html">GetAuthenticationDetails</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetAuthenticationDetailsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetAuthenticationDetailsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)getAuthenticationDetails:(AWSCognitoIdentityProviderGetAuthenticationDetailsRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderGetAuthenticationDetailsResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetAuthenticationDetails service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getAuthenticationDetails:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getJWKS:</TokenIdentifier>
+			<Abstract type="html">GetJWKS</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetJWKSRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetJWKSResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderGetJWKSResponse*&gt; *)getJWKS:(AWSCognitoIdentityProviderGetJWKSRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetJWKS service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderGetJWKSResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/getJWKS:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getJWKS:completionHandler:</TokenIdentifier>
+			<Abstract type="html">GetJWKS</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetJWKSRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetJWKSResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)getJWKS:(AWSCognitoIdentityProviderGetJWKSRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderGetJWKSResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetJWKS service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getJWKS:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getOpenIdConfiguration:</TokenIdentifier>
+			<Abstract type="html">GetOpenIdConfiguration</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetOpenIdConfigurationRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderGetOpenIdConfigurationResponse*&gt; *)getOpenIdConfiguration:(AWSCognitoIdentityProviderGetOpenIdConfigurationRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetOpenIdConfiguration service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderGetOpenIdConfigurationResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/getOpenIdConfiguration:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getOpenIdConfiguration:completionHandler:</TokenIdentifier>
+			<Abstract type="html">GetOpenIdConfiguration</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetOpenIdConfigurationRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetOpenIdConfigurationResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)getOpenIdConfiguration:(AWSCognitoIdentityProviderGetOpenIdConfigurationRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderGetOpenIdConfigurationResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetOpenIdConfiguration service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getOpenIdConfiguration:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getUser:</TokenIdentifier>
+			<Abstract type="html">GetUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderGetUserResponse*&gt; *)getUser:(AWSCognitoIdentityProviderGetUserRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetUser service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderGetUserResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/getUser:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getUser:completionHandler:</TokenIdentifier>
+			<Abstract type="html">GetUser</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)getUser:(AWSCognitoIdentityProviderGetUserRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderGetUserResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetUser service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getUser:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getUserAttributeVerificationCode:</TokenIdentifier>
+			<Abstract type="html">GetUserAttributeVerificationCode</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserAttributeVerificationCodeRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserAttributeVerificationCodeResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderGetUserAttributeVerificationCodeResponse*&gt; *)getUserAttributeVerificationCode:(AWSCognitoIdentityProviderGetUserAttributeVerificationCodeRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetUserAttributeVerificationCode service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderGetUserAttributeVerificationCodeResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/getUserAttributeVerificationCode:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/getUserAttributeVerificationCode:completionHandler:</TokenIdentifier>
+			<Abstract type="html">GetUserAttributeVerificationCode</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserAttributeVerificationCodeRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderGetUserAttributeVerificationCodeResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)getUserAttributeVerificationCode:(AWSCognitoIdentityProviderGetUserAttributeVerificationCodeRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderGetUserAttributeVerificationCodeResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the GetUserAttributeVerificationCode service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getUserAttributeVerificationCode:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/listUserPoolClients:</TokenIdentifier>
+			<Abstract type="html">ListUserPoolClients</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolClientsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolClientsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderListUserPoolClientsResponse*&gt; *)listUserPoolClients:(AWSCognitoIdentityProviderListUserPoolClientsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ListUserPoolClients service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderListUserPoolClientsResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/listUserPoolClients:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/listUserPoolClients:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ListUserPoolClients</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolClientsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolClientsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)listUserPoolClients:(AWSCognitoIdentityProviderListUserPoolClientsRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderListUserPoolClientsResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ListUserPoolClients service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/listUserPoolClients:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/listUserPools:</TokenIdentifier>
+			<Abstract type="html">ListUserPools</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderListUserPoolsResponse*&gt; *)listUserPools:(AWSCognitoIdentityProviderListUserPoolsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ListUserPools service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderListUserPoolsResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/listUserPools:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/listUserPools:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ListUserPools</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUserPoolsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)listUserPools:(AWSCognitoIdentityProviderListUserPoolsRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderListUserPoolsResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ListUserPools service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/listUserPools:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/listUsers:</TokenIdentifier>
+			<Abstract type="html">ListUsers</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUsersRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUsersResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderListUsersResponse*&gt; *)listUsers:(AWSCognitoIdentityProviderListUsersRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ListUsers service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderListUsersResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/listUsers:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/listUsers:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ListUsers</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUsersRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderListUsersResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)listUsers:(AWSCognitoIdentityProviderListUsersRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderListUsersResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ListUsers service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/listUsers:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/refreshTokens:</TokenIdentifier>
+			<Abstract type="html">RefreshTokens</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderRefreshTokensRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderRefreshTokensResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderRefreshTokensResponse*&gt; *)refreshTokens:(AWSCognitoIdentityProviderRefreshTokensRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the RefreshTokens service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderRefreshTokensResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/refreshTokens:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/refreshTokens:completionHandler:</TokenIdentifier>
+			<Abstract type="html">RefreshTokens</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderRefreshTokensRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderRefreshTokensResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)refreshTokens:(AWSCognitoIdentityProviderRefreshTokensRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderRefreshTokensResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the RefreshTokens service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/refreshTokens:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/resendConfirmationCode:</TokenIdentifier>
+			<Abstract type="html">ResendConfirmationCode</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderResendConfirmationCodeRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderResendConfirmationCodeResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderResendConfirmationCodeResponse*&gt; *)resendConfirmationCode:(AWSCognitoIdentityProviderResendConfirmationCodeRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ResendConfirmationCode service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderResendConfirmationCodeResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/resendConfirmationCode:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/resendConfirmationCode:completionHandler:</TokenIdentifier>
+			<Abstract type="html">ResendConfirmationCode</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderResendConfirmationCodeRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderResendConfirmationCodeResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)resendConfirmationCode:(AWSCognitoIdentityProviderResendConfirmationCodeRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderResendConfirmationCodeResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the ResendConfirmationCode service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resendConfirmationCode:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/setUserSettings:</TokenIdentifier>
+			<Abstract type="html">SetUserSettings</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSetUserSettingsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSetUserSettingsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderSetUserSettingsResponse*&gt; *)setUserSettings:(AWSCognitoIdentityProviderSetUserSettingsRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the SetUserSettings service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderSetUserSettingsResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized.</Abstract></ReturnValue>
+			<Anchor>//api/name/setUserSettings:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/setUserSettings:completionHandler:</TokenIdentifier>
+			<Abstract type="html">SetUserSettings</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSetUserSettingsRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSetUserSettingsResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)setUserSettings:(AWSCognitoIdentityProviderSetUserSettingsRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderSetUserSettingsResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the SetUserSettings service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorNotAuthorized.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUserSettings:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/signUp:</TokenIdentifier>
+			<Abstract type="html">SignUp</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSignUpRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSignUpResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderSignUpResponse*&gt; *)signUp:(AWSCognitoIdentityProviderSignUpRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the SignUp service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderSignUpResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidPassword, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/signUp:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/signUp:completionHandler:</TokenIdentifier>
+			<Abstract type="html">SignUp</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSignUpRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderSignUpResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)signUp:(AWSCognitoIdentityProviderSignUpRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderSignUpResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the SignUp service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorInvalidPassword, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/signUp:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/updateUserAttributes:</TokenIdentifier>
+			<Abstract type="html">UpdateUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderUpdateUserAttributesResponse*&gt; *)updateUserAttributes:(AWSCognitoIdentityProviderUpdateUserAttributesRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the UpdateUserAttributes service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderUpdateUserAttributesResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorAliasExists, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/updateUserAttributes:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/updateUserAttributes:completionHandler:</TokenIdentifier>
+			<Abstract type="html">UpdateUserAttributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserAttributesRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserAttributesResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)updateUserAttributes:(AWSCognitoIdentityProviderUpdateUserAttributesRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderUpdateUserAttributesResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the UpdateUserAttributes service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorUnexpectedLambda, AWSCognitoIdentityProviderErrorUserLambdaValidation, AWSCognitoIdentityProviderErrorInvalidLambdaResponse, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorAliasExists, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateUserAttributes:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/updateUserPool:</TokenIdentifier>
+			<Abstract type="html">UpdateUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderUpdateUserPoolResponse*&gt; *)updateUserPool:(AWSCognitoIdentityProviderUpdateUserPoolRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the UpdateUserPool service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderUpdateUserPoolResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorConcurrentModification, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/updateUserPool:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/updateUserPool:completionHandler:</TokenIdentifier>
+			<Abstract type="html">UpdateUserPool</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)updateUserPool:(AWSCognitoIdentityProviderUpdateUserPoolRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderUpdateUserPoolResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the UpdateUserPool service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorConcurrentModification, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateUserPool:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/updateUserPoolClient:</TokenIdentifier>
+			<Abstract type="html">UpdateUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolClientRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolClientResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderUpdateUserPoolClientResponse*&gt; *)updateUserPoolClient:(AWSCognitoIdentityProviderUpdateUserPoolClientRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the UpdateUserPoolClient service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderUpdateUserPoolClientResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/updateUserPoolClient:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/updateUserPoolClient:completionHandler:</TokenIdentifier>
+			<Abstract type="html">UpdateUserPoolClient</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolClientRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderUpdateUserPoolClientResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)updateUserPoolClient:(AWSCognitoIdentityProviderUpdateUserPoolClientRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderUpdateUserPoolClientResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the UpdateUserPoolClient service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateUserPoolClient:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/verifyUserAttribute:</TokenIdentifier>
+			<Abstract type="html">VerifyUserAttribute</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderVerifyUserAttributeRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderVerifyUserAttributeResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderVerifyUserAttributeResponse*&gt; *)verifyUserAttribute:(AWSCognitoIdentityProviderVerifyUserAttributeRequest *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the VerifyUserAttribute service method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An instance of AWSTask. On successful execution, task.result will contain an instance of AWSCognitoIdentityProviderVerifyUserAttributeResponse. On failed execution, task.error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract></ReturnValue>
+			<Anchor>//api/name/verifyUserAttribute:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityProvider/verifyUserAttribute:completionHandler:</TokenIdentifier>
+			<Abstract type="html">VerifyUserAttribute</Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderService.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderVerifyUserAttributeRequest</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityProviderVerifyUserAttributeResponse</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>- (void)verifyUserAttribute:(AWSCognitoIdentityProviderVerifyUserAttributeRequest *)request completionHandler:(void ( ^ _Nullable ) ( AWSCognitoIdentityProviderVerifyUserAttributeResponse *_Nullable response , NSError *_Nullable error ))completionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">A container for the necessary parameters to execute the VerifyUserAttribute service method.</Abstract>
+				</Parameter><Parameter>
+					<Name>completionHandler</Name>
+					<Abstract type="html">The completion handler to call when the load request is complete.
+                          response - A response object, or nil if the request failed.
+                          error - An error object that indicates why the request failed, or nil if the request was successful. On failed execution, error may contain an NSError with AWSCognitoIdentityProviderErrorDomain domain and the following error code: AWSCognitoIdentityProviderErrorResourceNotFound, AWSCognitoIdentityProviderErrorInvalidParameter, AWSCognitoIdentityProviderErrorCodeMismatch, AWSCognitoIdentityProviderErrorExpiredCode, AWSCognitoIdentityProviderErrorNotAuthorized, AWSCognitoIdentityProviderErrorTooManyRequests, AWSCognitoIdentityProviderErrorInternalError.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/verifyUserAttribute:completionHandler:</Anchor>
+            <NodeRef refid="151"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

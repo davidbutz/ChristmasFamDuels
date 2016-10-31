@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/AWSIdentityProviderManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/AWSIdentityProviderManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSIdentityProvider.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1384"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AWSIdentityProviderManager/logins</TokenIdentifier>
+			<Abstract type="html">Each entry in logins represents a single login with an identity provider.
+The key is the domain of the login provider (e.g. &apos;graph.facebook.com&apos;) and the value is the
+OAuth/OpenId Connect token that results from an authentication with that login provider.</Abstract>
+			<DeclaredIn>AWSIdentityProvider.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;NSDictionary&lt;NSString*,NSString*&gt; *&gt; *)logins</Declaration>
+			
+			
+			<Anchor>//api/name/logins</Anchor>
+            <NodeRef refid="1384"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

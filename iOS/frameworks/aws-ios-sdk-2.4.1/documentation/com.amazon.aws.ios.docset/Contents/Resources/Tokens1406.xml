@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/AWSCognitoIdentityProviderErrorType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/AWSCognitoIdentityProviderErrorType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1406"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorUnknown</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorUnknown</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorIncompleteSignature</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorIncompleteSignature</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorInvalidClientTokenId</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorInvalidClientTokenId</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorMissingAuthenticationToken</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorMissingAuthenticationToken</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorAliasExists</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorAliasExists</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorCodeMismatch</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorCodeMismatch</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorConcurrentModification</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorConcurrentModification</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorExpiredCode</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorExpiredCode</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorInternalError</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorInternalError</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorInvalidLambdaResponse</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorInvalidLambdaResponse</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorInvalidParameter</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorInvalidParameter</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorInvalidPassword</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorInvalidPassword</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorNotAuthorized</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorNotAuthorized</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorResourceNotFound</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorResourceNotFound</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorTooManyFailedAttempts</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorTooManyFailedAttempts</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorTooManyRequests</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorTooManyRequests</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorUnexpectedLambda</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorUnexpectedLambda</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AWSCognitoIdentityProviderErrorUserLambdaValidation</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>AWSCognitoIdentityProviderErrorUserLambdaValidation</Declaration>
+            
+            <DeclaredIn>AWSCognitoIdentityProviderModel.h</DeclaredIn>
+            
+            <NodeRef refid="1406"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

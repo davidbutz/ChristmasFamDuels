@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/AWSCognitoIdentityInteractiveAuthenticationDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/AWSCognitoIdentityInteractiveAuthenticationDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1378"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AWSCognitoIdentityInteractiveAuthenticationDelegate/startPasswordAuthentication</TokenIdentifier>
+			<Abstract type="html">Initialize ui to prompt end user for username and password</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>- (id&lt;AWSCognitoIdentityPasswordAuthentication&gt;)startPasswordAuthentication</Declaration>
+			
+			
+			<Anchor>//api/name/startPasswordAuthentication</Anchor>
+            <NodeRef refid="1378"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/AWSCognitoIdentityInteractiveAuthenticationDelegate/startMultiFactorAuthentication</TokenIdentifier>
+			<Abstract type="html">Initialize ui to prompt end user for multifactor authentication code</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUserPool.h</DeclaredIn>
+			
+			<Declaration>- (id&lt;AWSCognitoIdentityMultiFactorAuthentication&gt;)startMultiFactorAuthentication</Declaration>
+			
+			
+			<Anchor>//api/name/startMultiFactorAuthentication</Anchor>
+            <NodeRef refid="1378"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

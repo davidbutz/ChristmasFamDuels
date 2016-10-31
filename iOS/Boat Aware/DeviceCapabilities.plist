@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>Camera</string>
+		<key>Photo</key>
+		<string>alyosha</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Battery</string>
+		<key>Value</key>
+		<string>13.1 volts</string>
+		<key>Status</key>
+		<string>NORMAL</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Temperature</string>
+		<key>Value</key>
+		<string>74.2°F</string>
+		<key>Status</key>
+		<string>NORMAL</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Humidity</string>
+		<key>Value</key>
+		<string>46%</string>
+		<key>Status</key>
+		<string>NORMAL</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Shore Power</string>
+		<key>Value</key>
+		<string>OFF</string>
+		<key>Status</key>
+		<string>WARNING</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Bilge</string>
+		<key>Value</key>
+		<string>17 mins</string>
+		<key>Status</key>
+		<string>OK</string>
+	</dict>
+</array>
+</plist>

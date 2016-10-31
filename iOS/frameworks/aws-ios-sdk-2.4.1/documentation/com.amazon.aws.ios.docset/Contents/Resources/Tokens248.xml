@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/AWSCognitoIdentityUser.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/AWSCognitoIdentityUser</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+            
+			
+			<NodeRef refid="248"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/setUsername:</TokenIdentifier>
+			<Abstract type="html">The username of this user</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/username</TokenIdentifier>
+			<Abstract type="html">The username of this user</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityUser/username</TokenIdentifier>
+			<Abstract type="html">The username of this user</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSString *username</Declaration>
+			
+			
+			<Anchor>//api/name/username</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/setConfirmedStatus:</TokenIdentifier>
+			<Abstract type="html">If this user is a result of a signup, this has the confirmation status</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) AWSCognitoIdentityUserStatus confirmedStatus</Declaration>
+			
+			
+			<Anchor>//api/name/confirmedStatus</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/confirmedStatus</TokenIdentifier>
+			<Abstract type="html">If this user is a result of a signup, this has the confirmation status</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) AWSCognitoIdentityUserStatus confirmedStatus</Declaration>
+			
+			
+			<Anchor>//api/name/confirmedStatus</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/AWSCognitoIdentityUser/confirmedStatus</TokenIdentifier>
+			<Abstract type="html">If this user is a result of a signup, this has the confirmation status</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) AWSCognitoIdentityUserStatus confirmedStatus</Declaration>
+			
+			
+			<Anchor>//api/name/confirmedStatus</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/confirmSignUp:</TokenIdentifier>
+			<Abstract type="html">Confirm a users&apos; sign up with the confirmation code</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserConfirmSignUpResponse*&gt; *)confirmSignUp:(NSString *)confirmationCode</Declaration>
+			
+			
+			<Anchor>//api/name/confirmSignUp:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/resendConfirmationCode</TokenIdentifier>
+			<Abstract type="html">Resend the confirmation code sent during sign up</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserResendConfirmationCodeResponse*&gt; *)resendConfirmationCode</Declaration>
+			
+			
+			<Anchor>//api/name/resendConfirmationCode</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/getSession</TokenIdentifier>
+			<Abstract type="html">Get a session with default scopes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSession*&gt; *)getSession</Declaration>
+			
+			
+			<Anchor>//api/name/getSession</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/getSession:</TokenIdentifier>
+			<Abstract type="html">Get a session with custom scopes.  For future use, not supported by service yet.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSession*&gt; *)getSession:(nullable NSSet&lt;NSString*&gt; *)scopes</Declaration>
+			
+			
+			<Anchor>//api/name/getSession:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/getSession:password:validationData:scopes:</TokenIdentifier>
+			<Abstract type="html">Get a session with the following username and password</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSession*&gt; *)getSession:(NSString *)username password:(NSString *)password validationData:(nullable NSArray&lt;AWSCognitoIdentityUserAttributeType*&gt; *)validationData scopes:(nullable NSSet&lt;NSString*&gt; *)scopes</Declaration>
+			
+			
+			<Anchor>//api/name/getSession:password:validationData:scopes:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/getDetails</TokenIdentifier>
+			<Abstract type="html">Get details about this user, including user attributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserGetDetailsResponse*&gt; *)getDetails</Declaration>
+			
+			
+			<Anchor>//api/name/getDetails</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/forgotPassword</TokenIdentifier>
+			<Abstract type="html">Send a code to this user to initiate the forgot password flow</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserForgotPasswordResponse*&gt; *)forgotPassword</Declaration>
+			
+			
+			<Anchor>//api/name/forgotPassword</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/confirmForgotPassword:password:</TokenIdentifier>
+			<Abstract type="html">Conclude the forgot password flow by providing the forgot password code and new password.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserConfirmForgotPasswordResponse*&gt; *)confirmForgotPassword:(NSString *)confirmationCode password:(NSString *)password</Declaration>
+			
+			
+			<Anchor>//api/name/confirmForgotPassword:password:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/changePassword:proposedPassword:</TokenIdentifier>
+			<Abstract type="html">Change this user&apos;s password</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserChangePasswordResponse*&gt; *)changePassword:(NSString *)currentPassword proposedPassword:(NSString *)proposedPassword</Declaration>
+			
+			
+			<Anchor>//api/name/changePassword:proposedPassword:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/updateAttributes:</TokenIdentifier>
+			<Abstract type="html">Update this user&apos;s attributes</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserUpdateAttributesResponse*&gt; *)updateAttributes:(NSArray&lt;AWSCognitoIdentityUserAttributeType*&gt; *)attributes</Declaration>
+			
+			
+			<Anchor>//api/name/updateAttributes:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/deleteAttributes:</TokenIdentifier>
+			<Abstract type="html">Delete the attributes specified by attributeNames</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserDeleteAttributesResponse*&gt; *)deleteAttributes:(NSArray&lt;NSString*&gt; *)attributeNames</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAttributes:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/verifyAttribute:code:</TokenIdentifier>
+			<Abstract type="html">Verify a user attribute upon receiving the verification code.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserVerifyAttributeResponse*&gt; *)verifyAttribute:(NSString *)attributeName code:(NSString *)code</Declaration>
+			
+			
+			<Anchor>//api/name/verifyAttribute:code:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/getAttributeVerificationCode:</TokenIdentifier>
+			<Abstract type="html">Request a verification code to verify an attribute.</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserGetAttributeVerificationCodeResponse*&gt; *)getAttributeVerificationCode:(NSString *)attributeName</Declaration>
+			
+			
+			<Anchor>//api/name/getAttributeVerificationCode:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/setUserSettings:</TokenIdentifier>
+			<Abstract type="html">Set the user settings for this user such as MFA</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSetUserSettingsResponse*&gt; *)setUserSettings:(AWSCognitoIdentityUserSettings *)settings</Declaration>
+			
+			
+			<Anchor>//api/name/setUserSettings:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/deleteUser</TokenIdentifier>
+			<Abstract type="html">Delete this user</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (AWSTask *)deleteUser</Declaration>
+			
+			
+			<Anchor>//api/name/deleteUser</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/signOut</TokenIdentifier>
+			<Abstract type="html">Remove all sessions from the keychain for this user</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.h</DeclaredIn>
+			
+			<Declaration>- (void)signOut</Declaration>
+			
+			
+			<Anchor>//api/name/signOut</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/interactiveAuth:</TokenIdentifier>
+			<Abstract type="html">Kick off interactive auth to prompt developer for username/password and optionally mfa code</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.m</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSession*&gt; *)interactiveAuth:(NSSet&lt;NSString*&gt; *)scopes</Declaration>
+			
+			
+			<Anchor>//api/name/interactiveAuth:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/passwordAuthInternal:authenticationDelegate:</TokenIdentifier>
+			<Abstract type="html">Prompt developer to obtain username/password and do SRP auth</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.m</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSession*&gt; *)passwordAuthInternal:(NSSet&lt;NSString*&gt; *)scopes authenticationDelegate:(id&lt;AWSCognitoIdentityPasswordAuthentication&gt;)authenticationDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/passwordAuthInternal:authenticationDelegate:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/srpAuthInternal:password:validationData:scopes:</TokenIdentifier>
+			<Abstract type="html">Perform SRP based authentication (GetAuthenticationDetails and Authenticate) given a username and password</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.m</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityProviderAuthenticateResponse*&gt; *)srpAuthInternal:(NSString *)username password:(NSString *)password validationData:(NSArray&lt;AWSCognitoIdentityUserAttributeType*&gt; *)validationData scopes:(NSSet&lt;NSString*&gt; *)scopes</Declaration>
+			
+			
+			<Anchor>//api/name/srpAuthInternal:password:validationData:scopes:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/mfaAuthInternal:codeDeliveryDetails:authState:scopes:authenticationDelegate:</TokenIdentifier>
+			<Abstract type="html">Invoke developer&apos;s ui to prompt user for mfa code and call enhanceAuth</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.m</DeclaredIn>
+			
+			<Declaration>- (AWSTask&lt;AWSCognitoIdentityUserSession*&gt; *)mfaAuthInternal:(NSString *)username codeDeliveryDetails:(AWSCognitoIdentityProviderCodeDeliveryDetailsType *)codeDeliveryDetails authState:(NSString *)authState scopes:(NSSet&lt;NSString*&gt; *)scopes authenticationDelegate:(id&lt;AWSCognitoIdentityMultiFactorAuthentication&gt;)authenticationDelegate</Declaration>
+			
+			
+			<Anchor>//api/name/mfaAuthInternal:codeDeliveryDetails:authState:scopes:authenticationDelegate:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/keyChainKey:key:</TokenIdentifier>
+			<Abstract type="html">Get a namespaced keychain key given a namespace and key</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)keyChainKey:(NSString *)namespace key:(const NSString *)key</Declaration>
+			
+			
+			<Anchor>//api/name/keyChainKey:key:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/AWSCognitoIdentityUser/normalizeScopes:</TokenIdentifier>
+			<Abstract type="html">Sort scopes into a normalized order, and hash them to compact them</Abstract>
+			<DeclaredIn>AWSCognitoIdentityUser.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)normalizeScopes:(NSSet&lt;NSString*&gt; *)scopes</Declaration>
+			
+			
+			<Anchor>//api/name/normalizeScopes:</Anchor>
+            <NodeRef refid="248"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
