@@ -35,13 +35,6 @@ class LoginPageViewController: FormViewController {
         
         definesPresentationContext = true;
         // Do any additional setup after loading the view.
-//        
-//        let attachmentImg = NSTextAttachment();
-//        attachmentImg.image = UIImage(named: "arrow-right");
-//        let attachmentString = NSAttributedString(attachment: attachmentImg);
-//        let registerString = NSMutableAttributedString(string: "Don't have an account? Sign up");
-//        registerString.appendAttributedString(attachmentString);
-//        btnRegister.setAttributedTitle(registerString, forState: UIControlState.Normal);
     }
     
 
@@ -79,14 +72,32 @@ class LoginPageViewController: FormViewController {
                 let appvar = ApplicationVariables.applicationvariables;
                 let JSONObject: [String : AnyObject] = [
                     "login_token" : appvar.logintoken ]
-                
-                //let api = APICalls()
-                api.apicallout("/api/accounts/registeredcontrollers/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+
+                api.apicallout("/api/accounts/getleagues/" + appvar.userid + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
 
                     dispatch_async(dispatch_get_main_queue()) {
                         LoadingOverlay.shared.hideOverlayView();
                     };
-                    
+                    var leaguecount = 0;
+                    let success = (response as! NSDictionary)["success"] as! Bool;
+                    if let responseleaguecount = (response as! NSDictionary)["leagueCount"] as! NSNumber?{
+                        leaguecount = Int(responseleaguecount);
+                    }
+                    if(success){
+                        
+                    }
+                    else{
+                        //There is something wrong,
+                        if(leaguecount == 0){
+                            //take them to add a league page.
+                            dispatch_async(dispatch_get_main_queue()) {
+                                //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                let setupRemo = self.storyboard?.instantiateViewControllerWithIdentifier("createLeague");
+                                self.presentViewController(setupRemo!, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                    /*
                     let usercontrollers = Controllers(controllers: response as! Dictionary<String,AnyObject>);
                     for(_,controllerarray) in (usercontrollers?.controllers)!{
                         let arry = controllerarray as! Array<Dictionary<String, AnyObject>> as Array;
@@ -107,6 +118,7 @@ class LoginPageViewController: FormViewController {
                             
                         }
                     }
+                            */
                     
                     
                     dispatch_async(dispatch_get_main_queue()) {
@@ -157,9 +169,6 @@ class LoginPageViewController: FormViewController {
         
     }
     
-//    override func shouldAutorotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation) -> Bool {
-//        return UIInterfaceOrientationIsPortrait(toInterfaceOrientation);
-//    }
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait;
     }

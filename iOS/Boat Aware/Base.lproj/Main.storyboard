@@ -29,7 +29,7 @@
         <!--createLeague-->
         <scene sceneID="Ej6-P7-gQv">
             <objects>
-                <viewController title="createLeague" id="hiO-Ca-Qus" sceneMemberID="viewController">
+                <viewController title="createLeague" id="hiO-Ca-Qus" customClass="createLeagueViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rDF-Ct-TqS"/>
                         <viewControllerLayoutGuide type="bottom" id="hME-w0-cb0"/>
@@ -38,11 +38,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="christmasfamduels" translatesAutoresizingMaskIntoConstraints="NO" id="I3G-aw-0hf">
-                                <rect key="frame" x="20" y="28" width="560" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="christmasfamduels" translatesAutoresizingMaskIntoConstraints="NO" id="I3G-aw-0hf">
+                                <rect key="frame" x="20" y="72" width="560" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create a League to play with your friends!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9O-ze-nG9">
-                                <rect key="frame" x="20" y="164" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a League to play with your friends!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9O-ze-nG9">
+                                <rect key="frame" x="20" y="209" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aRQ-M2-dCI"/>
                                 </constraints>
@@ -50,18 +50,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your League name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-zd-sVJ">
-                                <rect key="frame" x="20" y="193" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your League name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-zd-sVJ">
+                                <rect key="frame" x="20" y="238" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ePc-Lz-m6w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36U-ns-a6y">
-                                <rect key="frame" x="20" y="231" width="560" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36U-ns-a6y">
+                                <rect key="frame" x="20" y="276" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Create League"/>
+                                <connections>
+                                    <action selector="onClickCreate:" destination="hiO-Ca-Qus" eventType="touchUpInside" id="9ty-Uq-0y4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,11 +73,11 @@
                             <constraint firstItem="I3G-aw-0hf" firstAttribute="trailing" secondItem="t9O-ze-nG9" secondAttribute="trailing" id="ECP-Ff-lvQ"/>
                             <constraint firstItem="36U-ns-a6y" firstAttribute="leading" secondItem="hgd-zd-sVJ" secondAttribute="leading" id="JIq-qT-67e"/>
                             <constraint firstItem="I3G-aw-0hf" firstAttribute="leading" secondItem="t9O-ze-nG9" secondAttribute="leading" id="UM3-oF-3KS"/>
-                            <constraint firstItem="t9O-ze-nG9" firstAttribute="top" secondItem="I3G-aw-0hf" secondAttribute="bottom" constant="8" symbolic="YES" id="aoH-b4-A0E"/>
+                            <constraint firstItem="t9O-ze-nG9" firstAttribute="top" secondItem="I3G-aw-0hf" secondAttribute="bottom" constant="9" id="aoH-b4-A0E"/>
                             <constraint firstItem="I3G-aw-0hf" firstAttribute="trailing" secondItem="7Tk-Qg-3yS" secondAttribute="trailingMargin" id="as9-Fc-XGz"/>
                             <constraint firstItem="36U-ns-a6y" firstAttribute="trailing" secondItem="hgd-zd-sVJ" secondAttribute="trailing" id="hUP-vs-VUB"/>
                             <constraint firstItem="hgd-zd-sVJ" firstAttribute="top" secondItem="t9O-ze-nG9" secondAttribute="bottom" constant="8" symbolic="YES" id="hYd-vJ-Yzc"/>
-                            <constraint firstItem="hME-w0-cb0" firstAttribute="top" secondItem="hgd-zd-sVJ" secondAttribute="bottom" constant="377" id="hjs-Xd-LBh"/>
+                            <constraint firstItem="hME-w0-cb0" firstAttribute="top" secondItem="hgd-zd-sVJ" secondAttribute="bottom" constant="288" id="hjs-Xd-LBh"/>
                             <constraint firstItem="I3G-aw-0hf" firstAttribute="leading" secondItem="7Tk-Qg-3yS" secondAttribute="leadingMargin" id="uss-0v-LNe"/>
                             <constraint firstItem="t9O-ze-nG9" firstAttribute="trailing" secondItem="hgd-zd-sVJ" secondAttribute="trailing" id="ysi-xx-PAC"/>
                             <constraint firstItem="t9O-ze-nG9" firstAttribute="leading" secondItem="hgd-zd-sVJ" secondAttribute="leading" id="z5n-sG-08m"/>
@@ -82,17 +85,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="txtLeagueName" destination="hgd-zd-sVJ" id="Coj-G7-9no"/>
                         <segue destination="VSd-Xw-5Pv" kind="show" identifier="seqCreateLeagueToAddInvite" id="RqA-lc-vCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdf-9l-Pe9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="-1131"/>
+            <point key="canvasLocation" x="-22" y="-1131"/>
         </scene>
         <!--Invite Friends-->
         <scene sceneID="0tY-fB-xGb">
             <objects>
-                <viewController title="Invite Friends" id="VSd-Xw-5Pv" sceneMemberID="viewController">
+                <viewController title="Invite Friends" id="VSd-Xw-5Pv" customClass="emailInvitationsViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uko-Ro-n1A"/>
                         <viewControllerLayoutGuide type="bottom" id="cPM-LI-LEo"/>
@@ -101,39 +105,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Invite up to 5 of your friends at a time to play" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfK-tF-NeX">
-                                <rect key="frame" x="20" y="28" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite up to 5 of your friends at a time to play" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfK-tF-NeX">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 1" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="a82-gE-TYh">
-                                <rect key="frame" x="20" y="57" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 1" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="a82-gE-TYh">
+                                <rect key="frame" x="20" y="101" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 2" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-EG-UN4">
-                                <rect key="frame" x="20" y="95" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 2" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="oUe-EG-UN4">
+                                <rect key="frame" x="20" y="139" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 3" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zni-ev-cM0">
-                                <rect key="frame" x="20" y="133" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 3" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="zni-ev-cM0">
+                                <rect key="frame" x="20" y="177" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 4" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2qK-UM-hvm">
-                                <rect key="frame" x="20" y="171" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 4" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2qK-UM-hvm">
+                                <rect key="frame" x="20" y="215" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 5" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="WGf-j4-ZNv">
-                                <rect key="frame" x="20" y="209" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email of friend 5" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="WGf-j4-ZNv">
+                                <rect key="frame" x="20" y="253" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdd-lB-jxu">
-                                <rect key="frame" x="20" y="247" width="560" height="30"/>
+                                <rect key="frame" x="20" y="291" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Send Invitations"/>
                             </button>
@@ -141,7 +145,7 @@
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zni-ev-cM0" firstAttribute="leading" secondItem="oUe-EG-UN4" secondAttribute="leading" id="1VK-A7-MD6"/>
-                            <constraint firstItem="cPM-LI-LEo" firstAttribute="top" secondItem="oUe-EG-UN4" secondAttribute="bottom" constant="475" id="8Pg-bR-t5b"/>
+                            <constraint firstItem="cPM-LI-LEo" firstAttribute="top" secondItem="oUe-EG-UN4" secondAttribute="bottom" constant="387" id="8Pg-bR-t5b"/>
                             <constraint firstItem="jfK-tF-NeX" firstAttribute="leading" secondItem="hm6-vo-4ID" secondAttribute="leadingMargin" id="BKU-dq-Cga"/>
                             <constraint firstItem="WGf-j4-ZNv" firstAttribute="trailing" secondItem="2qK-UM-hvm" secondAttribute="trailing" id="Bdo-z3-GhR"/>
                             <constraint firstItem="WGf-j4-ZNv" firstAttribute="top" secondItem="2qK-UM-hvm" secondAttribute="bottom" constant="8" symbolic="YES" id="EIc-EL-hy0"/>
@@ -160,15 +164,23 @@
                             <constraint firstItem="zni-ev-cM0" firstAttribute="top" secondItem="oUe-EG-UN4" secondAttribute="bottom" constant="8" symbolic="YES" id="yug-Nd-EQf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="onclickSendInvitations" destination="hdd-lB-jxu" id="PZI-Sr-mJe"/>
+                        <outlet property="txtemail1" destination="a82-gE-TYh" id="xsF-hO-D0g"/>
+                        <outlet property="txtemail2" destination="oUe-EG-UN4" id="ZrH-oY-7ju"/>
+                        <outlet property="txtemail3" destination="zni-ev-cM0" id="PMx-75-TEf"/>
+                        <outlet property="txtemail4" destination="2qK-UM-hvm" id="zkH-H6-qld"/>
+                        <outlet property="txtemail5" destination="WGf-j4-ZNv" id="S8C-My-jmX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aV8-m3-7gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="-1131"/>
+            <point key="canvasLocation" x="734" y="-1131"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="RPk-eq-7nB">
             <objects>
-                <viewController title="Home Controller" id="j1v-yb-sJD" sceneMemberID="viewController">
+                <viewController title="Home Controller" id="j1v-yb-sJD" customClass="HomeViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mor-Vv-NX3"/>
                         <viewControllerLayoutGuide type="bottom" id="FPE-nJ-ShQ"/>
@@ -422,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSc-cp-ifc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="-223"/>
+            <point key="canvasLocation" x="1616" y="237"/>
         </scene>
         <!--Home-->
         <scene sceneID="bwH-FN-ZEd">
@@ -599,7 +611,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Iu-6R-q0I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="-1099"/>
+            <point key="canvasLocation" x="1616" y="-431"/>
         </scene>
         <!--Device Capability Tab Bar Controller-->
         <scene sceneID="25k-bh-6Ue">
@@ -620,7 +632,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQ0-s3-YuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="-404"/>
+            <point key="canvasLocation" x="734" y="-12"/>
         </scene>
         <!--viewNavigation-->
         <scene sceneID="4Lc-9M-Yp2">
@@ -796,7 +808,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiX-XO-vVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1440" y="-1972"/>
+            <point key="canvasLocation" x="-1535" y="-1958"/>
         </scene>
         <!--viewLoadingApp-->
         <scene sceneID="gb4-n7-fWx">
@@ -830,7 +842,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmY-2Z-1cR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844" y="-2720"/>
+            <point key="canvasLocation" x="-1548" y="-2628"/>
         </scene>
         <!--Register Page View Controller-->
         <scene sceneID="uia-aC-Lpx">
@@ -1120,7 +1132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOS-Fs-5mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1508" y="-2720"/>
+            <point key="canvasLocation" x="-2176" y="-2628"/>
         </scene>
         <!--resetPassword-->
         <scene sceneID="Yqu-BU-d8F">
@@ -1361,7 +1373,7 @@
         <image name="singerwhite" width="459" height="459"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x9a-xV-XVQ"/>
+        <segue reference="OQ9-Ba-fiT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

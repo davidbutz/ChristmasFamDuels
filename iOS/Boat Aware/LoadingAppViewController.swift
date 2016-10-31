@@ -30,7 +30,7 @@ class LoadingAppViewController: UIViewController {
                     let success = (response as! NSDictionary)["success"] as! Bool;
                     if(success){
                         //yes it is valid and good.
-                        //need to get controllers, then populate the appvar information with data from the call.....
+                        //need to populate the appvar information with data from the call.....
                         let appvar = ApplicationVariables.applicationvariables;
                         appvar.username = (response as! NSDictionary)["username"] as! String;
                         appvar.logintoken = (response as! NSDictionary)["authenticationtoken"] as! String;
@@ -44,9 +44,8 @@ class LoadingAppViewController: UIViewController {
                         let JSONObject: [String : AnyObject] = [
                             "login_token" : appvar.logintoken ]
                         
-                        //let api = APICalls()
-                        api.apicallout("/api/accounts/registeredcontrollers/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
-                            
+                        api.apicallout("/api/setup/getleagues/" + appvar.userid  + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+                            /*
                             
                             let usercontrollers = Controllers(controllers: response as! Dictionary<String,AnyObject>);
                             for(_,controllerarray) in (usercontrollers?.controllers)!{
@@ -66,7 +65,7 @@ class LoadingAppViewController: UIViewController {
                                     
                                 }
                             }
-                            
+                                    */
                             dispatch_async(dispatch_get_main_queue()) {
                                 self.handleViewAppearance("viewLaunch");
                             }

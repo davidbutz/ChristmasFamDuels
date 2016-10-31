@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //defaults.setValue("https://api.boataware.com", forKey: "localIPAddress");
         defaults.setValue("http://192.168.0.122:1337", forKey: "localIPAddress");
         defaults.setValue("http://192.168.42.1:1337", forKey: "thriveIPAddress");
-        //defaults.setValue("http://api.thriveengineering.com", forKey: "localIPAddress");
         defaults.synchronize();
         
         
@@ -65,6 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             self.window?.rootViewController = initialViewControlleripad
             self.window?.makeKeyAndVisible()
+        }
+        else{
+            //TODO: HERE IS WHERE I PUT IN THE ACCEPT INVITATION LINK. FIRST THEY GET APP. THEN CLICK LINK.
         }
         //Do something with the information in userDict
         print(userDict);
