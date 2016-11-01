@@ -13,15 +13,17 @@ class LeagueVariable {
     var leagueName:String;
     var leagueID:String;
     var leagueOwnerID:String;
-    init(leagueName:String,leagueID:String,leagueOwnerID:String){
+    var roleID:NSNumber;
+    init(leagueName:String,leagueID:String,leagueOwnerID:String, roleID:NSNumber){
         self.leagueID = leagueID;
         self.leagueName = leagueName;
         self.leagueOwnerID = leagueOwnerID;
+        self.roleID = roleID;
     }
 }
 
 struct LeagueVariables{
-    static var leaguevariables = LeagueVariable(leagueName:"fake",leagueID: "fake",leagueOwnerID: "fake");
+    static var leaguevariables = LeagueVariable(leagueName:"fake",leagueID: "fake",leagueOwnerID: "fake", roleID: 0);
 }
 
 class ApplicationVariable {

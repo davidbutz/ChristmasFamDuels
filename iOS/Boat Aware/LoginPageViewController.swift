@@ -73,18 +73,40 @@ class LoginPageViewController: FormViewController {
                 let JSONObject: [String : AnyObject] = [
                     "login_token" : appvar.logintoken ]
 
-                api.apicallout("/api/accounts/getleagues/" + appvar.userid + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+                api.apicallout("/api/accounts/getleagues/" + appvar.userid + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (leagueresponse) -> () in
 
                     dispatch_async(dispatch_get_main_queue()) {
                         LoadingOverlay.shared.hideOverlayView();
                     };
                     var leaguecount = 0;
-                    let success = (response as! NSDictionary)["success"] as! Bool;
-                    if let responseleaguecount = (response as! NSDictionary)["leagueCount"] as! NSNumber?{
+                    let success = (leagueresponse as! NSDictionary)["success"] as! Bool;
+                    if let responseleaguecount = (leagueresponse as! NSDictionary)["leagueCount"] as! NSNumber?{
                         leaguecount = Int(responseleaguecount);
                     }
                     if(success){
-                        
+                        if(leaguecount == 0){
+                            let leagueArray = (leagueresponse as! NSDictionary)["leagueCount"] as! JSONArray;
+                            let leagueInformation = leagueArray[0] as! JSONDictionary;
+                            let leagueName = leagueInformation["leagueName"] as! String;
+                            let leagueID = leagueInformation["leagueID"] as! String;
+                            let leagueOwnerID = leagueInformation["leagueOwnerID"] as! String;
+                            let roleID = leagueInformation["roleID"] as! NSNumber;
+                            
+                            let leaguevar = LeagueVariables.leaguevariables;
+                            leaguevar.leagueID = leagueID;
+                            leaguevar.leagueName = leagueName;
+                            leaguevar.leagueOwnerID = leagueOwnerID;
+                            leaguevar.roleID = roleID;
+                            
+                            dispatch_async(dispatch_get_main_queue()) {
+                                //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                                self.presentViewController(settingview!, animated: true, completion: nil)
+                            }
+                        }
+                        else{
+                            print("they belong to more than one league, which i dont handle");
+                        }
                     }
                     else{
                         //There is something wrong,
@@ -96,39 +118,15 @@ class LoginPageViewController: FormViewController {
                                 self.presentViewController(setupRemo!, animated: true, completion: nil)
                             }
                         }
-                    }
-                    /*
-                    let usercontrollers = Controllers(controllers: response as! Dictionary<String,AnyObject>);
-                    for(_,controllerarray) in (usercontrollers?.controllers)!{
-                        let arry = controllerarray as! Array<Dictionary<String, AnyObject>> as Array;
-                        if(arry.count==0){
-                            dispatch_async(dispatch_get_main_queue()) {
-                                //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
-                                let setupRemo = self.storyboard?.instantiateViewControllerWithIdentifier("setupRemo");
-                                self.presentViewController(setupRemo!, animated: true, completion: nil)
-                            }
-
-                            return;
-                        }
                         else{
-                            //TODO: get the last remo used on this machine ....
-                            AppRemoList.appremoList = arry;
-                            let appdel = UIApplication.sharedApplication().delegate as! AppDelegate;
-                            appdel.my_remo_selected = AppRemoList.appremoList[0];
-                            
+                            print("The login was ok, but there was more than one league and the success was false");
                         }
                     }
-                            */
-                    
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
-                        let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
-                        self.presentViewController(settingview!, animated: true, completion: nil)
-                    }
-                    
+
                 });
-            } else {
+            }
+            else
+            {
                 dispatch_async(dispatch_get_main_queue()) {
                     LoadingOverlay.shared.hideOverlayView();
                 };

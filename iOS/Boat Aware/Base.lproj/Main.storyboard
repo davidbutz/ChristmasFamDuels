@@ -140,6 +140,9 @@
                                 <rect key="frame" x="20" y="291" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Send Invitations"/>
+                                <connections>
+                                    <action selector="onClickSendInvites:" destination="VSd-Xw-5Pv" eventType="touchUpInside" id="Njx-zh-ddy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -180,7 +183,7 @@
         <!--Home Controller-->
         <scene sceneID="RPk-eq-7nB">
             <objects>
-                <viewController title="Home Controller" id="j1v-yb-sJD" customClass="HomeViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home Controller" id="j1v-yb-sJD" customClass="playBallViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mor-Vv-NX3"/>
                         <viewControllerLayoutGuide type="bottom" id="FPE-nJ-ShQ"/>
@@ -352,6 +355,9 @@
                     <navigationItem key="navigationItem" id="Zqk-8c-JJO">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="55h-U5-Gfz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnHamburgerMenu" destination="55h-U5-Gfz" id="qoq-bF-71J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYa-0N-G7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,10 +619,10 @@
             </objects>
             <point key="canvasLocation" x="1616" y="-431"/>
         </scene>
-        <!--Device Capability Tab Bar Controller-->
+        <!--LeagueSetup-->
         <scene sceneID="25k-bh-6Ue">
             <objects>
-                <tabBarController id="P7d-Qr-PpT" customClass="DeviceCapabilityTabBarController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController title="LeagueSetup" id="P7d-Qr-PpT" customClass="DeviceCapabilityTabBarController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="34A-n4-TCb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -673,10 +679,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcP-Wq-dU2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="667"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NH7-Cu-U8K">
-                                        <rect key="frame" x="20" y="318" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="318" width="572" height="30"/>
                                         <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
@@ -685,7 +691,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (7 chars min)" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-7i-yLJ">
-                                        <rect key="frame" x="20" y="358" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="358" width="572" height="30"/>
                                         <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -694,20 +700,6 @@
                                             <outlet property="delegate" destination="gNo-JC-KY6" id="gkM-sK-Hz4"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-RZ-l88">
-                                        <rect key="frame" x="20" y="396" width="335" height="36"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="8hA-1y-Xob"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Log In">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnLoginClick:" destination="gNo-JC-KY6" eventType="touchUpInside" id="Nzt-MC-IND"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LEc-LP-X8r">
                                         <rect key="frame" x="20" y="440" width="335" height="30"/>
                                         <constraints>
@@ -737,29 +729,43 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="christmasfamduels" translatesAutoresizingMaskIntoConstraints="NO" id="eS4-QB-URq">
-                                        <rect key="frame" x="20" y="192" width="335" height="124"/>
+                                        <rect key="frame" x="20" y="192" width="572" height="124"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="124" id="Y2p-yd-J1b"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTL-RZ-l88">
+                                        <rect key="frame" x="20" y="396" width="572" height="36"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="8hA-1y-Xob"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnLoginClick:" destination="gNo-JC-KY6" eventType="touchUpInside" id="Nzt-MC-IND"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="NH7-Cu-U8K" firstAttribute="top" secondItem="eS4-QB-URq" secondAttribute="bottom" constant="2" id="4f3-CE-42p"/>
                                     <constraint firstItem="eS4-QB-URq" firstAttribute="leading" secondItem="NH7-Cu-U8K" secondAttribute="leading" id="5CT-vZ-eaR"/>
                                     <constraint firstItem="HJL-7i-yLJ" firstAttribute="trailing" secondItem="ZTL-RZ-l88" secondAttribute="trailing" id="I1P-af-hQ6"/>
                                     <constraint firstItem="LEc-LP-X8r" firstAttribute="top" secondItem="ZTL-RZ-l88" secondAttribute="bottom" constant="8" symbolic="YES" id="IVl-zI-0Ay"/>
-                                    <constraint firstAttribute="trailing" secondItem="eS4-QB-URq" secondAttribute="trailing" constant="20" id="QPJ-qX-HFE"/>
+                                    <constraint firstAttribute="trailing" secondItem="eS4-QB-URq" secondAttribute="trailing" constant="8" id="QPJ-qX-HFE"/>
                                     <constraint firstItem="HJL-7i-yLJ" firstAttribute="top" secondItem="NH7-Cu-U8K" secondAttribute="bottom" constant="10" id="R3O-Dx-ifm"/>
                                     <constraint firstItem="ZTL-RZ-l88" firstAttribute="leading" secondItem="HJL-7i-yLJ" secondAttribute="leading" id="UlX-as-QQg"/>
                                     <constraint firstAttribute="bottom" secondItem="LEc-LP-X8r" secondAttribute="bottom" constant="182" id="WD1-oX-M0v"/>
                                     <constraint firstItem="HJL-7i-yLJ" firstAttribute="trailing" secondItem="NH7-Cu-U8K" secondAttribute="trailing" id="WpJ-TS-tz2"/>
                                     <constraint firstItem="ZTL-RZ-l88" firstAttribute="top" secondItem="HJL-7i-yLJ" secondAttribute="bottom" constant="8" symbolic="YES" id="XWS-mo-XKE"/>
                                     <constraint firstItem="NH7-Cu-U8K" firstAttribute="centerY" secondItem="fcP-Wq-dU2" secondAttribute="centerY" id="iMN-Fi-avu"/>
-                                    <constraint firstItem="NH7-Cu-U8K" firstAttribute="centerX" secondItem="fcP-Wq-dU2" secondAttribute="centerX" id="kB9-uw-XjK"/>
+                                    <constraint firstItem="NH7-Cu-U8K" firstAttribute="centerX" secondItem="fcP-Wq-dU2" secondAttribute="centerX" constant="6" id="kB9-uw-XjK"/>
                                     <constraint firstItem="HJL-7i-yLJ" firstAttribute="leading" secondItem="NH7-Cu-U8K" secondAttribute="leading" id="lOd-t0-fhG"/>
                                     <constraint firstItem="NH7-Cu-U8K" firstAttribute="trailing" secondItem="eS4-QB-URq" secondAttribute="trailing" id="nIh-eY-vZ8"/>
                                     <constraint firstItem="eS4-QB-URq" firstAttribute="leading" secondItem="fcP-Wq-dU2" secondAttribute="leading" constant="20" id="sBu-dk-c4h"/>
-                                    <constraint firstItem="ZTL-RZ-l88" firstAttribute="trailing" secondItem="LEc-LP-X8r" secondAttribute="trailing" id="sub-aR-8xt"/>
+                                    <constraint firstItem="ZTL-RZ-l88" firstAttribute="trailing" secondItem="LEc-LP-X8r" secondAttribute="trailing" constant="237" id="sub-aR-8xt"/>
                                     <constraint firstItem="ZTL-RZ-l88" firstAttribute="leading" secondItem="LEc-LP-X8r" secondAttribute="leading" id="w5u-eK-Qcz"/>
                                 </constraints>
                             </scrollView>

@@ -22,12 +22,12 @@ class createLeagueViewController: FormViewController {
         }
         
         LoadingOverlay.shared.showOverlay(self.view);
-        LoadingOverlay.shared.setCaption("Logging In...");
+        LoadingOverlay.shared.setCaption("Creating League...");
         let api = APICalls();
         let appvar = ApplicationVariables.applicationvariables;
         let JSONObject: [String : AnyObject] = [
             "login_token" : appvar.logintoken ]
-        api.apicallout("/api/league/create/" + appvar.userid + "/" + leaguename! + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+        api.apicallout("/api/setup/league/create/" + appvar.userid + "/" + leaguename! + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
             
             dispatch_async(dispatch_get_main_queue()) {
                 LoadingOverlay.shared.hideOverlayView();
@@ -42,7 +42,7 @@ class createLeagueViewController: FormViewController {
                 leaguevar.leagueID = leagueID;
                 leaguevar.leagueName = leagueName;
                 leaguevar.leagueOwnerID = leagueOwnerID;
-                
+                leaguevar.roleID = 1;
                 //move them along to invitations...
                 dispatch_async(dispatch_get_main_queue()) {
                     let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("Invite Friends");

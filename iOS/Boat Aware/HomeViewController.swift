@@ -12,6 +12,9 @@ import AWSS3
     
 class HomeViewController: UICollectionViewController {
     
+    
+    @IBOutlet weak var btnHamburgerMenu: UIBarButtonItem!
+    
     typealias JSONArray = Array<AnyObject>
     typealias JSONDictionary = Dictionary<String, AnyObject>
     

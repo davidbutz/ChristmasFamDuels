@@ -13,9 +13,6 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var capabilityTitle : CapabilityTitleView!;
     
     private let appvar = ApplicationVariables.applicationvariables;
-    private var selectedCapability : Capability?
-    private var selectedRemoControllerID : String = "";
-    private var rulesList : Array<DeviceCapabilityRule> = [];
     private var refreshControl : UIRefreshControl?;
 
     override func viewDidLoad() {
@@ -29,8 +26,6 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
         self.tableView?.alwaysBounceVertical = true;
 
         if let deviceTabBar = self.tabBarController as? DeviceCapabilityTabBarController {
-            self.selectedCapability = deviceTabBar.selectedCapability;
-            self.selectedRemoControllerID = deviceTabBar.selectedRemoControllerID;
         }
         
         reload();
@@ -41,15 +36,16 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
     
     func reload() {
         if let deviceTabBar = self.tabBarController as? DeviceCapabilityTabBarController {
-            self.capabilityTitle.deviceCapability = deviceTabBar.selectedCapability;
+            //self.capabilityTitle.deviceCapability = deviceTabBar.selectedCapability;
         }
+        
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.refreshControl!.beginRefreshing();
         });
 
         let JSONObject: [String : AnyObject] = [
             "login_token" : appvar.logintoken ]
-        
+        /*
         let api = APICalls()
         api.apicallout("/api/accounts/rules/" + self.selectedRemoControllerID + "/" + (selectedCapability?.devicecapabilities[0].device_capability_id)! + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
             
@@ -65,53 +61,24 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
                 self.refreshControl!.attributedTitle = NSMutableAttributedString(string: "Updated at \(timeString)");
             });
         });
+            */
     }
 }
 
 extension ThresholdViewController {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.rulesList[section].rule_name;
+        return "header for section";
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.rulesList.count;
+        return 1;
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let ruleRange = self.rulesList[section].rule_range;
-        return ruleRange.count;
+        
+        return 1;
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : UITableViewCell;
-            cell = tableView.dequeueReusableCellWithIdentifier("ruleCell", forIndexPath: indexPath) as UITableViewCell;
-        let ruleRange = self.rulesList[indexPath.section].rule_range;
-        let ruleItem = ruleRange[indexPath.row];
-
-        switch (ruleItem.state_id) {
-        case 1:
-            cell.textLabel?.text = "CRITICAL";
-            cell.imageView?.tintColor = UIColor.boatAwareCritical();
-            break;
-        case 2:
-            cell.textLabel?.text = "WARNING";
-            cell.imageView?.tintColor = UIColor.boatAwareWarning();
-            break;
-        case 3:
-            cell.textLabel?.text = "NORMAL";
-            cell.imageView?.tintColor = UIColor.boatAwareNormal();
-            break;
-        case 4:
-            cell.textLabel?.text = "WARNING";
-            cell.imageView?.tintColor = UIColor.boatAwareWarning();
-            break;
-        case 5:
-            cell.textLabel?.text = "CRITICAL";
-            cell.imageView?.tintColor = UIColor.boatAwareCritical();
-            break;
-        default:
-            cell.textLabel?.text = "UNKNOWN";
-            break;
-        }
-        cell.detailTextLabel?.text = "\(ruleItem.gte) to \(ruleItem.lt)";
-
+        cell = tableView.dequeueReusableCellWithIdentifier("ruleCell", forIndexPath: indexPath) as UITableViewCell;
         return cell;
     }
 }

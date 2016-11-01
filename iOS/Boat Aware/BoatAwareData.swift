@@ -42,8 +42,6 @@ class Login{
     }
 }
 
-
-
 class AWSContent{
     var key: String
     var contenttype: String
@@ -75,6 +73,7 @@ class AWSContents{
     }
 }
 
+/*
 class DeviceCapabilityRuleRanges{
     var state_id: NSNumber;
     var gte: NSNumber;
@@ -267,6 +266,6 @@ class Controllers{
     }
 
 }
-
+*/
 
 
