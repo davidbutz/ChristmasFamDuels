@@ -12,25 +12,14 @@ import AWSS3
     
 class HomeViewController: UICollectionViewController {
     
-    @IBOutlet weak var warningBarButtonItem: UIBarButtonItem!
-    @IBOutlet var btn_menu_hamburger: UIBarButtonItem!
-
-    @IBOutlet var btn_settings: UIBarButtonItem!
-
-    @IBOutlet var btnAlert: UIBarButtonItem!
+    
+    @IBOutlet weak var btnHamburgerMenu: UIBarButtonItem!
     
     typealias JSONArray = Array<AnyObject>
     typealias JSONDictionary = Dictionary<String, AnyObject>
     
-    var deviceCapabilitiesb = DeviceCapability.allDeviceCapabilities()
     var remoSelected = JSONDictionary();
-//    var deviceCapabilities = Array<DeviceCapabilityNew>();
-    
-    var capabilities = Array<Capability>();
-    var cameraCapability = Capability(name: "Camera");
-    
-    
-//    var boat_image = UIImageView();
+
     
     var statechangeevents  = Array<StateChangeEvent>();
     
@@ -46,17 +35,6 @@ class HomeViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        btnAlert.enabled = false;
-        //btnAlert.tintColor = UIColor.clearColor();
-        
-//        let error = NSErrorPointer()
-        
-//        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-//        refreshControl.tintColor = [UIColor grayColor];
-//        [refreshControl addTarget:self action:@selector(refershControlAction) forControlEvents:UIControlEventValueChanged];
-//        [self.collectionView addSubview:refreshControl];
-//        self.collectionView.alwaysBounceVertical = YES;
 
         self.refreshControl = UIRefreshControl();
         self.refreshControl!.tintColor = UIColor.whiteColor();
@@ -64,7 +42,7 @@ class HomeViewController: UICollectionViewController {
         self.collectionView?.addSubview(self.refreshControl!);
         self.collectionView?.alwaysBounceVertical = true;
         
-        
+        //set up the folder for the download of the image(s)...
         do {
             try NSFileManager.defaultManager().createDirectoryAtURL(
                 NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent("download"),
@@ -112,26 +90,6 @@ class HomeViewController: UICollectionViewController {
         //pass the alerts along the seque.
         let controller_id = self.remoSelected["_id"] as! String;
         
-        //all/true/0/10 =  get "All" devices, get the current alerts (no history), skip 0 records, return 10 records...10
-        api.apicallout("/api/accounts/alerts/" + controller_id + "/all/true/0/10/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
-
-            let statechangeevents = StateChangeEvents(json: response as! Dictionary<String,AnyObject>);
-            for statechange in statechangeevents!.statechanges{
-                if statechange.current_state_id != 3 {
-                    self.statechangeevents.append(statechange);
-                }
-            }
-            //reload?
-            dispatch_async(dispatch_get_main_queue()
-                , { () -> Void in
-                    if self.statechangeevents.count > 0{
-                        //show the alert icon
-                        self.self.btnAlert.enabled = true;
-                        //self.self.btnAlert.tintColor = nil;
-                    }
-            })
-        });
-        
         //register the notification deviceToken with the server.
         let defaults = NSUserDefaults.standardUserDefaults();
         if let savedDeviceToken = defaults.stringForKey("deviceToken") {
@@ -167,8 +125,6 @@ class HomeViewController: UICollectionViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        
-        // TODO - check how long it's been since we refreshed and possibly reload our REMO.
     }
     
     
@@ -303,55 +259,4 @@ class HomeViewController: UICollectionViewController {
         }
     }
     
-}
-
-extension HomeViewController {
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        if (self.capabilities[indexPath.item].device_type_id == -1) {
-            let cameraCell = collectionView.dequeueReusableCellWithReuseIdentifier("CameraCell", forIndexPath: indexPath) as! CameraCollectionViewCell
-//                cell.deviceCapability = self.capabilities[indexPath.item]
-            cameraCell.deviceCapability = self.cameraCapability;
-            return cameraCell
-        }
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DeviceCapabilityCell", forIndexPath: indexPath) as! DeviceCapabilityCell
-        cell.deviceCapability = self.capabilities[indexPath.item]
-        return cell
-    }
-    
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.capabilities.count;
-    }
-}
-
-extension HomeViewController : HomeCollectionViewLayoutDelegate {
-    // 1. Returns the photo height
-    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath , withWidth width:CGFloat) -> CGFloat {
-        let deviceCapability = self.capabilities[indexPath.item]
-        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
-        if let image = deviceCapability.image {
-            let rect  = AVMakeRectWithAspectRatioInsideRect(image.size, boundingRect)
-            return rect.size.height
-        }
-        let rect = CGRect(x: 0, y: 0, width: width / 3.0, height: width / 3.0)
-        return rect.size.height
-    }
-    
-    // 2. Returns the annotation size based on the text
-    func collectionView(collectionView: UICollectionView, heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-//        let annotationPadding = CGFloat(4)
-//        let annotationHeaderHeight = CGFloat(17)
-        
-//        let photo = photos[indexPath.item]
-//        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
-//        let commentHeight = photo.heightForComment(font, width: width)
-        let commentHeight = CGFloat(24)
-//        _ = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
-        return commentHeight
-    }
-    
-    func collectionView(collectionView: UICollectionView, hasPhotoAtIndexPath indexPath:NSIndexPath) -> Bool {
-        return (self.capabilities[indexPath.item].device_type_id == -1)
-    }
 }

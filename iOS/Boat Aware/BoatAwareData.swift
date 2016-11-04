@@ -42,34 +42,6 @@ class Login{
     }
 }
 
-class StateChangeEvent{
-    var dateofchange :  NSDate?
-    var rulename : String
-    var current_state_id :  NSNumber
-    var prev_state_id : NSNumber?
-    var device_capability_id : String
-    init?(statechangeevent : JSONDictionary){
-        let dateformatter = NSDateFormatter();
-        dateformatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
-        if let dateofchange = statechangeevent["dateofchange"] as? String{
-            self.dateofchange = dateformatter.dateFromString(dateofchange);
-        }
-        self.rulename = statechangeevent["rulename"] as! String;
-        self.current_state_id = statechangeevent["current_state_id"] as! NSNumber;
-        self.device_capability_id = statechangeevent["device_capability_id"] as! String;
-        self.prev_state_id = statechangeevent["prev_state_id"] as? NSNumber;
-    }
-}
-
-class StateChangeEvents{
-    var statechanges = Array<StateChangeEvent>();
-    init?(json: JSONDictionary){
-        for statechangeeventitem in json["statechanges"] as! Array<JSONDictionary>{
-            self.statechanges.append(StateChangeEvent(statechangeevent : statechangeeventitem)!);
-        }
-    }
-}
-
 class AWSContent{
     var key: String
     var contenttype: String
@@ -101,6 +73,7 @@ class AWSContents{
     }
 }
 
+/*
 class DeviceCapabilityRuleRanges{
     var state_id: NSNumber;
     var gte: NSNumber;
@@ -251,21 +224,6 @@ class ControllerCapabilitiesResponse {
     }
 }
 
-//class Devices{
-//    var devices = Array<Device>()
-//    init?(devicesJson: Array<JSONDictionary>){
-//        for _device in devicesJson{
-//            self.devices.append(Device(device: _device)!);
-//        }
-//    }
-//}
-
-class DevicesOLD{
-    var devices: Array<Device>
-    init?(devices: Array<Device>){
-        self.devices = devices
-    }
-}
 
 class ControllersPopulated {
     var controllerspopulated: Array<Controller>
@@ -308,9 +266,6 @@ class Controllers{
     }
 
 }
-
-struct AppRemoList {
-    static var appremoList : Array<Dictionary<String, AnyObject>> = [];
-}
+*/
 
 

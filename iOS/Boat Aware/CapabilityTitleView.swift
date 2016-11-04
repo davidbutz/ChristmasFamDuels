@@ -45,7 +45,7 @@ class CapabilityTitleView : UIView {
         
         return view
     }
-    
+    /*
     var deviceCapability: Capability? {
         didSet {
             if let deviceCapability = deviceCapability {
@@ -79,6 +79,7 @@ class CapabilityTitleView : UIView {
             }
         }
     }
+ */
 
     
 }

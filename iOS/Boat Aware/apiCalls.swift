@@ -9,6 +9,23 @@
 import Foundation
 import UIKit
 
+class LeagueVariable {
+    var leagueName:String;
+    var leagueID:String;
+    var leagueOwnerID:String;
+    var roleID:NSNumber;
+    init(leagueName:String,leagueID:String,leagueOwnerID:String, roleID:NSNumber){
+        self.leagueID = leagueID;
+        self.leagueName = leagueName;
+        self.leagueOwnerID = leagueOwnerID;
+        self.roleID = roleID;
+    }
+}
+
+struct LeagueVariables{
+    static var leaguevariables = LeagueVariable(leagueName:"fake",leagueID: "fake",leagueOwnerID: "fake", roleID: 0);
+}
+
 class ApplicationVariable {
     var username:String;
     var logintoken:String;
@@ -213,9 +230,7 @@ class APICalls {
     }
     
     func register(email: String, password: String, fname: String, lname: String, cell: String, handler:(APIResponse)->Void) {
-        
 
-        
         let JSONObject: [String : AnyObject] = [
             "account_name": email,
             "username" : email,
@@ -254,7 +269,6 @@ class APICalls {
             do{
                 let jsonObject: AnyObject? = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions());
                 let status = (jsonObject as! NSDictionary)["status"] as! String;
-//                let message = (jsonObject as! NSDictionary)["message"] as! String;
                 
                 if(status=="success"){
                     handler(APIResponse(success: true, data: jsonObject as! JSONDictionary));
@@ -268,20 +282,4 @@ class APICalls {
             }
             }.resume()
     }
-    
-    //register(email: String, password: String, fname: String, lname: String, handler:(APIResponse)->Void) {
-    func getControllerCapabilities(controller_id: String, handler:(ControllerCapabilitiesResponse)->Void )  {
-        let JSONObject: [String : AnyObject] = [
-            "login_token" : ApplicationVariables.applicationvariables.logintoken ]
-        
-        self.apicallout("/api/accounts/controllercapabilities/" + controller_id + "/" + ApplicationVariables.applicationvariables.logintoken, iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
-            
-            let jsonResponse = response as! JSONDictionary;
-            let getControllerCapabilitiesResponse = ControllerCapabilitiesResponse(json: jsonResponse);
-            handler(getControllerCapabilitiesResponse);
-//            let devices = Devices(devicesJson: jsonResponse["devices"] as! JSONArray);
-
-        });
-    }
-    
 }

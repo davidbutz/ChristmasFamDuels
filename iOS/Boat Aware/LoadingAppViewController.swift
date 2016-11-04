@@ -18,6 +18,8 @@ class LoadingAppViewController: UIViewController {
         super.viewDidLoad()
         let defaults = NSUserDefaults.standardUserDefaults();
         let appvar = ApplicationVariables.applicationvariables;
+        LoadingOverlay.shared.showOverlay(self.view);
+        LoadingOverlay.shared.setCaption("Authenticating...");
         if let savedAuthenticationToken = defaults.stringForKey("authenticationtoken") {
             if(savedAuthenticationToken != ""){
                 //i have a saved AuthToken. Check if it is still valid...
@@ -30,7 +32,7 @@ class LoadingAppViewController: UIViewController {
                     let success = (response as! NSDictionary)["success"] as! Bool;
                     if(success){
                         //yes it is valid and good.
-                        //need to get controllers, then populate the appvar information with data from the call.....
+                        //need to populate the appvar information with data from the call.....
                         let appvar = ApplicationVariables.applicationvariables;
                         appvar.username = (response as! NSDictionary)["username"] as! String;
                         appvar.logintoken = (response as! NSDictionary)["authenticationtoken"] as! String;
@@ -44,36 +46,47 @@ class LoadingAppViewController: UIViewController {
                         let JSONObject: [String : AnyObject] = [
                             "login_token" : appvar.logintoken ]
                         
-                        //let api = APICalls()
-                        api.apicallout("/api/accounts/registeredcontrollers/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+                        api.apicallout("/api/setup/getleagues/" + appvar.userid  + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (leagueresponse) -> () in
                             
-                            
-                            let usercontrollers = Controllers(controllers: response as! Dictionary<String,AnyObject>);
-                            for(_,controllerarray) in (usercontrollers?.controllers)!{
-                                let arry = controllerarray as! Array<Dictionary<String, AnyObject>> as Array;
-                                if(arry.count==0){
-                                    dispatch_async(dispatch_get_main_queue()) {
-                                        self.handleViewAppearance("setupRemo");
-                                    }
-                                    
-                                    return;
-                                }
-                                else{
-                                    //TODO: get the last remo used on this machine ....
-                                    AppRemoList.appremoList = arry;
-                                    let appdel = UIApplication.sharedApplication().delegate as! AppDelegate;
-                                    appdel.my_remo_selected = AppRemoList.appremoList[0];
-                                    
-                                }
-                            }
                             
                             dispatch_async(dispatch_get_main_queue()) {
-                                self.handleViewAppearance("viewLaunch");
+                                LoadingOverlay.shared.hideOverlayView();
+                            };
+                            let leaguesuccess = (leagueresponse as! NSDictionary)["success"] as! Bool;
+                            let leaguecount = (leagueresponse as! NSDictionary)["leagueCount"] as! NSNumber;
+                            if(leaguesuccess){
+                                if(leaguecount == 1){
+                                    let leagueArray = (leagueresponse as! NSDictionary)["leagueCount"] as! JSONArray;
+                                    let leagueInformation = leagueArray[0] as! JSONDictionary;
+                                    let leagueName = leagueInformation["leagueName"] as! String;
+                                    let leagueID = leagueInformation["leagueID"] as! String;
+                                    let leagueOwnerID = leagueInformation["leagueOwnerID"] as! String;
+                                    let roleID = leagueInformation["roleID"] as! NSNumber;
+                                    
+                                    let leaguevar = LeagueVariables.leaguevariables;
+                                    leaguevar.leagueID = leagueID;
+                                    leaguevar.leagueName = leagueName;
+                                    leaguevar.leagueOwnerID = leagueOwnerID;
+                                    leaguevar.roleID = roleID;
+                                    
+                                    dispatch_async(dispatch_get_main_queue()) {
+                                        self.handleViewAppearance("viewLaunch");
+                                    }
+                                }
+                                else {
+                                    print("They have more than one league and I dont handle that right now...")
+                                }
+                            }
+                            else{
+                                //They signed in, but dont have any league(s) properly set up.
+                                print("They signed in, but dont have any league(s) properly set up.")
                             }
                         });
-                    
                     }
                     else{
+                        dispatch_async(dispatch_get_main_queue()) {
+                            LoadingOverlay.shared.hideOverlayView();
+                        };
                         //the token is not valid, or has expired. They need to login again.
                         dispatch_async(dispatch_get_main_queue()) {
                             self.handleViewAppearance("viewLogin");
@@ -83,6 +96,9 @@ class LoadingAppViewController: UIViewController {
             }
             else{
                 //check for login here..
+                dispatch_async(dispatch_get_main_queue()) {
+                    LoadingOverlay.shared.hideOverlayView();
+                };
                 if(appvar.logintoken == "fake"){
                     handleViewAppearance("viewLogin");
                 }
@@ -90,6 +106,9 @@ class LoadingAppViewController: UIViewController {
         }
         else{
             //check for login here..
+            dispatch_async(dispatch_get_main_queue()) {
+                LoadingOverlay.shared.hideOverlayView();
+            };
             if(appvar.logintoken == "fake"){
                 handleViewAppearance("viewLogin");
             }
@@ -104,21 +123,8 @@ class LoadingAppViewController: UIViewController {
         self.window?.makeKeyAndVisible()
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
