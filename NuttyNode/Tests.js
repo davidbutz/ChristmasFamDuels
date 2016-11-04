@@ -1,19 +1,65 @@
 ﻿var res = "";
-var email = "cfd1@nuttyrobot.com;cfd2@nuttyrobot.com";
-var invitation_token = "xxx";
 var Week = require("./models/Week.js");
 var setlineupcontroller = require("./controllers/SetLineupController");
 var config = require('./config/index.js');
 var settings = {
     config: config
 };
+var userID = "ABCDEFGHI";
+var weekID = "123456789";
+
 var mongoose = require('mongoose');
 mongoose.connect(settings.config().MONGOCONN);
 
-//tests
+//test variables.
+var email = "cfd1@nuttyrobot.com;cfd2@nuttyrobot.com";
+var invitation_token = "xxx";
+var artistsearchterm = "john denver";
+var artistDiscogsID = 342;
+var songsearchterm = "Have yourself a merry little christmas";
+var release_search_song_term = "all i want for christmas";
+var release_search_artist_term = "mariah carey";
+var releaseDiscogsID = 222;
+
+//adding and searching artists/songs/releases
+var testAddArtist = true;
+var testArtistSearch = true;
+var testAddSong = true;
+var testSongSearch = true;
+var testAddRelease = true;
+var testReleaseSearch = true;
+
+//login and invitation
 var testEmailInvitations = false;
-var testWeekQueries = true;
+
+//weeks
+var testWeekQueries = false;
 var addWeeks = false;
+
+if (testAddArtist) {
+    setlineupcontroller.addArtist(res, artistsearchterm, artistDiscogsID, callback);
+}
+if (testArtistSearch) {
+    setlineupcontroller.searchArtist(res, artistsearchterm, userID, weekID, callback);
+}
+
+
+if (testAddSong) {
+    setlineupcontroller.addSong(res, songsearchterm, callback);
+}
+if (testSongSearch) {
+    setlineupcontroller.searchSong(res, songsearchterm, userID, weekID, callback);
+}
+
+
+
+if (testAddRelease) {
+    setlineupcontroller.addRelease(res, release_search_artist_term + "-" + release_search_song_term, releaseDiscogsID, callback);
+}
+if (testReleaseSearch) {
+    setlineupcontroller.searchRelease(res, release_search_song_term, release_search_artist_term, userID, weekID, callback);
+}
+
 
 if (testWeekQueries) {
     setTimeout(function () {

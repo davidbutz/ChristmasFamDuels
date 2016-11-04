@@ -12,7 +12,7 @@ var db = new Discogs({
 }).database();
 
 
-var artist = "michael b";//"nat";//"gene";//"straight no chaser";//"toto";//"mariah carey";
+var artist = "chipmunks";//"nat";//"gene";//"straight no chaser";//"toto";//"mariah carey";
 var song = "baby it's cold outside";//"rudolph";//"12 days of christmas"//"africa";//"all i want for christmas";
 var track = song;// + "*";
 var artistsearch = artist;// + "*"

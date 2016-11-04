@@ -32,12 +32,153 @@
             }
         });
     });
-    //user logins with token and supplies app with data
-    rRouter.get("/loginTokenValid/:logintoken", function (req, res) {
+
+    ///api/setlineup/week/getnext/:logintoken
+    rRouter.get("/week/getnext/:logintoken", function (req, res) {
         var login_token = req.params.logintoken;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
-                authentication.getAccountInformationFromToken(req, res, login_token, sendresponse);
+                setlineupcontroller.getNextWeekID(res, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    rRouter.get("/add/song/:title/:logintoken", function (req, res) {
+        var login_token = req.params.logintoken;
+        var title = req.params.title;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.addSong(res, title, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+
+    ///api/setlineup/search/song/:keywords/:logintoken/:userID/:weekID"
+    rRouter.get("/search/song/:keywords/:logintoken/:userID/:weekID", function (req, res) {
+        var login_token = req.params.logintoken;
+        var keywords = req.params.keywords;
+        var weekID = req.params.weekID;
+        var userID = req.params.userID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.searchSong(res, keywords, userID, weekID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    rRouter.get("/add/artist/:artist/:discogArtistID/:logintoken", function (req, res) {
+        var login_token = req.params.logintoken;
+        var artist = req.params.artist;
+        var discogArtistID = req.params.discogArtistID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.addArtist(res, artist, discogArtistID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    ///api/setlineup/search/song/:keywords/:logintoken
+    rRouter.get("/search/artist/:keywords/:logintoken/:userID/:weekID", function (req, res) {
+        var login_token = req.params.logintoken;
+        var keywords = req.params.keywords;
+        var weekID = req.params.weekID;
+        var userID = req.params.userID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.searchArtist(res, keywords, userID, weekID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    
+    rRouter.get("/add/release/:release/:discogReleaseID/:logintoken", function (req, res) {
+        var login_token = req.params.logintoken;
+        var release = req.params.release;
+        var discogReleaseID = req.params.discogReleaseID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.addRelease(res, release, discogReleaseID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    rRouter.get("/search/release/:track/:artist/:logintoken/:userID/:weekID", function (req, res) {
+        var login_token = req.params.logintoken;
+        var track = req.params.track;
+        var artist = req.params.artist;
+        var weekID = req.params.weekID;
+        var userID = req.params.userID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.searchRelease(res, track, artist,userID, weekID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    ///api/setlineup/artist/:logintoken/:leagueID/:userID/:artistID/:weekID
+    rRouter.get("/setlineup/artist/:logintoken/:leagueID/:userID/:artistID/:weekID", function (req, res) {
+        var login_token = req.params.logintoken;
+        var leagueID = req.params.leagueID;
+        var artistID = req.params.artistID;
+        var weekID = req.params.weekID;
+        var userID = req.params.userID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.setLineUpArtist(res, leagueID, artistID, userID, weekID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    rRouter.get("/setlineup/song/:logintoken/:leagueID/:userID/:songID/:weekID", function (req, res) {
+        var login_token = req.params.logintoken;
+        var leagueID = req.params.leagueID;
+        var songID = req.params.songID;
+        var weekID = req.params.weekID;
+        var userID = req.params.userID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.setLineUpSong(res, leagueID, songID, userID, weekID, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
+    });
+    
+    
+    rRouter.get("/setlineup/release/:logintoken/:leagueID/:userID/:releaseID/:weekID", function (req, res) {
+        var login_token = req.params.logintoken;
+        var leagueID = req.params.leagueID;
+        var releaseID = req.params.releaseID;
+        var weekID = req.params.weekID;
+        var userID = req.params.userID;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.setLineUpRelease(res, leagueID, releaseID, userID, weekID, sendresponse);
             }
             else {
                 sendresponse(res, { success: false, message: 'token not valid' });
