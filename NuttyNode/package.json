@@ -8,6 +8,8 @@
     "email": "davidthomasbutz@gmail.com"
   },
   "dependencies": {
+    "aws-sdk": "^2.6.14",
+    "aws-sdk-promise": "0.0.2",
     "body-parser": "^1.14.1",
     "disconnect": "^1.0.0",
     "ejs": "^2.3.4",

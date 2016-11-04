@@ -3,8 +3,8 @@
     var League = require('../models/League.js');
     var UserXLeague = require('../models/UserXLeague.js');
     var LeagueInvitation = require('../models/LeagueInvitation.js');
-    
     var authentication = require("../controllers/Authentication");
+    var crypto = require("crypto");
 
     //add: add league
     LeagueController.addLeague = function (req, res, userID, leagueName, leagueYear, callback) {
@@ -66,16 +66,28 @@
             var cloudsettings = {
                 cloudconfig: cloudconfig
             };
+            //standard configuration
+            var config = require('../config/index.js');
+            var settings = {
+                config: config
+            };
             var profile = cloudsettings.cloudconfig().cloud_aws;
             AWS.config.update(profile);
             
-            var productionurl = settings.config().ProductionWeb.toString() + "/inviteUser?invitationToken=" + invitationToken;
+            var productionurl = settings.config().ProductionWeb.toString() + "/inviteUser?invitationToken=" + invitation_token;
             var ses = new AWS.SES({ apiVersion: '2010-12-01' });
             var to = [email];
             var from = cloudsettings.cloudconfig().christmasFamDuelsEmail;
             var messagebody = "You have been invited to play 'Christmas Fam Duels'.<br>";
             messagebody += "<b>Get the App!</b> Then click <a href=\"" + productionurl + "\"> THIS LINK </a> to accept your invitation!";
             messagebody += "<br><br>If you are having trouble finding the app, please contact NuttyRobot (getChristmasFamDuelsapp@nuttyrobot.com)";
+            
+            var finalToEmailArray = [];
+            var arrayEmails = email.split(";");
+            for (var i = 0; i < arrayEmails.length; i++) {
+                finalToEmailArray.push(arrayEmails[i]);
+            }
+            to = finalToEmailArray;
             var params = {
                 Destination: { ToAddresses: to },
                 Source: from,
@@ -150,16 +162,31 @@
                         callback(res, errorhandlingResponse);
                     }
                     if (dataLeague) {
-                        var array_leagues = [];
+                        //to determine the owner, we need to push in the entire block of leagueid back into UserXLeague...
+                        var array_leagues_owners = [];
                         for (var i = 0; i < dataLeague.length; i++) {
-                            for (var x = 0; x < dataUserXLeagues.length; x++) {
-                                if (dataUserXLeagues[x].leagueID.toString() == dataLeague[i]._id.toString()) {
-                                    array_leagues.push({ "leagueName" : dataLeague[i].leagueName, "roleID": dataUserXLeagues[x].roleID.toString()})
+                            array_leagues_owners.push(dataLeague[i].leagueID);
+                        }
+                        UserXLeague.find({ "leagueID": { $in: array_leagues_owners } }, function (err, dataUserXLeaguesOwners) {
+
+                            var array_leagues = [];
+                            for (var i = 0; i < dataLeague.length; i++) {
+                                var leagueOwnerID = 0;
+                                for (var x = 0; x < dataUserXLeagues.length; x++) {
+                                    if (dataUserXLeagues[x].leagueID.toString() == dataLeague[i]._id.toString()) {
+
+                                        for (var y = 0; y < dataUserXLeaguesOwners.length; y++) {
+                                            if (dataUserXLeaguesOwners[y].leagueID.toString() == dataLeague[i]._id.toString() && dataUserXLeaguesOwners[y].roleID == 1) {
+                                                leagueOwnerID = dataUserXLeaguesOwners[y].userID;
+                                            }
+                                        }
+                                        array_leagues.push({ "leagueName" : dataLeague[i].leagueName, "leagueID" : dataLeague[i]._id.toString(), "leagueOwnerID" : leagueOwnerID, "roleID": dataUserXLeagues[x].roleID.toString() })
+                                    }
                                 }
                             }
-                        }
-                        var jsonResponse = { "success": true, "leagueCount": dataLeague.length, "leagues" : array_leagues};
-                        callback(res, jsonResponse);
+                            var jsonResponse = { "success": true, "leagueCount": dataLeague.length, "leagues" : array_leagues };
+                            callback(res, jsonResponse);
+                        });
                     } 
                     else {
                         callback(res, errorhandlingResponse);

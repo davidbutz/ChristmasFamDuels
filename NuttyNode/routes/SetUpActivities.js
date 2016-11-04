@@ -20,7 +20,7 @@ module.exports = function (app, settings) {
         var userID = req.params.userID;
         var leagueName = req.params.leagueName;
         var logintoken = req.params.logintoken;
-        authentication.iftokenvalid(login_token, function (err, valid) {
+        authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
                 leaguecontroller.addLeague(req, res, userID, leagueName, "2016", sendResponse);
             }
@@ -37,12 +37,12 @@ module.exports = function (app, settings) {
         var leagueID = req.params.leagueID;
         var email = req.params.email;
         var logintoken = req.params.logintoken;
-        authentication.iftokenvalid(login_token, function (err, valid) {
+        authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
                 leaguecontroller.inviteToLeague(req, res, userID, leagueID, email, sendResponse);
             }
             else {
-                res.json({ status: 'error', message: 'token not valid' });
+                res.json({ success: false, message: 'token not valid' });
             }
         });
     });
@@ -63,7 +63,7 @@ module.exports = function (app, settings) {
     rRouter.get("/getleagues/:userID/:logintoken", function (req, res) {
         var userID = req.params.userID;
         var logintoken = req.params.logintoken;
-        authentication.iftokenvalid(login_token, function (err, valid) {
+        authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
                 leaguecontroller.getLeagues(req, res, userID, sendResponse);
             }

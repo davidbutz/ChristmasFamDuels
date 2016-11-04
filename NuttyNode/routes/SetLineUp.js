@@ -8,10 +8,10 @@
         rRouter = express.Router();
     
     var authentication = require("../controllers/Authentication");
-    var christmasfamduelcontroller = require("../controllers/ChristmasFamDuelsController");
+    var setlineupcontroller = require("../controllers/SetLineupController");
     
     var debugging = true;
-    
+
     rRouter.use(function (req, res, next) {
         // do logging that any /api call got made 
         if (debugging) {
@@ -20,20 +20,18 @@
         next();
     });
     
-    //user requests a new password be sent to them.
-    rRouter.get("/resetpassword/:email", function (req, res) {
-        var email = req.params.email;
-        var platform = "ios";
-        christmasfamduelcontroller.resetPassword(req, res, email, platform, sendresponse);
+    ///api/setlineup/week/getcurrent/:logintoken
+    rRouter.get("/week/getcurrent/:logintoken", function (req, res) {
+        var login_token = req.params.logintoken;
+        authentication.iftokenvalid(login_token, function (err, valid) {
+            if (valid) {
+                setlineupcontroller.getCurrentWeekID(res, sendresponse);
+            }
+            else {
+                sendresponse(res, { success: false, message: 'token not valid' });
+            }
+        });
     });
-    
-    //user supplies a new password and it is reset.
-    rRouter.post("/changepassword", function (req, res) {
-        var token = req.body.token;
-        var password = req.body.password;
-        christmasfamduelcontroller.changePassword(req, res, token, password, sendresponse);
-    });
-
     //user logins with token and supplies app with data
     rRouter.get("/loginTokenValid/:logintoken", function (req, res) {
         var login_token = req.params.logintoken;
@@ -46,22 +44,11 @@
             }
         });
     });
-    
-    //user authenticates themselves
-    rRouter.post("/authenticate", function (req, res) {
-        authentication.authenticate(req, res);
-    });
-    
-    //new user added to system
-    //users adds themselves to the system.
-    rRouter.post("/register", function (req, res) {
-        authentication.register(req.body, res, sendresponse);
-    });
 
     //generic send reponse.
     function sendresponse(res, response) {
         res.json(response);
     }
     
-    app.use('/api/accounts', rRouter);
+    app.use('/api/setlineup', rRouter);
 }; 

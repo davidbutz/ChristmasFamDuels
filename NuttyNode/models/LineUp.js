@@ -6,7 +6,8 @@ var LineUpsSchema = new Schema({
     userxleagueID: String,
     weekID: String,
     song: String,
-    artist: String
+    artist: String,
+    songartist: String
 });
 
 module.exports = mongoose.model('LineUps', LineUpSchema);

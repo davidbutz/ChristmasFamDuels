@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 
 var WeeksSchema = new Schema({
     weekStart: Date,  
-    weekEnd: Date
+    weekEnd: Date,
+    weekYear: Number
 });
 
 module.exports = mongoose.model('Weeks', WeeksSchema);
