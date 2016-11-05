@@ -4,8 +4,14 @@ var Schema = mongoose.Schema;
 
 var PointsSchema = new Schema({
     lineupID: String,
+    leagueID: String,
     score: Number,
-    confirmationuserID: String
+    referenceID: String,
+    referenceType: String,
+    referenceName: String,
+    referenceUser: String,
+    confirmationuserID: String,
+    datecreated: { type: Date, default: Date.now() }
 });
 
 module.exports = mongoose.model('Points', PointsSchema);

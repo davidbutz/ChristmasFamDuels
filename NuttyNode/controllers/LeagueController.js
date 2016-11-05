@@ -5,6 +5,8 @@
     var LeagueInvitation = require('../models/LeagueInvitation.js');
     var authentication = require("../controllers/Authentication");
     var crypto = require("crypto");
+    var User = require("../controllers/Authentication");
+    ObjectID = require('mongodb').ObjectID;
 
     //add: add league
     LeagueController.addLeague = function (req, res, userID, leagueName, leagueYear, callback) {
@@ -141,7 +143,52 @@
             }
         });
     }
-
+    
+    LeagueController.findInvitation = function (req, res, leagueName, userID, callback){
+        var errorhandlingResponse = { "success": false };
+        League.findOne({ "leagueName" : leagueName }, function (err, dataLeague){
+            if (err) {
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                if (dataLeague) {
+                    //now look up the email of the user
+                    User.findOne({ "_id": ObjectID(userID) }, function (err, dataUser) {
+                        if (err) {
+                            callback(res, errorhandlingResponse);
+                        }
+                        else {
+                            if (dataUser) {
+                                LeagueInvitation.findOne({ "leagueID": dataLeague._id.toString(), "email" : { $regex: new RegExp('^' + dataUser.email.toLowerCase(), 'i') } }, function (err, request) {
+                                    if (err) {
+                                        callback(res, errorhandlingResponse);
+                                    }
+                                    else {
+                                        if (request) {
+                                            // Add this user to the League in the invite.
+                                            var leagueID = request.leagueID.toString();
+                                            authentication.addLeagueMember(leagueID, userID, function (response) {
+                                                callback(res, response);
+                                            })
+                                        }
+                                        else {
+                                            callback(res, errorhandlingResponse);
+                                        }
+                                    }
+                                });
+                            }
+                            else {
+                                callback(res, errorhandlingResponse);
+                            }
+                        }
+                    });
+                }
+                else {
+                    callback(res, errorhandlingResponse);
+                }
+            }
+        })
+    }
     //query: list of leagues user belongs to
     LeagueController.getLeagues = function (req, res, userID, callback) {
         //what do we send back if something goes wrong?
@@ -174,13 +221,13 @@
                                 var leagueOwnerID = 0;
                                 for (var x = 0; x < dataUserXLeagues.length; x++) {
                                     if (dataUserXLeagues[x].leagueID.toString() == dataLeague[i]._id.toString()) {
-
+                                        var userxleagueID = dataUserXLeagues[x]._id.toString();
                                         for (var y = 0; y < dataUserXLeaguesOwners.length; y++) {
                                             if (dataUserXLeaguesOwners[y].leagueID.toString() == dataLeague[i]._id.toString() && dataUserXLeaguesOwners[y].roleID == 1) {
                                                 leagueOwnerID = dataUserXLeaguesOwners[y].userID;
                                             }
                                         }
-                                        array_leagues.push({ "leagueName" : dataLeague[i].leagueName, "leagueID" : dataLeague[i]._id.toString(), "leagueOwnerID" : leagueOwnerID, "roleID": dataUserXLeagues[x].roleID.toString() })
+                                        array_leagues.push({ "userxleagueID": userxleagueID, "leagueName" : dataLeague[i].leagueName, "leagueID" : dataLeague[i]._id.toString(), "leagueOwnerID" : leagueOwnerID, "roleID": dataUserXLeagues[x].roleID.toString() })
                                     }
                                 }
                             }

@@ -141,9 +141,9 @@
     }
     
     //user simply logs in and we capture their unique_id
-    ChristmasFamDuelsController.saveiOSNotificationToken = function (req, res, notification_token, controller_id, callback) {
+    ChristmasFamDuelsController.saveiOSNotificationToken = function (req, res, notification_token, leagueID, callback) {
         //see if it exists in Mongo.
-        NotificationToken.findOne({ "notification_token_id" : notification_token, "type" : "iOS" }, function (err, notificationtoken) {
+        NotificationToken.findOne({ "notification_token_id" : notification_token, "leagueID" : leagueID, "type" : "iOS" }, function (err, notificationtoken) {
             if (notificationtoken) {
                 if (debugging) {
                     console.log("its ok, we have it already, just callback with success.")
@@ -177,9 +177,10 @@
                             if (notifToken) {
                                 var token_endpointARN = notifToken.endpointARN;
                                 var notificationtoken = new NotificationToken({
-                                    notification_token_id: notification_token, 	
-                                    endpointARN: token_endpointARN.toString(),	
-                                    type: "iOS"
+                                    "notification_token_id": notification_token, 	
+                                    "leagueID": leagueID,
+                                    "endpointARN": token_endpointARN.toString(),	
+                                    "type": "iOS"
                                 });
                                 notificationtoken.save(function (err) {
                                     if (err) {
@@ -202,9 +203,10 @@
                             console.log(data);
                         }
                         var notificationtoken = new NotificationToken({
-                            notification_token_id: notification_token, 	
-                            endpointARN: data.EndpointArn.toString(),	
-                            type: "iOS"
+                            "notification_token_id": notification_token, 	
+                            "leagueID": leagueID,
+                            "endpointARN": data.EndpointArn.toString(),	
+                            "type": "iOS"
                         });
                         notificationtoken.save(function (err) {
                             if (err) {

@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 var NotificationTokensSchema = new Schema({
     notification_token_id: String,       
     endpointARN: String,
+    leagueID: String,
     type: String,
     datecreated: { type: Date, default: Date.now() }
 });

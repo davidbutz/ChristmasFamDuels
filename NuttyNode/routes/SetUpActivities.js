@@ -15,6 +15,21 @@ module.exports = function (app, settings) {
     });
     
     
+    //user finds a League to join...
+    rRouter.get("/league/findinvitation/:userID/:leagueName/:logintoken", function (req, res) {
+        var userID = req.params.userID;
+        var leagueName = req.params.leagueName;
+        var logintoken = req.params.logintoken;
+        authentication.iftokenvalid(logintoken, function (err, valid) {
+            if (valid) {
+                leaguecontroller.findInvitation(req, res, userID, leagueName, sendResponse);
+            }
+            else {
+                res.json({ "success": false , message: 'token not valid' });
+            }
+        });
+    });
+
     //user creates a new league
     rRouter.get("/league/create/:userID/:leagueName/:logintoken", function (req, res) {
         var userID = req.params.userID;

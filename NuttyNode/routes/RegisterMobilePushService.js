@@ -18,13 +18,13 @@ module.exports = function (app, settings) {
     });
     
     
-    rRouter.get("/iOS/:notification_token/:controller_id/:logintoken", function (req, res) {
+    rRouter.get("/iOS/:notification_token/:leagueID/:logintoken", function (req, res) {
         var notification_token = req.params.notification_token;
-        var controller_id = req.params.controller_id;
+        var leagueID = req.params.leagueID;
         var login_token = req.params.logintoken;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
-                christmasfamduelscontroller.saveiOSNotificationToken(req, res, notification_token, controller_id, sendresponse);
+                christmasfamduelscontroller.saveiOSNotificationToken(req, res, notification_token, leagueID, sendresponse);
             }
             else {
                 res.json({ "success": false });

@@ -1,6 +1,13 @@
 ﻿var res = "";
+var req = "";
 var Week = require("./models/Week.js");
-var setlineupcontroller = require("./controllers/SetLineupController");
+var Points = require("./models/Points.js");
+
+
+//var setlineupcontroller = require("./controllers/SetLineupController");
+var viewcontroller = require("./controllers/ViewController");
+
+
 var config = require('./config/index.js');
 var settings = {
     config: config
@@ -16,18 +23,19 @@ var email = "cfd1@nuttyrobot.com;cfd2@nuttyrobot.com";
 var invitation_token = "xxx";
 var artistsearchterm = "john denver";
 var artistDiscogsID = 342;
-var songsearchterm = "Have yourself a merry little christmas";
+var songsearchterm = "Have Yourself a merry little christmas";
 var release_search_song_term = "all i want for christmas";
 var release_search_artist_term = "mariah carey";
 var releaseDiscogsID = 222;
 
 //adding and searching artists/songs/releases
-var testAddArtist = true;
-var testArtistSearch = true;
-var testAddSong = true;
-var testSongSearch = true;
-var testAddRelease = true;
-var testReleaseSearch = true;
+var testAddArtist = false;
+var testArtistSearch = false;
+var testAddSong = false;
+var testSongSearch = false;
+var testAddRelease = false;
+var testReleaseSearch = false;
+var testdatesandsuch = true;
 
 //login and invitation
 var testEmailInvitations = false;
@@ -36,6 +44,26 @@ var testEmailInvitations = false;
 var testWeekQueries = false;
 var addWeeks = false;
 
+if (testdatesandsuch) {
+    console.log("testdatesandsuch");
+    viewcontroller.thresholdOK(req, res, "abcdefg", function (res, json) {
+        console.log(json);
+    });
+    //var newPoint = new Points({ "lineupID": "abcdefg" });
+    //newPoint.save(function (err, newpointobj) {
+    //    var lastDateCreated = newpointobj.datecreated;
+    //    //console.log(lastDateCreated);
+    //    setTimeout(function () {
+    //        //now compare that 3 seconds later?
+    //        var currentDate = new Date();
+    //        currentDate.setDate(currentDate.getDate());
+    //        console.log(currentDate);
+    //        console.log(currentDate.getTime());
+    //        console.log(lastDateCreated);
+    //        console.log(lastDateCreated.getTime());
+    //    }, 2000);
+    //});
+}
 if (testAddArtist) {
     setlineupcontroller.addArtist(res, artistsearchterm, artistDiscogsID, callback);
 }

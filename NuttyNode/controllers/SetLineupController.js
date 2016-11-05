@@ -11,7 +11,8 @@
     var Song = require("../models/Song.js");
     var Artist = require("../models/Artist.js");
     var Release = require("../models/Release.js");
-
+    var Lineup = require("../models/Lineup.js");
+    
     //controls used.
     var crypto = require("crypto");
     ObjectID = require('mongodb').ObjectID;
@@ -138,7 +139,7 @@
 
     SetLineupController.addSong = function (res, title, callback){
         var errorhandlingResponse = { "success": false };
-        Song.findOne({ "title" : title}, function (err, dataSong) {
+        Song.findOne({ "title" : { $regex: new RegExp('^' + title.toLowerCase(), 'i') }}, function (err, dataSong) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
@@ -161,7 +162,7 @@
     
     SetLineupController.addArtist = function (res, artist, discogArtistID, callback) {
         var errorhandlingResponse = { "success": false };
-        Artist.findOne({ "artist" : artist }, function (err, dataArtist) {
+        Artist.findOne({ "artist" : { $regex: new RegExp('^' + artist.toLowerCase(), 'i') } }, function (err, dataArtist) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
@@ -184,7 +185,7 @@
     
     SetLineupController.addRelease = function (res, release, discogReleaseID, callback) {
         var errorhandlingResponse = { "success": false };
-        Release.findOne({ "release" : release }, function (err, dataRelease) {
+        Release.findOne({ "release" : { $regex: new RegExp('^' + release.toLowerCase(), 'i') } }, function (err, dataRelease) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
@@ -210,7 +211,7 @@
         // Researching for "song" is harder than i thought , as the song databases out there really dont search and return a single Title.
         // So instead, i am going to store this "internally"
         //({'name': {'$regex': 'sometext'}})
-        Song.findOne({ "title" : { $regex : searchterm } }, function (err, dataSong) {
+        Song.findOne({ "title" : { $regex: new RegExp('^' + searchterm.toLowerCase(), 'i') }}, function (err, dataSong) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
@@ -438,17 +439,105 @@
         });
     }
 
-    SetLineupController.setLineUpArtist = function (res, leagueID, artistID, userID, weekID, callback) {
+    SetLineupController.setLineUpArtist = function (res, leagueID, artistID, userxleagueID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
+        LineUp.findOne({ "weekID": weekID, "userxleagueID": userxleagueID }, function (err, dataLineUp) {
+            if (err) {
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                if (dataLineUp) {
+                    //Update the state..
+                    var conditions = { _id: dataLineUp._id.toString() };
+                    var update = { $set: { "artistID" : artistID } };
+                    var options = { upsert: true };
+                    LineUp.update(conditions, update, options, mongocallback);
+                }
+                else {
+                    var newLineUp = { "weekID": weekID, "userxleagueID": userxleagueID, "artistID": artistID };
+                    var newLineUpObj = new LineUp(newLineUp);
+                    newLineUpObj.save(function (err) {
+                        if (err) {
+                            callback(res, errorhandlingResponse);
+                        }
+                        else {
+                            callback(res, { "success": true });
+                        }
+                    });
+                }
+            }
+        });
     }
     
-    SetLineupController.setLineUpSong = function (res, leagueID, songID, userID, weekID, callback) {
+    SetLineupController.setLineUpSong = function (res, leagueID, songID, userxleagueID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
+        LineUp.findOne({ "weekID": weekID, "userxleagueID": userxleagueID }, function (err, dataLineUp) {
+            if (err) {
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                if (dataLineUp) {
+                    //Update the state..
+                    var conditions = { _id: dataLineUp._id.toString() };
+                    var update = { $set: { "songID" : songID } };
+                    var options = { upsert: true };
+                    LineUp.update(conditions, update, options, mongocallback);
+                }
+                else {
+                    var newLineUp = { "weekID": weekID, "userxleagueID": userxleagueID, "songID": songID };
+                    var newLineUpObj = new LineUp(newLineUp);
+                    newLineUpObj.save(function (err) {
+                        if (err) {
+                            callback(res, errorhandlingResponse);
+                        }
+                        else {
+                            callback(res, { "success": true });
+                        }
+                    });
+                }
+            }
+        });
     }
     
-    SetLineupController.setLineUpRelease = function (res, leagueID, releaseID, userID, weekID, callback) {
+    SetLineupController.setLineUpRelease = function (res, leagueID, releaseID, userxleagueID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
+        LineUp.findOne({ "weekID": weekID, "userxleagueID": userxleagueID }, function (err, dataLineUp) {
+            if (err) {
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                if (dataLineUp) {
+                    //Update the state..
+                    var conditions = { _id: dataLineUp._id.toString() };
+                    var update = { $set: { "releaseID" : releaseID } };
+                    var options = { upsert: true };
+                    LineUp.update(conditions, update, options, mongocallback);
+                }
+                else {
+                    var newLineUp = { "weekID": weekID, "userxleagueID": userxleagueID, "releaseID": releaseID };
+                    var newLineUpObj = new LineUp(newLineUp);
+                    newLineUpObj.save(function (err) {
+                        if (err) {
+                            callback(res, errorhandlingResponse);
+                        }
+                        else {
+                            callback(res, { "success": true });
+                        }
+                    });
+                }
+            }
+        });
     }
+
+
+    function mongocallback(err, numAffected) {
+        // numAffected is the number of updated documents
+        if (err) {
+            console.log("error!!!");
+            console.log(err);
+        }
+    }
+
 
 
 })(module.exports);

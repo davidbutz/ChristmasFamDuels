@@ -137,15 +137,15 @@
     });
     
     ///api/setlineup/artist/:logintoken/:leagueID/:userID/:artistID/:weekID
-    rRouter.get("/setlineup/artist/:logintoken/:leagueID/:userID/:artistID/:weekID", function (req, res) {
+    rRouter.get("/artist/:logintoken/:leagueID/:userxleagueID/:artistID/:weekID", function (req, res) {
         var login_token = req.params.logintoken;
         var leagueID = req.params.leagueID;
         var artistID = req.params.artistID;
         var weekID = req.params.weekID;
-        var userID = req.params.userID;
+        var userxleagueID = req.params.userxleagueID;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
-                setlineupcontroller.setLineUpArtist(res, leagueID, artistID, userID, weekID, sendresponse);
+                setlineupcontroller.setLineUpArtist(res, leagueID, artistID, userxleagueID, weekID, sendresponse);
             }
             else {
                 sendresponse(res, { success: false, message: 'token not valid' });
@@ -153,15 +153,15 @@
         });
     });
     
-    rRouter.get("/setlineup/song/:logintoken/:leagueID/:userID/:songID/:weekID", function (req, res) {
+    rRouter.get("/song/:logintoken/:leagueID/:userxleagueID/:songID/:weekID", function (req, res) {
         var login_token = req.params.logintoken;
         var leagueID = req.params.leagueID;
         var songID = req.params.songID;
         var weekID = req.params.weekID;
-        var userID = req.params.userID;
+        var userxleagueID = req.params.userxleagueID;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
-                setlineupcontroller.setLineUpSong(res, leagueID, songID, userID, weekID, sendresponse);
+                setlineupcontroller.setLineUpSong(res, leagueID, songID, userxleagueID, weekID, sendresponse);
             }
             else {
                 sendresponse(res, { success: false, message: 'token not valid' });
@@ -169,16 +169,16 @@
         });
     });
     
-    
-    rRouter.get("/setlineup/release/:logintoken/:leagueID/:userID/:releaseID/:weekID", function (req, res) {
+
+    rRouter.get("/release/:logintoken/:leagueID/:userxleagueID/:releaseID/:weekID", function (req, res) {
         var login_token = req.params.logintoken;
         var leagueID = req.params.leagueID;
         var releaseID = req.params.releaseID;
         var weekID = req.params.weekID;
-        var userID = req.params.userID;
+        var userxleagueID = req.params.userxleagueID;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
-                setlineupcontroller.setLineUpRelease(res, leagueID, releaseID, userID, weekID, sendresponse);
+                setlineupcontroller.setLineUpRelease(res, leagueID, releaseID, userxleagueID, weekID, sendresponse);
             }
             else {
                 sendresponse(res, { success: false, message: 'token not valid' });
