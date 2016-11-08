@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreMotion
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,17 +16,85 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     typealias JSONArray = Array<AnyObject>
     typealias JSONDictionary = Dictionary<String, AnyObject>
     var my_remo_selected:JSONDictionary?;
-
+    var iAmDriving = true;
+    let _motionActivityManager = CMMotionActivityManager();
+    var activityState = "";
+    var invitationToken = "";
+    var knocked : Bool = false
+    let motionUpdateInterval : Double = 0.05
+    var knockReset : Double = 2.0
+    let manager = CMMotionManager();
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         let defaults = NSUserDefaults.standardUserDefaults();
-        //defaults.setValue("https://api.boataware.com", forKey: "localIPAddress");
-        defaults.setValue("http://192.168.0.122:1337", forKey: "localIPAddress");
+        defaults.setValue("http://192.168.1.10:1337", forKey: "localIPAddress");
         defaults.setValue("http://192.168.42.1:1337", forKey: "thriveIPAddress");
         defaults.synchronize();
         
+        if(CMMotionActivityManager.isActivityAvailable()){
+            print("YES!")
+            self._motionActivityManager.startActivityUpdatesToQueue(NSOperationQueue.mainQueue()) { data in
+                if let data = data {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if(data.stationary == true){
+                            self.activityState = "Stationary"
+                        } else if (data.walking == true){
+                            self.activityState = "Walking"
+                        } else if (data.running == true){
+                            self.activityState = "Running"
+                        } else if (data.automotive == true){
+                            self.activityState = "Automotive"
+                            if(self.iAmDriving){
+                                print("send up alert to user that the app will not work");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        if manager.deviceMotionAvailable {
+            manager.deviceMotionUpdateInterval = motionUpdateInterval // seconds
+            
+            manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
+                data in
+                
+                
+                if (data.0?.userAcceleration.z < -0.7) || (data.0?.userAcceleration.z > 0.7) { // Check if device is knocked
+                    
+                    // Check for double knock
+                    if self.knocked == false {
+                        // First knock
+                        print("First Knock")
+                        self.knocked = true
+                        
+                    }else{
+                        // Second knock
+                        print("Double Knocked")
+                        self.knocked = false
+                        self.knockReset = 2.0
+                        
+                        // Action:
+                    }
+                }
+                
+                // Countdown for reset action (second knock must be within the knockReset limit)
+                if (self.knocked) && (self.knockReset >= 0.0) {
+                    
+                    self.knockReset = self.knockReset - self.motionUpdateInterval
+                    
+                }else if self.knocked == true {
+                    self.knocked = false
+                    self.knockReset = 2.0
+                    print("Reset")
+                }
+                
+            }
+        }
+
         
         // TODO store login token in NSUserDefaults
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
@@ -66,7 +134,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         else{
-            //TODO: HERE IS WHERE I PUT IN THE ACCEPT INVITATION LINK. FIRST THEY GET APP. THEN CLICK LINK.
+                //TODO: HERE IS WHERE I PUT IN THE ACCEPT INVITATION LINK. FIRST THEY GET APP. THEN CLICK LINK.
+            if let invitetoken = userDict!["invitationtoken"] {
+                self.invitationToken = invitetoken;
+                let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("registerView") as UIViewController
+                //initialViewControlleripad.token
+                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                self.window?.rootViewController = initialViewControlleripad
+                self.window?.makeKeyAndVisible()
+                
+            }
         }
         //Do something with the information in userDict
         print(userDict);
@@ -114,6 +192,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
+    
+    
     
     func application(application: UIApplication,didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData){
         //send this device token to server

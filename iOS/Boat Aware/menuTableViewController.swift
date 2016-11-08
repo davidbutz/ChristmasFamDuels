@@ -28,7 +28,7 @@ class menuTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4;
+        return 3;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,17 +39,21 @@ class menuTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell();
         cell.backgroundColor = UIColor.clearColor()
-        if(indexPath.section<3){
+        if(indexPath.section<4){
             if(indexPath.section==0){
                 cell = tableView.dequeueReusableCellWithIdentifier("static1", forIndexPath: indexPath)
                 //cellview.text = "Christmas Fam Duels";
             }
             if(indexPath.section==1){
-                cell = tableView.dequeueReusableCellWithIdentifier("static4", forIndexPath: indexPath)
+                cell = tableView.dequeueReusableCellWithIdentifier("static2", forIndexPath: indexPath)
             }
             if(indexPath.section==2){
-                cell = tableView.dequeueReusableCellWithIdentifier("static5", forIndexPath: indexPath)
+                cell = tableView.dequeueReusableCellWithIdentifier("static4", forIndexPath: indexPath)
             }
+            /*
+            if(indexPath.section==3){
+                cell = tableView.dequeueReusableCellWithIdentifier("static4", forIndexPath: indexPath)
+            }*/
         }
         
         return cell;
@@ -85,8 +89,10 @@ class menuTableViewController: UITableViewController {
         
         
         //LeagueSetup
+        /*
         if(indexPath.section==2){
             print("league setup");
+            //performSegueWithIdentifier("seqMain", sender: nil);
             dispatch_async(dispatch_get_main_queue(), {
                 //ApplicationFunctions.globaldisplayAlert(self, userMessage: "Controller Registered. Please set up Wifi connection", fn: {ApplicationFunctions.switchViewRegister(self,viewtoswitch: "viewChangeWifi")})
                 let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -97,8 +103,8 @@ class menuTableViewController: UITableViewController {
             });
             
         }
-
-        if(indexPath.section==3){
+*/
+        if(indexPath.section==2){
             print("clicked Log Out");
             NSUserDefaults.standardUserDefaults().setObject("", forKey: "authenticationtoken");
             dispatch_async(dispatch_get_main_queue(), {

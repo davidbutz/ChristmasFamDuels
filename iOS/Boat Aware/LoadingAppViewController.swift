@@ -40,7 +40,7 @@ class LoadingAppViewController: UIViewController {
                         appvar.account_id = (response as! NSDictionary)["account_id"] as! String;
                         appvar.fname = (response as! NSDictionary)["firstname"] as! String;
                         appvar.lname = (response as! NSDictionary)["lastname"] as! String;
-                        appvar.account_name = (response as! NSDictionary)["account_name"] as! String;
+                        //appvar.account_name = (response as! NSDictionary)["account_name"] as! String;
                         appvar.password = (response as! NSDictionary)["password"] as! String;
                         appvar.cellphone = (response as! NSDictionary)["cellphone"] as! String;
                         let JSONObject: [String : AnyObject] = [
@@ -56,18 +56,20 @@ class LoadingAppViewController: UIViewController {
                             let leaguecount = (leagueresponse as! NSDictionary)["leagueCount"] as! NSNumber;
                             if(leaguesuccess){
                                 if(leaguecount == 1){
-                                    let leagueArray = (leagueresponse as! NSDictionary)["leagueCount"] as! JSONArray;
+                                    let leagueArray = (leagueresponse as! NSDictionary)["leagues"] as! JSONArray;
                                     let leagueInformation = leagueArray[0] as! JSONDictionary;
+                                    let userxleagueID = leagueInformation["userxleagueID"] as! String;
                                     let leagueName = leagueInformation["leagueName"] as! String;
                                     let leagueID = leagueInformation["leagueID"] as! String;
-                                    let leagueOwnerID = leagueInformation["leagueOwnerID"] as! String;
-                                    let roleID = leagueInformation["roleID"] as! NSNumber;
+                                    let leagueOwnerID = leagueInformation["leagueOwnerID"] as! NSNumber;
+                                    let roleID = leagueInformation["roleID"] as! String;
                                     
                                     let leaguevar = LeagueVariables.leaguevariables;
                                     leaguevar.leagueID = leagueID;
                                     leaguevar.leagueName = leagueName;
-                                    leaguevar.leagueOwnerID = leagueOwnerID;
-                                    leaguevar.roleID = roleID;
+                                    leaguevar.leagueOwnerID = String(leagueOwnerID);
+                                    leaguevar.roleID = NSNumber(integer: Int(roleID)!);
+                                    leaguevar.userxleagueID = userxleagueID;
                                     
                                     dispatch_async(dispatch_get_main_queue()) {
                                         self.handleViewAppearance("viewLaunch");

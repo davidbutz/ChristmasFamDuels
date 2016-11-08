@@ -9,21 +9,69 @@
 import Foundation
 import UIKit
 
+class LineUpVariable {
+    var lineupID:String;
+    var songID:String;
+    var artistID:String;
+    var releaseID:String;
+    var weekID:String;
+    var song:String;
+    var artist:String;
+    var discogArtistID:NSNumber;
+    var release:String;
+    var discogReleaseID:NSNumber;
+    init(lineupID:String,songID:String, artistID:String, releaseID:String, weekID:String, song:String, artist:String, discogArtistID:NSNumber, release:String, discogReleaseID:NSNumber){
+        self.artist = artist;
+        self.artistID = artistID;
+        self.discogArtistID = discogArtistID;
+        self.discogReleaseID = discogReleaseID;
+        self.lineupID = lineupID;
+        self.release = release;
+        self.releaseID = releaseID;
+        self.song = song;
+        self.songID = songID;
+        self.weekID = weekID;
+    }
+}
+
+struct LineUpVariables{
+    static var lineupvariables = LineUpVariable(lineupID:"fake",songID:"fake", artistID:"fake", releaseID:"fake", weekID:"fake", song:"fake", artist:"fake", discogArtistID:0, release:"fake", discogReleaseID:0);
+    static var futurelineupvariables = LineUpVariable(lineupID:"fake",songID:"fake", artistID:"fake", releaseID:"fake", weekID:"fake", song:"fake", artist:"fake", discogArtistID:0, release:"fake", discogReleaseID:0);
+}
+
+class WeekVariable {
+    var weekID:String;
+    var weekStart:NSDate;
+    var weekEnd:NSDate;
+    init(weekID:String,weekStart:NSDate,weekEnd:NSDate){
+        self.weekID = weekID;
+        self.weekStart = weekStart;
+        self.weekEnd = weekEnd;
+    }
+}
+
+struct WeekVariables{
+    static var currentweekvariables = WeekVariable(weekID:"fake", weekStart: NSDate(dateString: "1980-01-01"), weekEnd: NSDate(dateString: "1980-01-01"));
+    static var nextweekvariables = WeekVariable(weekID:"fake", weekStart: NSDate(dateString: "1980-01-01"), weekEnd: NSDate(dateString: "1980-01-01"));
+}
+
 class LeagueVariable {
     var leagueName:String;
     var leagueID:String;
     var leagueOwnerID:String;
     var roleID:NSNumber;
-    init(leagueName:String,leagueID:String,leagueOwnerID:String, roleID:NSNumber){
+    var userxleagueID:String;
+    init(leagueName:String,leagueID:String,leagueOwnerID:String, roleID:NSNumber, userxleagueID:String){
         self.leagueID = leagueID;
         self.leagueName = leagueName;
         self.leagueOwnerID = leagueOwnerID;
         self.roleID = roleID;
+        self.userxleagueID = userxleagueID;
     }
 }
 
 struct LeagueVariables{
-    static var leaguevariables = LeagueVariable(leagueName:"fake",leagueID: "fake",leagueOwnerID: "fake", roleID: 0);
+    static var leaguevariables = LeagueVariable(leagueName:"fake",leagueID: "fake",leagueOwnerID: "fake", roleID: 0, userxleagueID: "");
 }
 
 class ApplicationVariable {
@@ -169,7 +217,7 @@ class APICalls {
         let defaults = NSUserDefaults.standardUserDefaults();
         
         let ipaddress = defaults.stringForKey("localIPAddress");
-        let postEndPoint: String = ipaddress! + "/api/authenticate";
+        let postEndPoint: String = ipaddress! + "/api/accounts/authenticate";
         
         let request :  NSMutableURLRequest = NSMutableURLRequest();
         request.URL = NSURL(string:postEndPoint);
@@ -240,13 +288,14 @@ class APICalls {
             "cellphone" : cell
         ];
         
+        print(JSONObject);
         let defaults = NSUserDefaults.standardUserDefaults();
         
         let stringOne = defaults.stringForKey("localIPAddress");
         if let stringOne = defaults.stringForKey("localIPAddress") {
             print(stringOne) // Some String Value
         }
-        let postEndPoint: String = stringOne! + "/api/register";
+        let postEndPoint: String = stringOne! + "/api/accounts/register";
         let request :  NSMutableURLRequest = NSMutableURLRequest();
         request.URL = NSURL(string:postEndPoint);
         request.HTTPMethod = "POST";

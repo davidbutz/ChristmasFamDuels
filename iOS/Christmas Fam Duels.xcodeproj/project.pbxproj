@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		610115B71CD2454D009A14E4 /* RemoChangeWifiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610115B61CD2454D009A14E4 /* RemoChangeWifiViewController.swift */; };
 		6112344F1CFE3C3E0040C6EE /* BoatAwareExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6112344E1CFE3C3E0040C6EE /* BoatAwareExtensions.swift */; };
+		6117B0531DCB850700918C5B /* joinLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6117B0521DCB850700918C5B /* joinLeagueViewController.swift */; };
+		6121DC4D1DCE7E9800D31B76 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121DC4C1DCE7E9800D31B76 /* DateExtensions.swift */; };
+		6121DC4F1DCECA3300D31B76 /* cfdNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121DC4E1DCECA3300D31B76 /* cfdNavigationController.swift */; };
+		6121DC531DCED08200D31B76 /* selectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6121DC521DCED08200D31B76 /* selectorViewController.swift */; };
 		612BAA0F1D1C598100F00217 /* LoadingAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612BAA0E1D1C598100F00217 /* LoadingAppViewController.swift */; };
-		612BAA111D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */; };
 		612FBEFF1DC6A7CF000A0324 /* emailInvitationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FBEFE1DC6A7CF000A0324 /* emailInvitationsViewController.swift */; };
 		612FBF011DC82BE0000A0324 /* playBallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612FBF001DC82BE0000A0324 /* playBallViewController.swift */; };
-		6135DFE01D236A9700C58242 /* WifiSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */; };
-		6135DFE21D240B4A00C58242 /* WifiSelectUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */; };
 		61382BB11DC3F8770093297D /* createLeagueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61382BB01DC3F8770093297D /* createLeagueViewController.swift */; };
 		615C3A0E1C88E91B0029F8AE /* menuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */; };
 		6165C8701D0F010100F1F235 /* ForgotPasswordFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165C86F1D0F010100F1F235 /* ForgotPasswordFormViewController.swift */; };
@@ -22,10 +22,6 @@
 		616F9DD81DC14C4C004CADD2 /* apiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DD71DC14C4C004CADD2 /* apiCalls.swift */; };
 		616F9DDA1DC14C6F004CADD2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DD91DC14C6F004CADD2 /* LoadingView.swift */; };
 		616F9DDC1DC14C8F004CADD2 /* BoatAwareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */; };
-		616F9DE11DC14CA7004CADD2 /* registerControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDD1DC14CA7004CADD2 /* registerControllerViewController.swift */; };
-		616F9DE21DC14CA7004CADD2 /* selectwifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDE1DC14CA7004CADD2 /* selectwifiTableViewController.swift */; };
-		616F9DE31DC14CA7004CADD2 /* SetUpWifiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDF1DC14CA7004CADD2 /* SetUpWifiViewController.swift */; };
-		616F9DE41DC14CA7004CADD2 /* testControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE01DC14CA7004CADD2 /* testControllerViewController.swift */; };
 		616F9DE71DC14CE7004CADD2 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */; };
 		616F9DE81DC14CE7004CADD2 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */; };
 		61B437A61C93213F00B0DCC2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B437A51C93213F00B0DCC2 /* SWRevealViewController.m */; };
@@ -71,14 +67,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		610115B61CD2454D009A14E4 /* RemoChangeWifiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoChangeWifiViewController.swift; sourceTree = "<group>"; };
 		6112344E1CFE3C3E0040C6EE /* BoatAwareExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatAwareExtensions.swift; sourceTree = "<group>"; };
+		6117B0521DCB850700918C5B /* joinLeagueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = joinLeagueViewController.swift; sourceTree = "<group>"; };
+		6121DC4C1DCE7E9800D31B76 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		6121DC4E1DCECA3300D31B76 /* cfdNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cfdNavigationController.swift; sourceTree = "<group>"; };
+		6121DC521DCED08200D31B76 /* selectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectorViewController.swift; sourceTree = "<group>"; };
 		612BAA0E1D1C598100F00217 /* LoadingAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAppViewController.swift; sourceTree = "<group>"; };
-		612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelWithBoatAwareNetworkViewController.swift; sourceTree = "<group>"; };
 		612FBEFE1DC6A7CF000A0324 /* emailInvitationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emailInvitationsViewController.swift; sourceTree = "<group>"; };
 		612FBF001DC82BE0000A0324 /* playBallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playBallViewController.swift; sourceTree = "<group>"; };
-		6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiSelectTableViewController.swift; sourceTree = "<group>"; };
-		6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WifiSelectUserInputViewController.swift; sourceTree = "<group>"; };
 		61382BB01DC3F8770093297D /* createLeagueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createLeagueViewController.swift; sourceTree = "<group>"; };
 		615C3A021C8884160029F8AE /* Boat Aware-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boat Aware-Bridging-Header.h"; sourceTree = "<group>"; };
 		615C3A0D1C88E91B0029F8AE /* menuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuTableViewController.swift; sourceTree = "<group>"; };
@@ -87,10 +83,6 @@
 		616F9DD71DC14C4C004CADD2 /* apiCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiCalls.swift; sourceTree = "<group>"; };
 		616F9DD91DC14C6F004CADD2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatAwareData.swift; sourceTree = "<group>"; };
-		616F9DDD1DC14CA7004CADD2 /* registerControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerControllerViewController.swift; sourceTree = "<group>"; };
-		616F9DDE1DC14CA7004CADD2 /* selectwifiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectwifiTableViewController.swift; sourceTree = "<group>"; };
-		616F9DDF1DC14CA7004CADD2 /* SetUpWifiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpWifiViewController.swift; sourceTree = "<group>"; };
-		616F9DE01DC14CA7004CADD2 /* testControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testControllerViewController.swift; sourceTree = "<group>"; };
 		616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		61B437A41C93213F00B0DCC2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -133,33 +125,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		612BAA0A1D1B0F0800F00217 /* RemoSetUp */ = {
-			isa = PBXGroup;
-			children = (
-				616F9DDD1DC14CA7004CADD2 /* registerControllerViewController.swift */,
-				616F9DDE1DC14CA7004CADD2 /* selectwifiTableViewController.swift */,
-				616F9DDF1DC14CA7004CADD2 /* SetUpWifiViewController.swift */,
-				616F9DE01DC14CA7004CADD2 /* testControllerViewController.swift */,
-				612BAA101D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift */,
-				6135DFDF1D236A9700C58242 /* WifiSelectTableViewController.swift */,
-				6135DFE11D240B4A00C58242 /* WifiSelectUserInputViewController.swift */,
-			);
-			name = RemoSetUp;
-			sourceTree = "<group>";
-		};
-		612BAA0C1D1B11F100F00217 /* ChangeWiFi */ = {
-			isa = PBXGroup;
-			children = (
-				610115B61CD2454D009A14E4 /* RemoChangeWifiViewController.swift */,
-			);
-			name = ChangeWiFi;
-			sourceTree = "<group>";
-		};
 		615C39EA1C87707A0029F8AE /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
-				612BAA0C1D1B11F100F00217 /* ChangeWiFi */,
-				612BAA0A1D1B0F0800F00217 /* RemoSetUp */,
 				6165C86C1D0EFFA700F1F235 /* ForgotPassword */,
 				612BAA0E1D1C598100F00217 /* LoadingAppViewController.swift */,
 				616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */,
@@ -255,6 +223,9 @@
 				61382BB01DC3F8770093297D /* createLeagueViewController.swift */,
 				612FBEFE1DC6A7CF000A0324 /* emailInvitationsViewController.swift */,
 				612FBF001DC82BE0000A0324 /* playBallViewController.swift */,
+				6117B0521DCB850700918C5B /* joinLeagueViewController.swift */,
+				6121DC4E1DCECA3300D31B76 /* cfdNavigationController.swift */,
+				6121DC521DCED08200D31B76 /* selectorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -291,6 +262,7 @@
 			children = (
 				66E71FD51C693199004BB2C1 /* UIImage+Decompression.swift */,
 				66B678E81C6A6FE9007963AA /* UIColor+Darken.swift */,
+				6121DC4C1DCE7E9800D31B76 /* DateExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -356,7 +328,7 @@
 				TargetAttributes = {
 					66E71FAE1C691309004BB2C1 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 79JL2LSC2W;
+						DevelopmentTeam = YRV6G54Q88;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -420,37 +392,33 @@
 			files = (
 				6165C8721D0F014500F1F235 /* ResetPasswordFormViewController.swift in Sources */,
 				66B678EB1C6A875E007963AA /* DeviceCapabilityViewController.swift in Sources */,
-				616F9DE21DC14CA7004CADD2 /* selectwifiTableViewController.swift in Sources */,
 				616F9DDA1DC14C6F004CADD2 /* LoadingView.swift in Sources */,
 				66E71FCF1C692607004BB2C1 /* HomeCollectionViewLayout.swift in Sources */,
 				616F9DE81DC14CE7004CADD2 /* RegisterPageViewController.swift in Sources */,
-				616F9DE11DC14CA7004CADD2 /* registerControllerViewController.swift in Sources */,
-				6135DFE01D236A9700C58242 /* WifiSelectTableViewController.swift in Sources */,
 				612FBF011DC82BE0000A0324 /* playBallViewController.swift in Sources */,
 				615C3A0E1C88E91B0029F8AE /* menuTableViewController.swift in Sources */,
 				616F9DE71DC14CE7004CADD2 /* LoginPageViewController.swift in Sources */,
 				66E71FDB1C693382004BB2C1 /* RoundedCornersView.swift in Sources */,
 				61B437A61C93213F00B0DCC2 /* SWRevealViewController.m in Sources */,
-				6135DFE21D240B4A00C58242 /* WifiSelectUserInputViewController.swift in Sources */,
 				66F83EC41C9354D400D5AB8B /* SegueFromLeft.swift in Sources */,
+				6121DC4D1DCE7E9800D31B76 /* DateExtensions.swift in Sources */,
 				612FBEFF1DC6A7CF000A0324 /* emailInvitationsViewController.swift in Sources */,
 				66E71FD61C693199004BB2C1 /* UIImage+Decompression.swift in Sources */,
 				616F9DDC1DC14C8F004CADD2 /* BoatAwareData.swift in Sources */,
 				666CE7BF1C974127005863A9 /* FormViewController.swift in Sources */,
 				66E71FB31C691309004BB2C1 /* AppDelegate.swift in Sources */,
-				610115B71CD2454D009A14E4 /* RemoChangeWifiViewController.swift in Sources */,
 				6165C8701D0F010100F1F235 /* ForgotPasswordFormViewController.swift in Sources */,
-				612BAA111D230D3600F00217 /* CancelWithBoatAwareNetworkViewController.swift in Sources */,
 				6112344F1CFE3C3E0040C6EE /* BoatAwareExtensions.swift in Sources */,
 				66F117851D22F963001EC81F /* LineView.swift in Sources */,
 				66B678ED1C6A9B30007963AA /* DeviceCapabilityTabBarConroller.swift in Sources */,
 				612BAA0F1D1C598100F00217 /* LoadingAppViewController.swift in Sources */,
+				6121DC531DCED08200D31B76 /* selectorViewController.swift in Sources */,
+				6117B0531DCB850700918C5B /* joinLeagueViewController.swift in Sources */,
+				6121DC4F1DCECA3300D31B76 /* cfdNavigationController.swift in Sources */,
 				61382BB11DC3F8770093297D /* createLeagueViewController.swift in Sources */,
 				66B678E91C6A6FE9007963AA /* UIColor+Darken.swift in Sources */,
 				66F117891D241350001EC81F /* ThresholdViewController.swift in Sources */,
-				616F9DE41DC14CA7004CADD2 /* testControllerViewController.swift in Sources */,
 				66F83EC61C93565800D5AB8B /* SegueFromRight.swift in Sources */,
-				616F9DE31DC14CA7004CADD2 /* SetUpWifiViewController.swift in Sources */,
 				66F1177F1D1C3964001EC81F /* CapabilityTitleView.swift in Sources */,
 				616F9DD81DC14C4C004CADD2 /* apiCalls.swift in Sources */,
 			);
