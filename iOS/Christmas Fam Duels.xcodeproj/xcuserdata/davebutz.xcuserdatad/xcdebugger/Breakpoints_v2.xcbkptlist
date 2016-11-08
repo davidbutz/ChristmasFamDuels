@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Boat Aware/menuTableViewController.swift"
-            timestampString = "488399203.492564"
+            timestampString = "500259173.021029"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "menuTableViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -37,13 +37,6 @@ class RegisterPageViewController: FormViewController
         txtlastname.resignFirstResponder();
         txtfirstname.resignFirstResponder();
 
-        // Register a touch gesture recognizer to cancel out of our input form
-//        let recognizer = UITapGestureRecognizer(target: self, action:Selector("touch"))
-//        recognizer.numberOfTapsRequired = 1
-//        recognizer.numberOfTouchesRequired = 1
-//        self.view.addGestureRecognizer(recognizer)
-
-        
         // Do any additional setup after loading the view.
     }
     
@@ -160,17 +153,93 @@ class RegisterPageViewController: FormViewController
         api.register(userEmail!, password: userPassword!, fname: userFirstName!, lname: userLastName!, cell: userCell!) { (response:APIResponse) in
             // Register Handler
             if (response.success) {
-                let appdel = UIApplication.sharedApplication().delegate as! AppDelegate;
-                appdel.my_remo_selected = nil;
+            
                 // Registration successful
                 LoadingOverlay.shared.setCaption("Logging In...");
                 api.login(userEmail!, password: userPassword!) { (loginResponse: APIResponse) in
                     if (loginResponse.success) {
+                        
                         // Login successful
-                        dispatch_async(dispatch_get_main_queue()) {
-                            //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
-                            let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
-                            self.presentViewController(settingview!, animated: true, completion: nil)
+                        
+                        // Now handle the situation where the invitationtoken is present and lets add this user to the league.
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        if(appDelegate.invitationToken != ""){
+                            //
+                            let appvar = ApplicationVariables.applicationvariables;
+                            let JSONObject: [String : AnyObject] = [
+                                "login_token" : appvar.logintoken ]
+
+                            api.apicallout("/api/setup/acceptinvite/" + appvar.userid + "/" + appDelegate.invitationToken + "/" + userEmail! , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+
+                                let JSONResponse = response as! JSONDictionary;
+                                if(JSONResponse["success"] as! Bool){
+                                    api.apicallout("/api/accounts/getleagues/" + appvar.userid + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (leagueresponse) -> () in
+                                        
+                                        dispatch_async(dispatch_get_main_queue()) {
+                                            LoadingOverlay.shared.hideOverlayView();
+                                        };
+                                        var leaguecount = 0;
+                                        let success = (leagueresponse as! NSDictionary)["success"] as! Bool;
+                                        if let responseleaguecount = (leagueresponse as! NSDictionary)["leagueCount"] as! NSNumber?{
+                                            leaguecount = Int(responseleaguecount);
+                                        }
+                                        if(success){
+                                            if(leaguecount == 0){
+                                                let leagueArray = (leagueresponse as! NSDictionary)["leagueCount"] as! JSONArray;
+                                                let leagueInformation = leagueArray[0] as! JSONDictionary;
+                                                let leagueName = leagueInformation["leagueName"] as! String;
+                                                let leagueID = leagueInformation["leagueID"] as! String;
+                                                let leagueOwnerID = leagueInformation["leagueOwnerID"] as! String;
+                                                let roleID = leagueInformation["roleID"] as! NSNumber;
+                                                
+                                                let leaguevar = LeagueVariables.leaguevariables;
+                                                leaguevar.leagueID = leagueID;
+                                                leaguevar.leagueName = leagueName;
+                                                leaguevar.leagueOwnerID = leagueOwnerID;
+                                                leaguevar.roleID = roleID;
+                                                
+                                                dispatch_async(dispatch_get_main_queue()) {
+                                                    //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                                    let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                                                    self.presentViewController(settingview!, animated: true, completion: nil)
+                                                }
+                                            }
+                                            else{
+                                                print("they belong to more than one league, which i dont handle");
+                                            }
+                                        }
+                                        else{
+                                            //There is something wrong,
+                                            if(leaguecount == 0){
+                                                //take them to add a league page.
+                                                dispatch_async(dispatch_get_main_queue()) {
+                                                    //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                                    let setupRemo = self.storyboard?.instantiateViewControllerWithIdentifier("createLeague");
+                                                    self.presentViewController(setupRemo!, animated: true, completion: nil)
+                                                }
+                                            }
+                                            else{
+                                                print("The login was ok, but there was more than one league and the success was false");
+                                            }
+                                        }
+                                    });
+                                }
+                                else{
+                                    dispatch_async(dispatch_get_main_queue()) {
+                                        //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                        let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                                        self.presentViewController(settingview!, animated: true, completion: nil)
+                                    }
+                                }
+                            });
+
+                        }
+                        else{
+                            dispatch_async(dispatch_get_main_queue()) {
+                                //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                                self.presentViewController(settingview!, animated: true, completion: nil)
+                            }
                         }
                     } else {
                         let myAlert = UIAlertController(title:"Login Failed",message: "No account was found with that username and password combination",preferredStyle: UIAlertControllerStyle.Alert);

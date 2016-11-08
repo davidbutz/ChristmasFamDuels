@@ -73,7 +73,7 @@ class LoginPageViewController: FormViewController {
                 let JSONObject: [String : AnyObject] = [
                     "login_token" : appvar.logintoken ]
 
-                api.apicallout("/api/accounts/getleagues/" + appvar.userid + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (leagueresponse) -> () in
+                api.apicallout("/api/setup/getleagues/" + appvar.userid + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (leagueresponse) -> () in
 
                     dispatch_async(dispatch_get_main_queue()) {
                         LoadingOverlay.shared.hideOverlayView();
@@ -84,9 +84,10 @@ class LoginPageViewController: FormViewController {
                         leaguecount = Int(responseleaguecount);
                     }
                     if(success){
-                        if(leaguecount == 0){
+                        if(leaguecount == 1){
                             let leagueArray = (leagueresponse as! NSDictionary)["leagueCount"] as! JSONArray;
                             let leagueInformation = leagueArray[0] as! JSONDictionary;
+                            let userxleagueID = leagueInformation["userxleagueID"] as! String;
                             let leagueName = leagueInformation["leagueName"] as! String;
                             let leagueID = leagueInformation["leagueID"] as! String;
                             let leagueOwnerID = leagueInformation["leagueOwnerID"] as! String;
@@ -97,6 +98,7 @@ class LoginPageViewController: FormViewController {
                             leaguevar.leagueName = leagueName;
                             leaguevar.leagueOwnerID = leagueOwnerID;
                             leaguevar.roleID = roleID;
+                            leaguevar.userxleagueID = userxleagueID;
                             
                             dispatch_async(dispatch_get_main_queue()) {
                                 //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});

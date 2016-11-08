@@ -11,7 +11,7 @@ import UIKit
 class createLeagueViewController: FormViewController {
     typealias JSONArray = Array<AnyObject>
     typealias JSONDictionary = Dictionary<String, AnyObject>
-    
+  
     @IBOutlet weak var txtLeagueName: UITextField!
     
     @IBAction func onClickCreate(sender: AnyObject) {
@@ -27,7 +27,7 @@ class createLeagueViewController: FormViewController {
         let appvar = ApplicationVariables.applicationvariables;
         let JSONObject: [String : AnyObject] = [
             "login_token" : appvar.logintoken ]
-        api.apicallout("/api/setup/league/create/" + appvar.userid + "/" + leaguename! + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+        api.apicallout("/api/setup/league/create/" + appvar.userid + "/" + leaguename!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
             
             dispatch_async(dispatch_get_main_queue()) {
                 LoadingOverlay.shared.hideOverlayView();
