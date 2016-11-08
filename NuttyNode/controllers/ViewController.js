@@ -6,6 +6,8 @@
     var Artist = require('../models/Artist.js');
     var Release = require('../models/Release.js');
     var Points = require('../models/Points.js');
+    
+
     ObjectID = require('mongodb').ObjectID;
     
     ViewController.viewPoints = function (req, res, leagueID, weekID, callback) {
@@ -14,9 +16,26 @@
         //**FINISH
         callback(res, errorhandlingResponse);
     }
+    
+    ViewController.getNeededConfirmations = function (req, res, leagueID, callback) {
+        var errorhandlingResponse = { "success": false };
+        
+        //**FINISH
+        callback(res, errorhandlingResponse);
+    }
+    
+    ViewController.summarizePoints = function (req, res, lineupID, callback) {
+        var errorhandlingResponse = { "success": false };
+        
+        //**FINISH
+        callback(res, errorhandlingResponse);
+    }
 
     ViewController.thresholdOK = function (req, res, lineupID, callback){
         var errorhandlingResponse = { "success": false };
+
+        console.log("calling  db.points.find({'lineupID':'" + lineupID + "'}).sort({ 'datecreated': -1 }).limit(1) yielded nothing...")
+
         Points.find({ "lineupID": lineupID }).sort({ "datecreated": -1 }).limit(1).exec(function (err, dataPoints) {
             if (err) {
                 callback(res, errorhandlingResponse);
@@ -31,7 +50,7 @@
                     currentDate.setDate(currentDate.getDate());
                     var diffMs = (currentDate - lastDateCreated);
                     var secondselapsed = Math.floor((diffMs / 1000));
-                    //console.log(secondselapsed);
+                    console.log(secondselapsed);
                     if (secondselapsed < 180) {
                         callback(res, errorhandlingResponse);
                     }
@@ -41,7 +60,7 @@
                 }
                 else {
                     //no points in system...
-                    callback(res, { "success": false });
+                    callback(res, { "success": true });
                 }
             }
         });
@@ -59,17 +78,60 @@
                     Song.findOne({ "_id": ObjectID(dataLineUp.songID) }, function (err, dataSong) {
                         Artist.findOne({ "_id": ObjectID(dataLineUp.artistID) }, function (err, dataArtist) {
                             Release.findOne({ "_id": ObjectID(dataLineUp.releaseID) }, function (err, dataRelease) {
+
+                                var songID = "";
+                                var artistID = "";
+                                var releaseID = "";
+                                var song = "";
+                                var artist = "";
+                                var discogArtistID = 0;
+                                var release = "";
+                                var discogReleaseID = 0;
+
+                                if (dataLineUp.songID) {
+                                    songID = dataLineUp.songID;
+                                }
+                                if (dataLineUp.artistID) {
+                                    artistID = dataLineUp.artistID;
+                                }
+                                if (dataLineUp.releaseID) {
+                                    releaseID = dataLineUp.releaseID;
+                                }
+                                if (dataSong) {
+                                    if (dataSong.title) {
+                                        song = dataSong.title;
+                                    }
+                                }
+                                if (dataArtist) {
+                                    if (dataArtist.artist) {
+                                        artist = dataArtist.artist;
+                                    }
+                                    
+                                    if (dataArtist.discogArtistID) {
+                                        discogArtistID = dataArtist.discogArtistID;
+                                    }
+                                }
+                                if (dataRelease) {
+                                    if (dataRelease.release) {
+                                        release = dataRelease.release;
+                                    }
+                                    if (dataRelease.discogReleaseID) {
+                                        discogReleaseID = dataRelease.discogReleaseID;
+                                    }
+                                }
+                                
                                 var returnJSON = {
+                                    "success": true ,
                                     "_id" : dataLineUp._id.toString(), 
-                                    "songID": dataLineUp.songID,
-                                    "artistID": dataLineUp.artistID,
-                                    "releaseID": dataLineUp.releaseID,
                                     "weekID": dataLineUp.weekID,
-                                    "song" : dataSong.title,
-                                    "artist" : dataArtist.artist,
-                                    "discogArtistID" : dataArtist.discogArtistID,
-                                    "release" : dataRelease.release,
-                                    "discogReleaseID": dataRelease.discogReleaseID
+                                    "songID": songID,
+                                    "artistID": artistID,
+                                    "releaseID": releaseID,
+                                    "song": song,
+                                    "artist" : artist,
+                                    "discogArtistID": discogArtistID,
+                                    "release" : release,
+                                    "discogReleaseID": discogReleaseID
                                 }
                                 callback(res, returnJSON);
                             });

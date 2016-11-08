@@ -11,7 +11,7 @@
     var Song = require("../models/Song.js");
     var Artist = require("../models/Artist.js");
     var Release = require("../models/Release.js");
-    var Lineup = require("../models/Lineup.js");
+    var LineUp = require("../models/LineUp.js");
     
     //controls used.
     var crypto = require("crypto");
@@ -96,10 +96,18 @@
 
     SetLineupController.getNextWeekID = function (res, callback) {
         var currentDate = new Date();
-        currentDate.setDate(currentDate.getDate() + 7);
-        var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d %H:%M:%S", false);
+        console.log(currentDate.getDay());
+        if (currentDate.getDay() == 0) {
+            currentDate.setDate(currentDate.getDate() + 8);
+        }
+        else {
+            currentDate.setDate(currentDate.getDate() + 7);
+        }
+        var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d", false);
+        //var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d %H:%M:%S", false);
         var year = currentDate.getFullYear();
-        
+        console.log(queryDate);
+        console.log(new Date(queryDate));
         var collection = db.collection('weeks').find({ "weekYear": year , $and : [{ "weekStart" : { $lte : new Date(queryDate) } }, { "weekEnd": { $gte : new Date(queryDate) } }] });
         collection.toArray(function (err, docs) {
             if (docs) {
@@ -118,9 +126,11 @@
 
     SetLineupController.getCurrentWeekID = function (res, callback) {
         var currentDate = new Date();
-        var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d %H:%M:%S", false);
+        var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d ", false);
+        //var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d %H:%M:%S", false);
         var year = currentDate.getFullYear();
-
+        console.log(queryDate);
+        console.log(new Date(queryDate));
         var collection = db.collection('weeks').find({ "weekYear": year , $and : [{ "weekStart" : { $lte : new Date(queryDate) } }, { "weekEnd": { $gte : new Date(queryDate) } }] });
         collection.toArray(function (err, docs) {
             if (docs) {
@@ -128,11 +138,11 @@
                     callback(res, { "success": true , "_id": docs[0]._id, "weekStart": dateFormat(docs[0].weekStart, "%Y-%m-%d %H:%M:%S", false), "weekEnd": dateFormat(docs[0].weekEnd, "%Y-%m-%d %H:%M:%S", false) });
                 }
                 else {
-                    callback(res, { "success": false });
+                    callback(res, { "success": false, "message":"docs.length > 0" });
                 }
             }
             else {
-                callback(res, { "success": false });
+                callback(res, { "success": false, "message" : "if (docs)" });
             }
         });
     }
@@ -237,16 +247,19 @@
                     var newartistID = artistID;
                     var artistname;
                     var artisturl;
-                    if (dataArtist.images.length > 0) {
-                        artisturl = dataArtist.images[0].resource_url;
-                        //getImagefromRelease(url, userID, weekID, searchtype)
-                        getImagefromRelease(artisturl, userID, weekID, "artist");
-                    }
                     if (dataArtist.name) {
                         artistname = dataArtist.name;
                     }
-                    var buildJSON = {"success" : true, "imageurl" : artisturl, "discogArtistID" : artistID, "artist" : artistname };
-                    callback(res, buildJSON);
+                    if (dataArtist.images.length > 0) {
+                        artisturl = dataArtist.images[0].resource_url;
+                        //getImagefromRelease(url, userID, weekID, searchtype)
+                        var buildJSON = { "success" : true, "imageurl" : artisturl, "discogArtistID" : artistID, "artist" : artistname };
+                        getImagefromRelease(artisturl, userID, weekID, "artist", res, buildJSON, callback);
+                    }
+                    else {
+                        var buildJSON = { "success" : true, "imageurl" : artisturl, "discogArtistID" : artistID, "artist" : artistname };
+                        callback(res, buildJSON);
+                    }
                 });
             }
             else {
@@ -277,11 +290,6 @@
                                     var artist;
                                     var trackname;
                                     
-                                    //imageurl (to see the image of the release)
-                                    if (releasedata.images.length > 0) {
-                                        imageurl = releasedata.images[0].resource_url;
-                                        getImagefromRelease(imageurl, userID, weekID, "release");
-                                    }
                                     //videouri (to listen to the song...)
                                     if (masterdata.videos) {
                                         if (masterdata.videos.length > 0) {
@@ -297,15 +305,24 @@
                                     if (masterdata.tracklist) {
                                         if (masterdata.tracklist.length > 0) {
                                             for (var i = 0; i < masterdata.tracklist.length; i++) {
-                                                if (masterdata.tracklist[i].title.toLowerCase().includes(track.toLowerCase())) {
+                                                var titleinside = masterdata.tracklist[i].title.toLowerCase();
+                                                if (titleinside.indexOf(track.toLowerCase()) > -1) {
                                                     trackname = masterdata.tracklist[i].title;
                                                     break;
                                                 }
                                             }
                                         }
                                     }
-                                    var buildJSON = { "success": true, "imageurl" : imageurl, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
-                                    callback(res, buildJSON);
+                                    //imageurl (to see the image of the release)
+                                    if (releasedata.images.length > 0) {
+                                        imageurl = releasedata.images[0].resource_url;
+                                        var buildJSON = { "success": true, "imageurl" : imageurl, "releaseID" : releaseID, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
+                                        getImagefromRelease(imageurl, userID, weekID, "release", res, buildJSON, callback);
+                                    }
+                                    else {
+                                        var buildJSON = { "success": true, "imageurl" : imageurl, "releaseID" : releaseID, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
+                                        callback(res, buildJSON);
+                                    }
                                 });
                             });
                         }
@@ -321,7 +338,7 @@
                         var output;
                         if (trackdata.results.length > 0) {
                             for (var y = 0; y < trackdata.results.length; y++) {
-                                if (trackdata.results[y].title.toLowerCase().includes(artist.toLowerCase())) {
+                                if (trackdata.results[y].title.toLowerCase().indexOf(artist.toLowerCase()) > -1) {
                                     output = trackdata.results[y];
                                     break;
                                 }
@@ -372,11 +389,6 @@
                         callback(errorhandlingResponse);
                     }
                     else {
-                        //imageurl (to see the image of the release)
-                        if (releasedata.images.length > 0) {
-                            imageurl = releasedata.images[0].resource_url;
-                            getImagefromRelease(imageurl, userID, weekID, "release");
-                        }
                         //videouri (to listen to the song...)
                         if (masterdata.videos) {
                             if (masterdata.videos.length > 0) {
@@ -392,22 +404,33 @@
                         if (masterdata.tracklist) {
                             if (masterdata.tracklist.length > 0) {
                                 for (var i = 0; i < masterdata.tracklist.length; i++) {
-                                    if (masterdata.tracklist[i].title.toLowerCase().includes(track.toLowerCase())) {
+                                    if (masterdata.tracklist[i].title.toLowerCase().indexOf(track.toLowerCase()) > -1) {
                                         trackname = masterdata.tracklist[i].title;
                                         break;
                                     }
                                 }
                             }
                         }
-                        var buildJSON = { "success": true, "imageurl" : imageurl, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
-                        callback(buildJSON);
+                        //imageurl (to see the image of the release)
+                        if (releasedata.images.length > 0) {
+                            imageurl = releasedata.images[0].resource_url;
+                            var buildJSON = { "success": true, "imageurl" : imageurl, "releaseID" : releaseID, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
+                            getImagefromRelease(imageurl, userID, weekID, "release", "", buildJSON, function (res, jsonResponse) {
+                                callback(jsonResponse);
+                            });
+                        }
+                        else {
+                            var buildJSON = { "success": true, "imageurl" : imageurl, "releaseID" : releaseID, "videourl" : videourl , "title" : title, "artist" : artist, "track" : trackname };
+                            callback(buildJSON);
+                        }
                     }
                 });
             }
         });
     }
 
-    function getImagefromRelease(url, userID, weekID, searchtype) {
+    function getImagefromRelease(url, userID, weekID, searchtype, res, buildJSON, callback) {
+        var errorhandlingResponse = { "success": false };
         discogs_db.getImage(url, function (err, data, rateLimit) {
             // save to AWS
             // save as userID_search_searchtype_weekID
@@ -417,6 +440,7 @@
             require('fs').writeFile('/tmp/' + saveName, data, 'binary', function (err) {
                 if (err) {
                     console.log(err);
+                    callback(res, errorhandlingResponse);
                 }
                 else {
                     //console.log('Image saved!');
@@ -428,9 +452,11 @@
                         function (err, data) {
                             if (err) {
                                 console.error("AWSController.pushImage error", err);
+                                callback(res, errorhandlingResponse);
                             }
                             if (data) {
                                 console.log("AWSController.pushImage data", data);
+                                callback(res, buildJSON);
                             }
                         }
                     );
@@ -452,6 +478,7 @@
                     var update = { $set: { "artistID" : artistID } };
                     var options = { upsert: true };
                     LineUp.update(conditions, update, options, mongocallback);
+                    callback(res, { "success": true });
                 }
                 else {
                     var newLineUp = { "weekID": weekID, "userxleagueID": userxleagueID, "artistID": artistID };
@@ -482,6 +509,7 @@
                     var update = { $set: { "songID" : songID } };
                     var options = { upsert: true };
                     LineUp.update(conditions, update, options, mongocallback);
+                    callback(res, { "success": true });
                 }
                 else {
                     var newLineUp = { "weekID": weekID, "userxleagueID": userxleagueID, "songID": songID };
@@ -512,6 +540,7 @@
                     var update = { $set: { "releaseID" : releaseID } };
                     var options = { upsert: true };
                     LineUp.update(conditions, update, options, mongocallback);
+                    callback(res, { "success": true });
                 }
                 else {
                     var newLineUp = { "weekID": weekID, "userxleagueID": userxleagueID, "releaseID": releaseID };

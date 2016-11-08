@@ -3,6 +3,8 @@
     var League = require('../models/League.js');
     var UserXLeague = require('../models/UserXLeague.js');
     var LeagueInvitation = require('../models/LeagueInvitation.js');
+    
+
     var authentication = require("../controllers/Authentication");
     var crypto = require("crypto");
     var User = require("../controllers/Authentication");
@@ -204,7 +206,7 @@
                     array_userleagues.push(dataUserXLeagues[i].leagueID);
                 }
                 //expansion point, add in years and league types to the query and output
-                League.find({ "_id": { $in: arraydevices } }, function (err, dataLeague) {
+                League.find({ "_id": { $in: array_userleagues } }, function (err, dataLeague) {
                     if (err) {
                         callback(res, errorhandlingResponse);
                     }

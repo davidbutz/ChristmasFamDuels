@@ -21,6 +21,36 @@
         next();
     });
     
+    
+    ///summarizepoints/:lineupID/:logintoken
+    //summarize your points so far...
+    rRouter.get("/summarizepoints/:lineupID/:logintoken", function (req, res) {
+        var lineupID = req.params.lineupID;
+        var logintoken = req.params.logintoken;
+        authentication.iftokenvalid(logintoken, function (err, valid) {
+            if (valid) {
+                viewcontroller.summarizePoints(req, res, lineupID, sendResponse);
+            }
+            else {
+                res.json({ "success": false , message: 'token not valid' });
+            }
+        });
+    });
+
+    //check if user is scamming system by clicking too much...
+    rRouter.get("/getNeededConfirmations/:leagueID/:logintoken", function (req, res) {
+        var leagueID = req.params.leagueID;
+        var logintoken = req.params.logintoken;
+        authentication.iftokenvalid(logintoken, function (err, valid) {
+            if (valid) {
+                viewcontroller.getNeededConfirmations(req, res, leagueID, sendResponse);
+            }
+            else {
+                res.json({ "success": false , message: 'token not valid' });
+            }
+        });
+    });
+
     //check if user is scamming system by clicking too much...
     rRouter.get("/thresholdOK/:lineupID/:logintoken", function (req, res) {
         var lineupID = req.params.lineupID;
@@ -67,9 +97,8 @@
 
 
     //generic send reponse.
-    function sendresponse(res, response) {
+    function sendResponse(res, response) {
         res.json(response);
     }
-    
     app.use('/api/view', rRouter);
 }; 

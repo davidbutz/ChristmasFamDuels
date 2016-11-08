@@ -15,7 +15,7 @@
     rRouter.use(function (req, res, next) {
         // do logging that any /api call got made 
         if (debugging) {
-            console.log('Something is happening in /api/accounts layer.');
+            console.log('Something is happening in /api/setlineup layer.');
         }
         next();
     });

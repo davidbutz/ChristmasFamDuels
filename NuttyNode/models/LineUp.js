@@ -7,7 +7,7 @@ var LineUpSchema = new Schema({
     weekID: String,
     songID: String,         //From MongoDB
     artistID: String,     //From MongoDB
-    songartistID: String  //From MongoDB
+    releaseID: String  //From MongoDB
 });
 
 module.exports = mongoose.model('LineUp', LineUpSchema);

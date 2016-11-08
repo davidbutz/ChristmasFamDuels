@@ -87,7 +87,7 @@
     });
 
     //generic send reponse.
-    function sendresponse(res, response) {
+    function sendResponse(res, response) {
         res.json(response);
     }
     

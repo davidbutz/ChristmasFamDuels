@@ -4,9 +4,11 @@ var Week = require("./models/Week.js");
 var Points = require("./models/Points.js");
 
 
-//var setlineupcontroller = require("./controllers/SetLineupController");
+var setlineupcontroller = require("./controllers/SetLineupController");
 var viewcontroller = require("./controllers/ViewController");
 
+var title = "my name is dave";
+console.log(title.indexOf("me name"));
 
 var config = require('./config/index.js');
 var settings = {
@@ -28,6 +30,10 @@ var release_search_song_term = "all i want for christmas";
 var release_search_artist_term = "mariah carey";
 var releaseDiscogsID = 222;
 
+
+//test thresholdOK logic...
+var testthresholdOK = true;
+
 //adding and searching artists/songs/releases
 var testAddArtist = false;
 var testArtistSearch = false;
@@ -35,7 +41,7 @@ var testAddSong = false;
 var testSongSearch = false;
 var testAddRelease = false;
 var testReleaseSearch = false;
-var testdatesandsuch = true;
+var testdatesandsuch = false;
 
 //login and invitation
 var testEmailInvitations = false;
@@ -44,7 +50,17 @@ var testEmailInvitations = false;
 var testWeekQueries = false;
 var addWeeks = false;
 
+if (testthresholdOK) {
+    console.log("testing threhold ok");
+    var lineupID = "5820b611d2641d08242551e7";
+    viewcontroller.thresholdOK(req, res, lineupID, function (err, json) {
+        console.log(json);
+    });
+}
+
+
 if (testdatesandsuch) {
+    var viewcontroller = require("./controllers/ViewController");
     console.log("testdatesandsuch");
     viewcontroller.thresholdOK(req, res, "abcdefg", function (res, json) {
         console.log(json);

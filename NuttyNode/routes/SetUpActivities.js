@@ -22,7 +22,7 @@ module.exports = function (app, settings) {
         var logintoken = req.params.logintoken;
         authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
-                leaguecontroller.findInvitation(req, res, userID, leagueName, sendResponse);
+                leaguecontroller.findInvitation(req, res, leagueName, userID, sendResponse);
             }
             else {
                 res.json({ "success": false , message: 'token not valid' });

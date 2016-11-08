@@ -40,7 +40,7 @@ db.search(artist , { "type": "artist" } , function (err, data) {
             //    if (dataArtist.groups.length > 0) {
             //        for (var x = 0; x < dataArtist.groups.length; x++) {
             //            console.log(dataArtist.groups[x].name);
-            //            if (dataArtist.groups[x].name.toLowerCase().includes(artist.toLowerCase())) {
+            //            if (dataArtist.groups[x].name.toLowerCase().indexOf(artist.toLowerCase())) {
             //                newartistID = dataArtist.groups[x].id;
             //                break;
             //            }
@@ -135,7 +135,7 @@ if (testingboth) {
                                 //console.log(masterdata.tracklist);
                                 if (masterdata.tracklist.length > 0) {
                                     for (var i = 0; i < masterdata.tracklist.length; i++) {
-                                        if (masterdata.tracklist[i].title.toLowerCase().includes(track.toLowerCase())) {
+                                        if (masterdata.tracklist[i].title.toLowerCase().indexOf(track.toLowerCase()) > -1) {
                                             trackname = masterdata.tracklist[i].title;
                                             break;
                                         }
@@ -165,7 +165,7 @@ if (testingboth) {
                 var output;
                 if (trackdata.results.length > 0) {
                     for (var y = 0; y < trackdata.results.length; y++) {
-                        if (trackdata.results[y].title.toLowerCase().includes(artist.toLowerCase())) {
+                        if (trackdata.results[y].title.toLowerCase().indexOf(artist.toLowerCase()) > -1) {
                             //console.log(trackdata.results[y]);
                             output = trackdata.results[y];
                             break;
@@ -224,7 +224,7 @@ function getReleaseInformation(releaseID, imagename){
                 //console.log(masterdata.tracklist);
                 if (masterdata.tracklist.length > 0) {
                     for (var i = 0; i < masterdata.tracklist.length; i++) {
-                        if (masterdata.tracklist[i].title.toLowerCase().includes(track.toLowerCase())) {
+                        if (masterdata.tracklist[i].title.toLowerCase().indexOf(track.toLowerCase()) > -1) {
                             trackname = masterdata.tracklist[i].title;
                             break;
                         }

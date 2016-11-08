@@ -90,6 +90,9 @@
                     });
                 }
             }
+            else {
+                console.log("apparently...db.notificationtokens.find({'leagueID':'" + leagueID + "'}) yielded nothing...")
+            }
         });
     }
 

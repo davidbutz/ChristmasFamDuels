@@ -164,7 +164,7 @@
                 var params = {
                     PlatformApplicationArn: cloudsettings.cloudconfig().iOSPlatformApplicationArn,
                     Token: notification_token,
-                    CustomUserData: controller_id.toString()
+                    CustomUserData: leagueID.toString()
                 };
                 sns.createPlatformEndpoint(params, function (err, data) {
                     if (err) {
