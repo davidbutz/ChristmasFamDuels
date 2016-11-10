@@ -197,7 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        let aps = userInfo["aps"] as! [String: AnyObject]
+        _ = userInfo["aps"] as! [String: AnyObject]
         NSNotificationCenter.defaultCenter().postNotificationName("myNotif", object: nil, userInfo: userInfo as [NSObject : AnyObject])
 
     }

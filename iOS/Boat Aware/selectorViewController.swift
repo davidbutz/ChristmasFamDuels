@@ -58,6 +58,9 @@ class selectorViewController: FormViewController {
             "login_token" : appvar.logintoken ]
         let api = APICalls();
         var apiURL = "";
+        LoadingOverlay.shared.showOverlay(self.view);
+        LoadingOverlay.shared.setCaption("Setting Lineup...");
+
         if(SearchType == "artist"){
             apiURL = "/api/setlineup/add/artist/" + lblResults.text!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lblDiscogsID.text! + "/";
             apiURL += appvar.logintoken;
@@ -94,17 +97,25 @@ class selectorViewController: FormViewController {
                     let JSONResponse = setresponse as! JSONDictionary;
                     if(JSONResponse["success"] as! Bool){
                         dispatch_async(dispatch_get_main_queue()) {
+                            LoadingOverlay.shared.hideOverlayView();
                             self.navigationController?.popViewControllerAnimated(true);
                         }
                     }
                     else{
                         self.displayAlert("Couldn't save the data", fn: {self.doNothing()});
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            LoadingOverlay.shared.hideOverlayView();
+                        });
+
                         return;
                     }
                 });
             }
             else{
                 self.displayAlert("Couldn't save the data", fn: {self.doNothing()});
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    LoadingOverlay.shared.hideOverlayView();
+                });
                 return;
             }
         });
@@ -146,6 +157,8 @@ class selectorViewController: FormViewController {
         let api = APICalls();
         var apiURL = "";
         var imageKeyName = "";
+        LoadingOverlay.shared.showOverlay(self.view);
+        LoadingOverlay.shared.setCaption("Searching for Song...");
         if(SearchType == "artist"){
             apiURL = "/api/setlineup/search/artist/" + txtInput2.text!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/";
             apiURL += appvar.logintoken + "/" + appvar.userid + "/" + weekvar.weekID;
@@ -194,6 +207,7 @@ class selectorViewController: FormViewController {
                 }
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    LoadingOverlay.shared.hideOverlayView();
                     self.lblResults.text = resultText;
                     self.lblDiscogsID.text = String(discogID);
                     self.btnSet.hidden = false;
@@ -213,6 +227,7 @@ class selectorViewController: FormViewController {
                     resultText = self.txtInput1.text! + " - " + self.txtInput2.text!;
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    LoadingOverlay.shared.hideOverlayView();
                     self.lblResults.text = resultText;
                     self.lblDiscogsID.text = "0";
                     self.btnSet.hidden = false;

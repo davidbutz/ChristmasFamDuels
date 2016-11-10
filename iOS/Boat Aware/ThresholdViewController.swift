@@ -25,7 +25,7 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
         self.tableView?.addSubview(self.refreshControl!);
         self.tableView?.alwaysBounceVertical = true;
 
-        if let deviceTabBar = self.tabBarController as? DeviceCapabilityTabBarController {
+        if (self.tabBarController as? DeviceCapabilityTabBarController) != nil {
         }
         
         reload();
@@ -35,7 +35,7 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func reload() {
-        if let deviceTabBar = self.tabBarController as? DeviceCapabilityTabBarController {
+        if (self.tabBarController as? DeviceCapabilityTabBarController) != nil {
             //self.capabilityTitle.deviceCapability = deviceTabBar.selectedCapability;
         }
         
@@ -43,8 +43,8 @@ class ThresholdViewController: UIViewController, UITableViewDataSource, UITableV
             self.refreshControl!.beginRefreshing();
         });
 
-        let JSONObject: [String : AnyObject] = [
-            "login_token" : appvar.logintoken ]
+        //let JSONObject: [String : AnyObject] = [
+        //    "login_token" : appvar.logintoken ]
         /*
         let api = APICalls()
         api.apicallout("/api/accounts/rules/" + self.selectedRemoControllerID + "/" + (selectedCapability?.devicecapabilities[0].device_capability_id)! + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in

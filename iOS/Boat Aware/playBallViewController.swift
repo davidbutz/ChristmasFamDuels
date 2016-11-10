@@ -41,17 +41,17 @@ class playBallViewController: UIViewController {
                 self.api.apicallout("/api/scoring/points/heardsong/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.song.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.songID + "/" + self.lineupvar.lineupID + "/" + self.appvar.userid + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
                     let success =  (okresponse as! NSDictionary)["success"] as! Bool;
                     if(success){
-                        self.displayAlert("Awaiting Confirmation.", fn: {self.doNothing()});
+                        self.displayAlert("SCORE!!!",userMessage: "Awaiting Confirmation.", fn: {self.doNothing()});
                         return;
                     }
                     else{
-                        self.displayAlert("Problem with Scoring.", fn: {self.doNothing()});
+                        self.displayAlert("Alert",userMessage: "Problem with Scoring.", fn: {self.doNothing()});
                         return;
                     }
                 });
             }
             else{
-                self.displayAlert("Need to wait 3 minutes between scoring.", fn: {self.doNothing()});
+                self.displayAlert("Warning",userMessage: "Need to wait 3 minutes between scoring.", fn: {self.doNothing()});
                 return;
             }
         });
@@ -65,17 +65,17 @@ class playBallViewController: UIViewController {
                 self.api.apicallout("/api/scoring/points/heardartist/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.artist.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.artistID + "/" + self.lineupvar.lineupID + "/" + self.appvar.userid + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
                     let success =  (okresponse as! NSDictionary)["success"] as! Bool;
                     if(success){
-                        self.displayAlert("Awaiting Confirmation.", fn: {self.doNothing()});
+                        self.displayAlert("SCORE!!!",userMessage: "Awaiting Confirmation.", fn: {self.doNothing()});
                         return;
                     }
                     else{
-                        self.displayAlert("Problem with Scoring.", fn: {self.doNothing()});
+                        self.displayAlert("Alert",userMessage: "Problem with Scoring.", fn: {self.doNothing()});
                         return;
                     }
                 });
             }
             else{
-                self.displayAlert("Need to wait 3 minutes between scoring.", fn: {self.doNothing()});
+                self.displayAlert("Warning",userMessage: "Need to wait 3 minutes between scoring.", fn: {self.doNothing()});
                 return;
             }
         });
@@ -91,17 +91,17 @@ class playBallViewController: UIViewController {
                 self.api.apicallout("/api/scoring/points/heardrelease/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.release.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.releaseID + "/" + self.lineupvar.lineupID + "/" + self.appvar.userid + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
                     let success =  (okresponse as! NSDictionary)["success"] as! Bool;
                     if(success){
-                        self.displayAlert("Awaiting Confirmation.", fn: {self.doNothing()});
+                        self.displayAlert("SCORE!!!",userMessage: "Awaiting Confirmation.", fn: {self.doNothing()});
                         return;
                     }
                     else{
-                        self.displayAlert("Problem with Scoring.", fn: {self.doNothing()});
+                        self.displayAlert("Alert",userMessage: "Problem with Scoring.", fn: {self.doNothing()});
                         return;
                     }
                 });
             }
             else{
-                self.displayAlert("Need to wait 3 minutes between scoring.", fn: {self.doNothing()});
+                self.displayAlert("Warning",userMessage: "Need to wait 3 minutes between scoring.", fn: {self.doNothing()});
                 return;
             }
         });
@@ -120,6 +120,7 @@ class playBallViewController: UIViewController {
     let currentweekvar = WeekVariables.currentweekvariables;
     let nextweekvar = WeekVariables.nextweekvariables;
     let lineupvar = LineUpVariables.lineupvariables;
+    let confirmationvar = ConfirmationVariables.confirmationvariables;
     var refreshControl : UIRefreshControl?;
     var pointsearned = 0;
     
@@ -167,12 +168,14 @@ class playBallViewController: UIViewController {
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration;
         
         _ = AWSS3TransferManager.registerS3TransferManagerWithConfiguration(configuration, forKey: "xxx");
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
+        LoadingOverlay.shared.showOverlay(self.view);
+        LoadingOverlay.shared.setCaption("Getting Lineup Data...");
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.catchIt), name: "myNotif", object: nil);
         
         // get the week you are in!
@@ -260,10 +263,28 @@ class playBallViewController: UIViewController {
                 let releaseKeyName = self.appvar.userid + "_search_release_" + self.currentweekvar.weekID + ".jpg";
                 self.loadImage(artistKeyName, uiImageName: "artist");
                 self.loadImage(releaseKeyName, uiImageName: "release");
+                
+                self.api.apicallout("/api/view/getNeededConfirmations/" + self.leaguevar.leagueID  + "/" + self.appvar.userid + "/" + self.currentweekvar.weekID + "/" + self.appvar.logintoken, iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (confirmationresponse) -> () in
+                    let success = (confirmationresponse as! NSDictionary)["success"] as! Bool;
+                        if(success){
+                            //using this time to load lots of stuff up.                            
+                            print("success");
+                            let myvar = Confirmations(json: confirmationresponse as! Dictionary<String,AnyObject>);
+                            self.confirmationvar.confirmations = myvar;
+                            if(self.confirmationvar.confirmations?.contents.count > 0){
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    self.btnScoresAwaiting.hidden = false;
+                                });
+                            }
+                        }
+                    }
+                );
             }
             else{
+                
                 //send them to "Set Lineup"
                 dispatch_async(dispatch_get_main_queue()) {
+                    LoadingOverlay.shared.hideOverlayView();
                     //I want to have them pretend they clicked this button....
                     UIApplication.sharedApplication().sendAction(self.btnbarbutton.action, to: self.btnbarbutton.target, from: self, forEvent: nil);
                     //let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("Set Lineup");
@@ -274,6 +295,7 @@ class playBallViewController: UIViewController {
     }
 
     func provisionScreen(){
+
         dispatch_async(dispatch_get_main_queue()) {
             self.lblSong.text = self.lineupvar.song;
             self.lblArtistLable.text = self.lineupvar.artist;
@@ -286,6 +308,7 @@ class playBallViewController: UIViewController {
             let dateString = formatter.stringFromDate(self.currentweekvar.weekEnd);
             
             self.lblWeekLable.text = "Week ending " + dateString;
+            LoadingOverlay.shared.hideOverlayView();
         }
     }
     
@@ -322,8 +345,8 @@ class playBallViewController: UIViewController {
         }
     }
     
-    func displayAlert(userMessage:String, fn:()->Void){
-        let myAlert = UIAlertController(title:"Alert",message: userMessage,preferredStyle: UIAlertControllerStyle.Alert);
+    func displayAlert(userTitle:String, userMessage:String, fn:()->Void){
+        let myAlert = UIAlertController(title:userTitle,message: userMessage,preferredStyle: UIAlertControllerStyle.Alert);
         let okAction = UIAlertAction(title:"Ok",style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in fn()});
         myAlert.addAction(okAction);
         dispatch_async(dispatch_get_main_queue()) {
