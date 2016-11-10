@@ -96,14 +96,6 @@ class selectorViewController: FormViewController {
                         dispatch_async(dispatch_get_main_queue()) {
                             self.navigationController?.popViewControllerAnimated(true);
                         }
-                        //send them to Set Lineup
-                        /*dispatch_async(dispatch_get_main_queue()) {
-                            self.performSegueWithIdentifier("backtoSetLineup", sender: nil);
-                        }*/
-                        /*dispatch_async(dispatch_get_main_queue()) {
-                            let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("Set Lineup");
-                            self.presentViewController(settingview!, animated: true, completion: nil)
-                        }*/
                     }
                     else{
                         self.displayAlert("Couldn't save the data", fn: {self.doNothing()});

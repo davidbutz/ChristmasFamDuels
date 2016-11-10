@@ -14,6 +14,7 @@ class playBallViewController: UIViewController {
 
     @IBOutlet weak var btnHamburgerMenu: UIBarButtonItem!
     
+    @IBOutlet weak var btnbarbutton: UIBarButtonItem!
     
     @IBOutlet weak var lblArtistLable: UILabel!
     
@@ -23,6 +24,7 @@ class playBallViewController: UIViewController {
     
     @IBOutlet weak var lblWeekLable: UILabel!
     
+    @IBOutlet weak var btnScoresAwaiting: UIButton!
     
     @IBOutlet weak var imgArtist: UIImageView!
     
@@ -36,7 +38,7 @@ class playBallViewController: UIViewController {
             let success =  (okresponse as! NSDictionary)["success"] as! Bool;
             if(success){
                 let cleanedname = self.appvar.fname + " " + self.appvar.lname;
-                self.api.apicallout("/api/scoring/points/heardsong/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.song.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.songID + "/" + self.lineupvar.lineupID + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
+                self.api.apicallout("/api/scoring/points/heardsong/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.song.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.songID + "/" + self.lineupvar.lineupID + "/" + self.appvar.userid + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
                     let success =  (okresponse as! NSDictionary)["success"] as! Bool;
                     if(success){
                         self.displayAlert("Awaiting Confirmation.", fn: {self.doNothing()});
@@ -60,7 +62,7 @@ class playBallViewController: UIViewController {
             let success =  (okresponse as! NSDictionary)["success"] as! Bool;
             if(success){
                 let cleanedname = self.appvar.fname + " " + self.appvar.lname;
-                self.api.apicallout("/api/scoring/points/heardartist/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.artist.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.artistID + "/" + self.lineupvar.lineupID + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
+                self.api.apicallout("/api/scoring/points/heardartist/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.artist.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.artistID + "/" + self.lineupvar.lineupID + "/" + self.appvar.userid + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
                     let success =  (okresponse as! NSDictionary)["success"] as! Bool;
                     if(success){
                         self.displayAlert("Awaiting Confirmation.", fn: {self.doNothing()});
@@ -86,7 +88,7 @@ class playBallViewController: UIViewController {
             let success =  (okresponse as! NSDictionary)["success"] as! Bool;
             if(success){
                 let cleanedname = self.appvar.fname + " " + self.appvar.lname;
-                self.api.apicallout("/api/scoring/points/heardrelease/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.release.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.releaseID + "/" + self.lineupvar.lineupID + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
+                self.api.apicallout("/api/scoring/points/heardrelease/" + cleanedname.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.leaguevar.leagueID + "/" + self.lineupvar.release.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! + "/" + self.lineupvar.releaseID + "/" + self.lineupvar.lineupID + "/" + self.appvar.userid + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (okresponse) -> () in
                     let success =  (okresponse as! NSDictionary)["success"] as! Bool;
                     if(success){
                         self.displayAlert("Awaiting Confirmation.", fn: {self.doNothing()});
@@ -149,7 +151,7 @@ class playBallViewController: UIViewController {
         //register the notification deviceToken with the server.
         let defaults = NSUserDefaults.standardUserDefaults();
         if let savedDeviceToken = defaults.stringForKey("deviceToken") {
-            api.apicallout("/api/registerNotifications/iOS/" + savedDeviceToken + "/" + leaguevar.leagueID + "/" + appvar.logintoken, iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
+            api.apicallout("/api/registerNotifications/iOS/" + savedDeviceToken + "/" + leaguevar.leagueID + "/" + appvar.userid + "/" + appvar.logintoken, iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
                     let success = (response as! NSDictionary)["success"] as! Bool;
                     if(success){
                         //right now we dont really take any action on the part of this API call.. just want to know if successful.
@@ -165,6 +167,13 @@ class playBallViewController: UIViewController {
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration;
         
         _ = AWSS3TransferManager.registerS3TransferManagerWithConfiguration(configuration, forKey: "xxx");
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.catchIt), name: "myNotif", object: nil);
         
         // get the week you are in!
         api.apicallout("/api/setlineup/week/getcurrent/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (weekresponse) -> () in
@@ -181,16 +190,31 @@ class playBallViewController: UIViewController {
             self.nextweekvar.weekStart = NSDate(dateStringhms: (nextweekresponse as! NSDictionary)["weekStart"] as! String);
             self.nextweekvar.weekEnd = NSDate(dateStringhms: (nextweekresponse as! NSDictionary)["weekEnd"] as! String);
         });
-    
+
         
-        // Do any additional setup after loading the view.
-        // reload(true);
+        btnScoresAwaiting.hidden = true;
+        //here we will check to see if there are any unconfirmed "points"... if so, we will btnScoresAwaiting.hidden = false;
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
+    func catchIt(userInfo: NSNotification){
+        /*var not = JSON(userInfo.valueForKey("userInfo")!)
+        // Check nil and do redirect here, for example:
+        if not["callback"]["type"].int == 10{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc1: example1VC = storyboard.instantiateViewControllerWithIdentifier("example1") as! example1VC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if not["callback"]["type"].int == 20{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc2: example2VC = storyboard.instantiateViewControllerWithIdentifier("example2") as! example2VC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }*/
+        print("Load a button on the bottom.");
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.btnScoresAwaiting.hidden = false;
+        });
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -226,6 +250,7 @@ class playBallViewController: UIViewController {
                     if(success){
                         dispatch_async(dispatch_get_main_queue()) {
                             self.pointsearned = (pointresponse as! NSDictionary)["points"] as! Int;
+                            self.lblScore.text = String(self.pointsearned) + " Points";
                         };
                     }
                     self.provisionScreen();
@@ -239,8 +264,10 @@ class playBallViewController: UIViewController {
             else{
                 //send them to "Set Lineup"
                 dispatch_async(dispatch_get_main_queue()) {
-                    let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("Set Lineup");
-                    self.presentViewController(inviteFriends!, animated: true, completion: nil);
+                    //I want to have them pretend they clicked this button....
+                    UIApplication.sharedApplication().sendAction(self.btnbarbutton.action, to: self.btnbarbutton.target, from: self, forEvent: nil);
+                    //let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("Set Lineup");
+                    //self.presentViewController(inviteFriends!, animated: true, completion: nil);
                 }
             }
         });

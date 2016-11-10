@@ -71,11 +71,11 @@
                                             <action selector="onClickCreate:" destination="hiO-Ca-Qus" eventType="touchUpInside" id="9ty-Uq-0y4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXG-bB-6Z1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXG-bB-6Z1">
                                         <rect key="frame" x="20" y="438" width="560" height="30"/>
                                         <state key="normal" title="Join an Existing League"/>
                                         <connections>
-                                            <segue destination="I3B-TQ-Tom" kind="show" id="T5w-Du-Gvy"/>
+                                            <segue destination="I3B-TQ-Tom" kind="show" identifier="seqjoinExistingLeague" id="T5w-Du-Gvy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -90,7 +90,7 @@
                                     <constraint firstItem="I3G-aw-0hf" firstAttribute="trailing" secondItem="t9O-ze-nG9" secondAttribute="trailing" id="Mkf-kl-phN"/>
                                     <constraint firstAttribute="trailing" secondItem="I3G-aw-0hf" secondAttribute="trailing" constant="20" id="SWZ-fu-odc"/>
                                     <constraint firstItem="jXG-bB-6Z1" firstAttribute="leading" secondItem="36U-ns-a6y" secondAttribute="leading" id="Zre-tb-1WS"/>
-                                    <constraint firstAttribute="bottom" secondItem="jXG-bB-6Z1" secondAttribute="bottom" constant="-56" id="e4d-We-ZfQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="jXG-bB-6Z1" secondAttribute="bottom" constant="8" id="e4d-We-ZfQ"/>
                                     <constraint firstItem="I3G-aw-0hf" firstAttribute="top" secondItem="1Xn-ps-fCW" secondAttribute="top" constant="8" id="fmr-eI-kWc"/>
                                     <constraint firstItem="hgd-zd-sVJ" firstAttribute="leading" secondItem="36U-ns-a6y" secondAttribute="leading" id="fvI-XT-DBW"/>
                                     <constraint firstItem="hgd-zd-sVJ" firstAttribute="trailing" secondItem="36U-ns-a6y" secondAttribute="trailing" id="iFh-ZK-W2s"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="-54" y="-1131"/>
         </scene>
-        <!--Join League View Controller-->
+        <!--joinExistingLeague-->
         <scene sceneID="1zh-rA-Fwv">
             <objects>
-                <viewController restorationIdentifier="joinExistingLeague" storyboardIdentifier="joinExistingLeague" id="I3B-TQ-Tom" customClass="joinLeagueViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="joinExistingLeague" storyboardIdentifier="joinExistingLeague" title="joinExistingLeague" id="I3B-TQ-Tom" customClass="joinLeagueViewController" customModule="Christmas_Fam_Duels" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FSP-jW-pyo"/>
                         <viewControllerLayoutGuide type="bottom" id="Ftu-Xl-aDx"/>
@@ -130,53 +130,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRD-si-fyv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join existing league" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-Tg-HrD">
-                                        <rect key="frame" x="8" y="72" width="584" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zz-TE-5xM">
-                                        <rect key="frame" x="8" y="139" width="584" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Join"/>
-                                        <connections>
-                                            <action selector="onClickJoinLeague:" destination="I3B-TQ-Tom" eventType="touchUpInside" id="bqe-9E-3is"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter League Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Uh-wXa">
-                                        <rect key="frame" x="8" y="101" width="584" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="bMc-Tg-HrD" firstAttribute="leading" secondItem="IRD-si-fyv" secondAttribute="leadingMargin" id="0b5-aq-il4"/>
-                                    <constraint firstItem="8zz-TE-5xM" firstAttribute="top" secondItem="14W-Uh-wXa" secondAttribute="bottom" constant="8" symbolic="YES" id="14K-PF-FfX"/>
-                                    <constraint firstItem="bMc-Tg-HrD" firstAttribute="trailing" secondItem="IRD-si-fyv" secondAttribute="trailingMargin" id="FV0-XC-TJY"/>
-                                    <constraint firstItem="14W-Uh-wXa" firstAttribute="trailing" secondItem="8zz-TE-5xM" secondAttribute="trailing" id="RcP-Qi-vWd"/>
-                                    <constraint firstItem="14W-Uh-wXa" firstAttribute="leading" secondItem="8zz-TE-5xM" secondAttribute="leading" id="RcV-eP-KDI"/>
-                                    <constraint firstItem="bMc-Tg-HrD" firstAttribute="leading" secondItem="14W-Uh-wXa" secondAttribute="leading" id="U0S-Sc-oNz"/>
-                                    <constraint firstItem="14W-Uh-wXa" firstAttribute="top" secondItem="bMc-Tg-HrD" secondAttribute="bottom" constant="8" symbolic="YES" id="cSZ-2l-hqt"/>
-                                    <constraint firstItem="bMc-Tg-HrD" firstAttribute="top" secondItem="IRD-si-fyv" secondAttribute="top" constant="72" id="fk4-kY-gbs"/>
-                                    <constraint firstItem="bMc-Tg-HrD" firstAttribute="trailing" secondItem="14W-Uh-wXa" secondAttribute="trailing" id="xr8-xv-oGi"/>
-                                </constraints>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join existing league" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-Tg-HrD">
+                                <rect key="frame" x="8" y="64" width="584" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter League Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="14W-Uh-wXa">
+                                <rect key="frame" x="8" y="93" width="584" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zz-TE-5xM">
+                                <rect key="frame" x="8" y="131" width="584" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Join"/>
+                                <connections>
+                                    <action selector="onClickJoinLeague:" destination="I3B-TQ-Tom" eventType="touchUpInside" id="bqe-9E-3is"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="IRD-si-fyv" secondAttribute="trailing" id="RwH-YM-R4f"/>
-                            <constraint firstItem="IRD-si-fyv" firstAttribute="leading" secondItem="ByO-Ku-iFp" secondAttribute="leading" id="jzC-pt-5bj"/>
-                            <constraint firstAttribute="bottom" secondItem="IRD-si-fyv" secondAttribute="bottom" id="xp4-H6-T1f"/>
-                            <constraint firstItem="IRD-si-fyv" firstAttribute="top" secondItem="ByO-Ku-iFp" secondAttribute="top" id="xs5-yI-IEJ"/>
+                            <constraint firstItem="bMc-Tg-HrD" firstAttribute="leading" secondItem="14W-Uh-wXa" secondAttribute="leading" id="1po-nJ-5cT"/>
+                            <constraint firstItem="14W-Uh-wXa" firstAttribute="leading" secondItem="8zz-TE-5xM" secondAttribute="leading" id="7rt-8y-sfV"/>
+                            <constraint firstItem="bMc-Tg-HrD" firstAttribute="leading" secondItem="ByO-Ku-iFp" secondAttribute="leadingMargin" constant="-12" id="ExE-5F-NgK"/>
+                            <constraint firstItem="14W-Uh-wXa" firstAttribute="top" secondItem="bMc-Tg-HrD" secondAttribute="bottom" constant="8" symbolic="YES" id="Ivq-LP-K75"/>
+                            <constraint firstItem="bMc-Tg-HrD" firstAttribute="trailing" secondItem="14W-Uh-wXa" secondAttribute="trailing" id="NJC-Xb-c4P"/>
+                            <constraint firstItem="bMc-Tg-HrD" firstAttribute="centerX" secondItem="ByO-Ku-iFp" secondAttribute="centerX" id="Txf-uC-kyq"/>
+                            <constraint firstItem="14W-Uh-wXa" firstAttribute="trailing" secondItem="8zz-TE-5xM" secondAttribute="trailing" id="rzF-d0-NtF"/>
+                            <constraint firstItem="bMc-Tg-HrD" firstAttribute="top" secondItem="FSP-jW-pyo" secondAttribute="bottom" id="yal-NN-OVP"/>
+                            <constraint firstItem="8zz-TE-5xM" firstAttribute="top" secondItem="14W-Uh-wXa" secondAttribute="bottom" constant="8" symbolic="YES" id="zlJ-8m-2EB"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="formView" destination="IRD-si-fyv" id="DeW-by-jJu"/>
                         <outlet property="txtLeagueName" destination="14W-Uh-wXa" id="uSQ-pL-c5z"/>
                     </connections>
                 </viewController>
@@ -412,13 +399,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3CV-Hs-Ve1">
                                 <rect key="frame" x="520" y="221" width="60" height="60"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6t-Zh-k0j">
+                                <rect key="frame" x="20" y="439" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Scores Awaiting Confirmation"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="x6t-Zh-k0j" firstAttribute="top" secondItem="IE0-P9-dWE" secondAttribute="bottom" constant="8" symbolic="YES" id="056-fo-gsm"/>
                             <constraint firstItem="CKG-4a-44e" firstAttribute="top" secondItem="3CV-Hs-Ve1" secondAttribute="top" id="0O2-9o-o3p"/>
                             <constraint firstItem="s4g-Tx-Ypj" firstAttribute="leading" secondItem="CKG-4a-44e" secondAttribute="leading" id="0ds-42-rav"/>
                             <constraint firstItem="CKG-4a-44e" firstAttribute="top" secondItem="icj-X9-7M6" secondAttribute="top" id="17Z-q0-goH"/>
                             <constraint firstItem="gBI-RR-PIH" firstAttribute="top" secondItem="a4v-gU-B1q" secondAttribute="bottom" constant="64" id="1iT-cc-fyu"/>
+                            <constraint firstItem="x6t-Zh-k0j" firstAttribute="trailing" secondItem="yT4-wI-obA" secondAttribute="trailing" id="1wQ-zI-uML"/>
                             <constraint firstItem="KMx-gf-LeX" firstAttribute="top" secondItem="icj-X9-7M6" secondAttribute="bottom" constant="15" id="5Q3-mq-IjP"/>
                             <constraint firstItem="CKG-4a-44e" firstAttribute="bottom" secondItem="3CV-Hs-Ve1" secondAttribute="bottom" id="6CR-7q-E2O"/>
                             <constraint firstItem="KMx-gf-LeX" firstAttribute="leading" secondItem="EBD-1L-Ccm" secondAttribute="leading" id="6GY-5a-4Gg"/>
@@ -470,6 +464,7 @@
                             <constraint firstItem="KMx-gf-LeX" firstAttribute="bottom" secondItem="kFy-3H-AvZ" secondAttribute="bottom" id="tWd-FG-orN"/>
                             <constraint firstItem="s4g-Tx-Ypj" firstAttribute="centerX" secondItem="XlB-HH-AlR" secondAttribute="centerX" id="vko-XL-Rih"/>
                             <constraint firstItem="kFy-3H-AvZ" firstAttribute="leading" secondItem="a4v-gU-B1q" secondAttribute="trailing" constant="8" symbolic="YES" id="vvW-ZQ-HtD"/>
+                            <constraint firstItem="x6t-Zh-k0j" firstAttribute="leading" secondItem="IE0-P9-dWE" secondAttribute="leading" id="xF0-N5-0hX"/>
                             <constraint firstItem="icj-X9-7M6" firstAttribute="bottom" secondItem="CKG-4a-44e" secondAttribute="bottom" id="yu9-A9-MSu"/>
                             <constraint firstItem="dzL-Jr-8yQ" firstAttribute="bottom" secondItem="IE0-P9-dWE" secondAttribute="bottom" id="zKj-yX-BzZ"/>
                         </constraints>
@@ -484,6 +479,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnHamburgerMenu" destination="55h-U5-Gfz" id="qoq-bF-71J"/>
+                        <outlet property="btnScoresAwaiting" destination="x6t-Zh-k0j" id="FYp-w1-KT5"/>
+                        <outlet property="btnbarbutton" destination="x6K-Ah-Aa3" id="D2K-4o-dgr"/>
                         <outlet property="imgArtist" destination="kFy-3H-AvZ" id="3zM-mL-DaP"/>
                         <outlet property="imgRelease" destination="yT4-wI-obA" id="KFM-Zt-Q5C"/>
                         <outlet property="lblArtistLable" destination="a4v-gU-B1q" id="y4s-Vo-oFS"/>
@@ -496,6 +493,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYa-0N-G7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-31" y="-12"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="k1O-Fm-gkj">
+            <objects>
+                <viewController id="dAw-WX-PQW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ieH-na-sPC"/>
+                        <viewControllerLayoutGuide type="bottom" id="bN0-a6-wiu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TZb-qR-kwY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yp-Qh-jwP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="490"/>
         </scene>
         <!--Standings-->
         <scene sceneID="Yyb-8e-PPa">
@@ -1679,9 +1694,9 @@
         <image name="singerwhite" width="459" height="459"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yc5-Qz-UXH"/>
-        <segue reference="x9a-xV-XVQ"/>
+        <segue reference="OQ9-Ba-fiT"/>
         <segue reference="avi-ol-evB"/>
+        <segue reference="Yc5-Qz-UXH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
