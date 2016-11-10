@@ -109,14 +109,14 @@
         //what do we send back if something goes wrong?
         var errorhandlingResponse = { "success": false };
         
-        UserXLeague.find({ "userID": user_id, "leagueID": leagueID }, function (err, dataUserXLeague) {
+        UserXLeague.find({ "userID": userID, "leagueID": leagueID }, function (err, dataUserXLeague) {
             
-            if (dataUserXLeague) {
+            if (dataUserXLeague.length > 0) {
                 console.log("addLeagueMember - user exists in league already.")
                 callback(errorhandlingResponse);
             }
             else {
-                var newUserXLeague = new UserXLeague({ "userID": user_id, "leagueID": leagueID, "roleID" : 2 });
+                var newUserXLeague = new UserXLeague({ "userID": userID, "leagueID": leagueID, "roleID" : 2 });
                 newUserXLeague.save(function (err) {
                     if (err) {
                         console.log(err);

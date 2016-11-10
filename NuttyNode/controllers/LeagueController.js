@@ -7,7 +7,7 @@
 
     var authentication = require("../controllers/Authentication");
     var crypto = require("crypto");
-    var User = require("../controllers/Authentication");
+    var User = require('../models/User.js');
     ObjectID = require('mongodb').ObjectID;
 
     //add: add league
@@ -89,7 +89,9 @@
             var finalToEmailArray = [];
             var arrayEmails = email.split(";");
             for (var i = 0; i < arrayEmails.length; i++) {
-                finalToEmailArray.push(arrayEmails[i]);
+                if (arrayEmails[i] != "") {
+                    finalToEmailArray.push(arrayEmails[i]);
+                }
             }
             to = finalToEmailArray;
             var params = {
@@ -161,7 +163,7 @@
                         }
                         else {
                             if (dataUser) {
-                                LeagueInvitation.findOne({ "leagueID": dataLeague._id.toString(), "email" : { $regex: new RegExp('^' + dataUser.email.toLowerCase(), 'i') } }, function (err, request) {
+                                LeagueInvitation.findOne({ "leagueID": dataLeague._id.toString(), "email" : { $regex: new RegExp('' + dataUser.username, 'i') } }, function (err, request) {
                                     if (err) {
                                         callback(res, errorhandlingResponse);
                                     }

@@ -141,7 +141,7 @@
     }
     
     //user simply logs in and we capture their unique_id
-    ChristmasFamDuelsController.saveiOSNotificationToken = function (req, res, notification_token, leagueID, callback) {
+    ChristmasFamDuelsController.saveiOSNotificationToken = function (req, res, notification_token, leagueID, userID, callback) {
         //see if it exists in Mongo.
         NotificationToken.findOne({ "notification_token_id" : notification_token, "leagueID" : leagueID, "type" : "iOS" }, function (err, notificationtoken) {
             if (notificationtoken) {
@@ -179,6 +179,7 @@
                                 var notificationtoken = new NotificationToken({
                                     "notification_token_id": notification_token, 	
                                     "leagueID": leagueID,
+                                    "userID" : userID,
                                     "endpointARN": token_endpointARN.toString(),	
                                     "type": "iOS"
                                 });
@@ -205,6 +206,7 @@
                         var notificationtoken = new NotificationToken({
                             "notification_token_id": notification_token, 	
                             "leagueID": leagueID,
+                            "userID" : userID,
                             "endpointARN": data.EndpointArn.toString(),	
                             "type": "iOS"
                         });

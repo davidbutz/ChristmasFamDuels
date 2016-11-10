@@ -38,12 +38,14 @@
     });
 
     //check if user is scamming system by clicking too much...
-    rRouter.get("/getNeededConfirmations/:leagueID/:logintoken", function (req, res) {
+    rRouter.get("/getNeededConfirmations/:leagueID/:userID/:weekID/:logintoken", function (req, res) {
         var leagueID = req.params.leagueID;
         var logintoken = req.params.logintoken;
+        var userID = req.params.userID;
+        var weekID = req.params.weekID;
         authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
-                viewcontroller.getNeededConfirmations(req, res, leagueID, sendResponse);
+                viewcontroller.getNeededConfirmations(req, res, leagueID, userID, weekID, sendResponse);
             }
             else {
                 res.json({ "success": false , message: 'token not valid' });
@@ -81,6 +83,8 @@
         });
     });
     
+    
+    //view league standings overall....weekID is optional.
     rRouter.get("/points/:weekID/:leagueID/:logintoken", function (req, res) {
         var leagueID = req.params.leagueID;
         var weekID = req.params.weekID;

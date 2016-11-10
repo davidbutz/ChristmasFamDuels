@@ -6,29 +6,111 @@
     var Artist = require('../models/Artist.js');
     var Release = require('../models/Release.js');
     var Points = require('../models/Points.js');
-    
+    var UserXLeague = require('../models/UserXLeague.js');
 
     ObjectID = require('mongodb').ObjectID;
     
+    //view league standings overall.....weekID is optional.
     ViewController.viewPoints = function (req, res, leagueID, weekID, callback) {
-        var errorhandlingResponse = { "success": false };
-
+       
         //**FINISH
         callback(res, errorhandlingResponse);
     }
     
-    ViewController.getNeededConfirmations = function (req, res, leagueID, callback) {
+    ViewController.getNeededConfirmations = function (req, res, leagueID, userID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
-        
-        //**FINISH
-        callback(res, errorhandlingResponse);
+        var showmyownpoints = true;
+        // for these userxleagues
+        UserXLeague.find({ "leagueID": leagueID }, function (err, dataUserXLeague) {
+            if (err) {
+                console.log("error in UserXLeague.find");
+                console.log(err);
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                // minus the user i am
+                array_UserXLeague = [];
+                for (var y = 0; y < dataUserXLeague.length; y++) {
+                    if (!showmyownpoints) {
+                        if (dataUserXLeague[y].userID.toString() != userID) {
+                            array_UserXLeague.push(dataUserXLeague[y]._id.toString());
+                        }
+                    }
+                    else {
+                        array_UserXLeague.push(dataUserXLeague[y]._id.toString());
+                    }
+                }
+                // get their lineups for this week.
+                LineUp.find({ "weekID": weekID, "userxleagueID": { $in: array_UserXLeague } }, function (err, dataLineUp) {
+                    if (err) {
+                        console.log("error in LineUp.find");
+                        console.log(err);
+                        callback(res, errorhandlingResponse);
+                    }
+                    else {
+                        array_LineUp = [];
+                        for (var y = 0; y < dataLineUp.length; y++) {
+                            array_LineUp.push(dataLineUp[y]._id.toString());
+                        }
+                        // then get points where confirmationuserID is not there...
+                        Points.find({ "lineupID": { $in: array_LineUp }, "confirmationuserID": null }, function (err, dataPoints) {
+                            if (err) {
+                                console.log("error in Points.find");
+                                console.log(err);
+                                callback(res, errorhandlingResponse);
+                            }
+                            else {
+                                var pointsArray = [];
+                                
+                                for (var y = 0; y < dataPoints.length; y++) {
+                                    var datecreated = new Date(dataPoints[y].datecreated.toString());
+                                    var currentDate = new Date();
+                                    currentDate.setDate(datecreated.getDate());
+                                    currentDate.setTime(datecreated.getTime());
+                                    //console.log(currentDate);
+                                    //console.log(currentDate.toISOString());
+                                    //console.log(currentDate.toUTCString());
+                                    var point = {
+                                        "_id": dataPoints[y]._id,
+                                        "lineupID": dataPoints[y].lineupID,
+                                        "leagueID": dataPoints[y].leagueID,
+                                        "score": dataPoints[y].score,
+                                        "referenceID": dataPoints[y].referenceID,
+                                        "referenceType": dataPoints[y].referenceType,
+                                        "referenceName": dataPoints[y].referenceName,
+                                        "referenceUser": dataPoints[y].referenceUser,
+                                        "__v": dataPoints[y].__v,
+                                        "datecreated": currentDate.toISOString()
+                                    }
+                                    pointsArray.push(point);
+                                }
+                                callback(res, { "success": true , "points": pointsArray });
+                            }
+                        });
+                    }
+                });
+            }
+        });
     }
     
     ViewController.summarizePoints = function (req, res, lineupID, callback) {
         var errorhandlingResponse = { "success": false };
-        
-        //**FINISH
-        callback(res, errorhandlingResponse);
+        Points.find({ "lineupID": lineupID }, function (err, dataPoints) {
+            if (err) {
+                console.log("error in Points.find");
+                console.log(err);
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                var PointsEarned = 0;
+                for (var y = 0; y < dataPoints.length; y++) {
+                    if (dataPoints[y].confirmationuserID) {
+                        PointsEarned += dataPoints[y].score;
+                    }
+                }
+                callback(res, { "success": true, "points" : PointsEarned });
+            }
+        });
     }
 
     ViewController.thresholdOK = function (req, res, lineupID, callback){

@@ -3,9 +3,10 @@
     var LineUp = require('../models/LineUp.js');
     var Points = require('../models/Points.js');
 
-    ScoringController.heardSong = function (req, res, lineupID, leagueID, userName, song, songID, callback) {
+    ScoringController.heardSong = function (req, res, lineupID, leagueID, userName, song, songID, userID, callback) {
         var errorhandlingResponse = { "success": false };
-        var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 3, "referenceID": songID, "referenceType": "Song", "referenceName": song, "referenceUser": userName });
+        var isodate = new Date().toISOString();
+        var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 3, "referenceID": songID, "referenceType": "Song", "referenceName": song, "referenceUser": userName, "datecreated": isodate });
         newPoints.save(function (err) {
             if (err) {
                 callback(res, errorhandlingResponse);
@@ -13,15 +14,16 @@
             else {
                 //send notification to league that 
                 var notificationMessage = userName + " heard their song";
-                sendLeagueNotification(leagueID, notificationMessage);
+                sendLeagueNotification(leagueID, notificationMessage, userID);
                 callback(res, { "success": true });
             }
         });
     }
     
-    ScoringController.heardArtist = function (req, res, lineupID, leagueID, userName, artist, artistID, callback) {
+    ScoringController.heardArtist = function (req, res, lineupID, leagueID, userName, artist, artistID, userID, callback) {
         var errorhandlingResponse = { "success": false };
-        var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 1, "referenceID": artistID, "referenceType": "Artist", "referenceName": artist, "referenceUser": userName });
+        var isodate = new Date().toISOString();
+        var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 1, "referenceID": artistID, "referenceType": "Artist", "referenceName": artist, "referenceUser": userName, "datecreated": isodate });
         newPoints.save(function (err) {
             if (err) {
                 callback(res, errorhandlingResponse);
@@ -29,15 +31,16 @@
             else {
                 //send notification to league that 
                 var notificationMessage = userName + " heard their artist";
-                sendLeagueNotification(leagueID, notificationMessage);
+                sendLeagueNotification(leagueID, notificationMessage, userID);
                 callback(res, { "success": true });
             }
         });
     }
     
-    ScoringController.heardRelease = function (req, res, lineupID, leagueID, userName, release, releaseID, callback) {
+    ScoringController.heardRelease = function (req, res, lineupID, leagueID, userName, release, releaseID, userID, callback) {
         var errorhandlingResponse = { "success": false };
-        var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 7, "referenceID": releaseID, "referenceType": "Release", "referenceName": release, "referenceUser": userName });
+        var isodate = new Date().toISOString();
+        var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 7, "referenceID": releaseID, "referenceType": "Release", "referenceName": release, "referenceUser": userName, "datecreated": isodate });
         newPoints.save(function (err) {
             if (err) {
                 callback(res, errorhandlingResponse);
@@ -45,21 +48,21 @@
             else {
                 //send notification to league that 
                 var notificationMessage = userName + " heard their artist and song";
-                sendLeagueNotification(leagueID, notificationMessage);
+                sendLeagueNotification(leagueID, notificationMessage, userID);
                 callback(res, { "success": true });
             }
         });
     }
     
     ScoringController.confirmed = function (req, res, pointID, userID, callback) {
-        var conditions = { _od: pointID };
+        var conditions = { _id: pointID };
         var update = { $set: { confirmationuserID: userID } };
         var options = { upsert: true };
         Points.update(conditions, update, options, mongocallback);
         callback(res, { "success": true });
     }
 
-    function sendLeagueNotification(leagueID, message){
+    function sendLeagueNotification(leagueID, message, userID){
         var subject = "Christmas Fam Duels";
         var AWS = require('aws-sdk');
         var cloudconfig = require('../cloud/index.js');
@@ -74,20 +77,41 @@
         NotificationTokens.find({ "leagueID": leagueID }, function (err, notificationtokens) {
             if (notificationtokens) {
                 for (var x = 0; x < notificationtokens.length; x++) {
-                    var endpointARN = notificationtokens[x].endpointARN.toString();
-                    sns.publish({
-                        TargetArn: endpointARN,
-                        Message: message,
-                        Subject: subject
-                    },
-                    function (err, data) {
-                        if (err) {
-                            console.log("Error sending a message " + err);
-                        }
-                        else {
-                            console.log("Sent message: " + data.MessageId);
-                        }
-                    });
+                    if (notificationtokens[x].userID.toString() != userID) {
+                        var endpointARN = notificationtokens[x].endpointARN.toString();
+                        sns.publish({
+                            TargetArn: endpointARN,
+                            Message: message,
+                            Subject: subject
+                        },
+                        function (err, data) {
+                            if (err) {
+                                console.log("Error sending a message " + err);
+                            }
+                            else {
+                                console.log("Sent message: " + data.MessageId);
+                            }
+                        });
+                    }
+                    else {
+                        console.log("you were going to notify yourself...")
+                        //BEGIN: TEMPORARY!!!
+                        var endpointARN = notificationtokens[x].endpointARN.toString();
+                        sns.publish({
+                            TargetArn: endpointARN,
+                            Message: message,
+                            Subject: subject
+                        },
+                        function (err, data) {
+                            if (err) {
+                                console.log("Error sending a message " + err);
+                            }
+                            else {
+                                console.log("Sent message: " + data.MessageId);
+                            }
+                        });
+                        //END: TEMPORARY!!!
+                    }
                 }
             }
             else {

@@ -21,16 +21,18 @@
         next();
     });
     
-    rRouter.get("/points/heardsong/:userName/:leagueID/:song/:songID/:lineupID/:logintoken", function (req, res) {
+
+    rRouter.get("/points/heardsong/:userName/:leagueID/:song/:songID/:lineupID/:userID/:logintoken", function (req, res) {
         var lineupID = req.params.lineupID;
         var logintoken = req.params.logintoken;
         var userName = req.params.userName;
         var song = req.params.song;
         var songID = req.params.songID;
         var leagueID = req.params.leagueID;
+        var userID = req.params.userID;
         authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
-                scoringcontroller.heardSong(req, res, lineupID, leagueID, userName, song, songID, sendResponse);
+                scoringcontroller.heardSong(req, res, lineupID, leagueID, userName, song, songID, userID, sendResponse);
             }
             else {
                 res.json({ "success": false , message: 'token not valid' });
@@ -38,16 +40,17 @@
         });
     });
     
-    rRouter.get("/points/heardartist/:userName/:leagueID/:artist/:artistID/:lineupID/:logintoken", function (req, res) {
+    rRouter.get("/points/heardartist/:userName/:leagueID/:artist/:artistID/:lineupID/:userID/:logintoken", function (req, res) {
         var lineupID = req.params.lineupID;
         var logintoken = req.params.logintoken;
         var userName = req.params.userName;
         var artist = req.params.artist;
         var artistID = req.params.artistID;
         var leagueID = req.params.leagueID;
+        var userID = req.params.userID;
         authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
-                scoringcontroller.heardArtist(req, res, lineupID, leagueID, userName, artist, artistID, sendResponse);
+                scoringcontroller.heardArtist(req, res, lineupID, leagueID, userName, artist, artistID, userID, sendResponse);
             }
             else {
                 res.json({ "success": false , message: 'token not valid' });
@@ -55,16 +58,17 @@
         });
     });
     
-    rRouter.get("/points/heardrelease/:userName/:leagueID/:release/:releaseID/:lineupID/:logintoken", function (req, res) {
+    rRouter.get("/points/heardrelease/:userName/:leagueID/:release/:releaseID/:lineupID/:userID/:logintoken", function (req, res) {
         var lineupID = req.params.lineupID;
         var logintoken = req.params.logintoken;
         var userName = req.params.userName;
         var release = req.params.release;
         var releaseID = req.params.releaseID;
         var leagueID = req.params.leagueID;
+        var userID = req.params.userID;
         authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {
-                scoringcontroller.heardRelease(req, res, lineupID, leagueID, userName, release, releaseID, sendResponse);
+                scoringcontroller.heardRelease(req, res, lineupID, leagueID, userName, release, releaseID, userID, sendResponse);
             }
             else {
                 res.json({ "success": false , message: 'token not valid' });

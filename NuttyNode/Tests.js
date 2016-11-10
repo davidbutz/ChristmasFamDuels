@@ -2,13 +2,12 @@
 var req = "";
 var Week = require("./models/Week.js");
 var Points = require("./models/Points.js");
-
+var League = require('./models/League.js');
+var LeagueInvitation = require('./models/LeagueInvitation.js');
 
 var setlineupcontroller = require("./controllers/SetLineupController");
 var viewcontroller = require("./controllers/ViewController");
 
-var title = "my name is dave";
-console.log(title.indexOf("me name"));
 
 var config = require('./config/index.js');
 var settings = {
@@ -29,10 +28,13 @@ var songsearchterm = "Have Yourself a merry little christmas";
 var release_search_song_term = "all i want for christmas";
 var release_search_artist_term = "mariah carey";
 var releaseDiscogsID = 222;
-
+var leagueID = "581a932124cd41302ad6ce61";
+var userID = "58239632c27b8ac4219c99df";//"581a73bf6dcd47a00233328e";
+var weekID = "581beba54201452008ecb29a";
+var lineupID = "5820b611d2641d08242551e7";//"5821347857e1e558259db299";//"5820b611d2641d08242551e7";
 
 //test thresholdOK logic...
-var testthresholdOK = true;
+var testthresholdOK = false;
 
 //adding and searching artists/songs/releases
 var testAddArtist = false;
@@ -49,7 +51,55 @@ var testEmailInvitations = false;
 //weeks
 var testWeekQueries = false;
 var addWeeks = false;
+var testlikequery = false;
+var testgetConfirmations = true;
+var testsummarize = true;
 
+if (testsummarize) {
+    viewcontroller.summarizePoints(res, res, lineupID, function (err, resp) {
+        console.log(resp);
+    });
+}
+
+if (testgetConfirmations) {
+    viewcontroller.getNeededConfirmations(req, res, leagueID, userID, weekID, function (err, resp) {
+        console.log(resp);
+    });
+}
+if (testlikequery) {
+    
+    var title = "my name is dave";
+    console.log(title.indexOf("me name"));
+    
+    var d = new Date();
+    var n = d.toISOString();
+    console.log(n);
+    var isodate = new Date().toISOString()
+    console.log(isodate);
+
+    var varemail = "cfd9@nuttyROBOT.com";
+    var varemail2 = "*cfd9*";
+    LeagueInvitation.findOne({ "email" : varemail2 }, function (err, request) {
+        if (err) {
+            callback(res, errorhandlingResponse);
+        }
+        console.log("--2-----");
+        console.log(request);
+        console.log("--2-----");
+    });
+    var aa = new RegExp('^' + varemail, 'i');
+    console.log(aa);
+    
+    LeagueInvitation.findOne({ "email" : { $regex: new RegExp('' + varemail, 'i') } }, function (err, request) {
+        if (err) {
+            callback(res, errorhandlingResponse);
+        }
+        console.log("-------");
+        console.log(request);
+        console.log("-------");
+    });
+
+}
 if (testthresholdOK) {
     console.log("testing threhold ok");
     var lineupID = "5820b611d2641d08242551e7";
