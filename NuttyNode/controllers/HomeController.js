@@ -36,6 +36,9 @@
             //todo: validate requesttoken
             res.render("inviteUser/index", { title: "Accept Invitation", OS: getMobileOperatingSystem(req), token: requesttoken, productionurl: settings.config().ProductionWeb });
         });
+        app.get("/privacy", function (req, res) {
+            res.render("privacy/index", { title: "Privacy Policy", OS: getMobileOperatingSystem(req), productionurl: settings.config().ProductionWeb });
+        });
     };
     
     function getMobileOperatingSystem(req) {

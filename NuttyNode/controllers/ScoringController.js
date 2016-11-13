@@ -2,37 +2,138 @@
 
     var LineUp = require('../models/LineUp.js');
     var Points = require('../models/Points.js');
+    var https = require('http');
+    var testingWLIF = true;
 
     ScoringController.heardSong = function (req, res, lineupID, leagueID, userName, song, songID, userID, callback) {
         var errorhandlingResponse = { "success": false };
         var isodate = new Date().toISOString();
         var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 3, "referenceID": songID, "referenceType": "Song", "referenceName": song, "referenceUser": userName, "datecreated": isodate });
-        newPoints.save(function (err) {
+        newPoints.save(function (err, datanewPoints) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
             else {
-                //send notification to league that 
                 var notificationMessage = userName + " heard their song";
-                sendLeagueNotification(leagueID, notificationMessage, userID);
-                callback(res, { "success": true });
+                //try to confirm against http://todays1019.cbslocal.com/?action=now-playing&type=json
+                sendWebRequest("todays1019.cbslocal.com", "/?action=now-playing&type=json", "GET", "80", "", function (error, response) {
+                    if (error) {
+                        sendLeagueNotification(leagueID, notificationMessage, userID);
+                        callback(res, { "success": true });
+                    }
+                    else {
+                        if (response) {
+                            if (response.message) {
+                                var json = JSON.parse(response.message);
+                                if (json[0].title) {
+                                    if (json[0].title.toLowerCase().indexOf(song.toLowerCase()) > -1 || testingWLIF == true) {
+                                        console.log("confirmed song hit!");
+                                        //update the datanewPoints just saved.
+                                        ScoringController.confirmed(null, null, datanewPoints._id.toString(), "1", function (err, resp) {
+                                            console.log("i just auto-confirmed a point");
+                                        });
+                                        callback(res, { "success": true });
+                                    }
+                                    else {
+                                        sendLeagueNotification(leagueID, notificationMessage, userID);
+                                        callback(res, { "success": true });
+                                    }
+                                }
+                                else {
+                                    sendLeagueNotification(leagueID, notificationMessage, userID);
+                                    callback(res, { "success": true });
+                                }
+                            }
+                            else {
+                                sendLeagueNotification(leagueID, notificationMessage, userID);
+                                callback(res, { "success": true });
+                            }
+                        }
+                        else {
+                            sendLeagueNotification(leagueID, notificationMessage, userID);
+                            callback(res, { "success": true });
+                        }
+                    }
+                });
             }
         });
     }
     
+    function sendWebRequest(_url, _path, _method, _port, _body, callback) {
+        var options = {
+            host: _url,
+            path: _path,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Cache -Control': 'no-cache'
+            }
+        };
+        //console.log(options);
+        var req2 = https.request(options, function (res) {
+            res.setEncoding('utf8');
+            res.on('data', function (chunk) {
+                callback(null, { "success": true, "message": chunk });
+            });
+        });
+        req2.on('error', function (e) {
+            console.log("error Man!s: " + e);
+            callback(e, { "success": false, "message": "error" });
+        });
+        req2.write(_body);
+        req2.end();
+    }
+    
+
     ScoringController.heardArtist = function (req, res, lineupID, leagueID, userName, artist, artistID, userID, callback) {
         var errorhandlingResponse = { "success": false };
         var isodate = new Date().toISOString();
         var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 1, "referenceID": artistID, "referenceType": "Artist", "referenceName": artist, "referenceUser": userName, "datecreated": isodate });
-        newPoints.save(function (err) {
+        newPoints.save(function (err, datanewPoints) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
             else {
                 //send notification to league that 
                 var notificationMessage = userName + " heard their artist";
-                sendLeagueNotification(leagueID, notificationMessage, userID);
-                callback(res, { "success": true });
+                sendWebRequest("todays1019.cbslocal.com", "/?action=now-playing&type=json", "GET", "80", "", function (error, response) {
+                    if (error) {
+                        sendLeagueNotification(leagueID, notificationMessage, userID);
+                        callback(res, { "success": true });
+                    }
+                    else {
+                        if (response) {
+                            if (response.message) {
+                                var json = JSON.parse(response.message);
+                                if (json[0].title) {
+                                    if (json[0].title.toLowerCase().indexOf(artist.toLowerCase()) > -1 || testingWLIF == true) {
+                                        console.log("confirmed artist hit!");
+                                        //update the datanewPoints just saved.
+                                        ScoringController.confirmed(null, null, datanewPoints._id.toString(), "1", function (err, resp) {
+                                            console.log("i just auto-confirmed a point");
+                                        });
+                                        callback(res, { "success": true });
+                                    }
+                                    else {
+                                        sendLeagueNotification(leagueID, notificationMessage, userID);
+                                        callback(res, { "success": true });
+                                    }
+                                }
+                                else {
+                                    sendLeagueNotification(leagueID, notificationMessage, userID);
+                                    callback(res, { "success": true });
+                                }
+                            }
+                            else {
+                                sendLeagueNotification(leagueID, notificationMessage, userID);
+                                callback(res, { "success": true });
+                            }
+                        }
+                        else {
+                            sendLeagueNotification(leagueID, notificationMessage, userID);
+                            callback(res, { "success": true });
+                        }
+                    }
+                });
             }
         });
     }
@@ -41,15 +142,52 @@
         var errorhandlingResponse = { "success": false };
         var isodate = new Date().toISOString();
         var newPoints = new Points({ "lineupID": lineupID, "leagueID": leagueID, "score": 7, "referenceID": releaseID, "referenceType": "Release", "referenceName": release, "referenceUser": userName, "datecreated": isodate });
-        newPoints.save(function (err) {
+        newPoints.save(function (err, datanewPoints) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
             else {
                 //send notification to league that 
                 var notificationMessage = userName + " heard their artist and song";
-                sendLeagueNotification(leagueID, notificationMessage, userID);
-                callback(res, { "success": true });
+                sendWebRequest("todays1019.cbslocal.com", "/?action=now-playing&type=json", "GET", "80", "", function (error, response) {
+                    if (error) {
+                        sendLeagueNotification(leagueID, notificationMessage, userID);
+                        callback(res, { "success": true });
+                    }
+                    else {
+                        if (response) {
+                            if (response.message) {
+                                var json = JSON.parse(response.message);
+                                if (json[0].title) {
+                                    if (json[0].title.toLowerCase().indexOf(release.toLowerCase()) > -1 || testingWLIF == true) {
+                                        console.log("confirmed release hit!");
+                                        //update the datanewPoints just saved.
+                                        ScoringController.confirmed(null, null, datanewPoints._id.toString(), "1", function (err, resp) {
+                                            console.log("i just auto-confirmed a point");
+                                        });
+                                        callback(res, { "success": true });
+                                    }
+                                    else {
+                                        sendLeagueNotification(leagueID, notificationMessage, userID);
+                                        callback(res, { "success": true });
+                                    }
+                                }
+                                else {
+                                    sendLeagueNotification(leagueID, notificationMessage, userID);
+                                    callback(res, { "success": true });
+                                }
+                            }
+                            else {
+                                sendLeagueNotification(leagueID, notificationMessage, userID);
+                                callback(res, { "success": true });
+                            }
+                        }
+                        else {
+                            sendLeagueNotification(leagueID, notificationMessage, userID);
+                            callback(res, { "success": true });
+                        }
+                    }
+                });
             }
         });
     }
@@ -96,6 +234,7 @@
                     else {
                         console.log("you were going to notify yourself...")
                         //BEGIN: TEMPORARY!!!
+                        /*
                         var endpointARN = notificationtokens[x].endpointARN.toString();
                         sns.publish({
                             TargetArn: endpointARN,
@@ -110,6 +249,7 @@
                                 console.log("Sent message: " + data.MessageId);
                             }
                         });
+                        */
                         //END: TEMPORARY!!!
                     }
                 }

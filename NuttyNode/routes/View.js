@@ -88,6 +88,9 @@
     rRouter.get("/points/:weekID/:leagueID/:logintoken", function (req, res) {
         var leagueID = req.params.leagueID;
         var weekID = req.params.weekID;
+        if (weekID == "all") {
+            weekID = "";
+        }
         var logintoken = req.params.logintoken;
         authentication.iftokenvalid(logintoken, function (err, valid) {
             if (valid) {

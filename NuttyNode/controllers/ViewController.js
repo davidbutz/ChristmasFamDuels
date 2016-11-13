@@ -7,19 +7,108 @@
     var Release = require('../models/Release.js');
     var Points = require('../models/Points.js');
     var UserXLeague = require('../models/UserXLeague.js');
-
+    var User = require('../models/User.js');
     ObjectID = require('mongodb').ObjectID;
     
     //view league standings overall.....weekID is optional.
     ViewController.viewPoints = function (req, res, leagueID, weekID, callback) {
-       
-        //**FINISH
-        callback(res, errorhandlingResponse);
+        var errorhandlingResponse = { "success": false };
+        // Get League Members
+        UserXLeague.find({ "leagueID": leagueID }, function (err, dataUserXLeague) {
+            if (err) {
+                console.log("error in UserXLeague.find");
+                console.log(err);
+                callback(res, errorhandlingResponse);
+            }
+            else {
+                //console.log(dataUserXLeague);
+                array_UserXLeague = [];
+                for (var y = 0; y < dataUserXLeague.length; y++) {
+                    array_UserXLeague.push(dataUserXLeague[y]._id.toString());
+                }
+                if (weekID != "") {
+                    // If weekID <> "", then we get that week's lineups
+                    console.log("weekID != ''");
+                }
+                else {
+                    // we get all lineups!
+                    LineUp.find({ "userxleagueID": { $in: array_UserXLeague } }, function (err, dataLineUp) {
+                        //console.log(dataLineUp);
+                        if (err) {
+                            console.log("error in LineUp.find");
+                            console.log(err);
+                            callback(res, errorhandlingResponse);
+                        }
+                        else {
+                            array_LineUp = [];
+                            for (var y = 0; y < dataLineUp.length; y++) {
+                                array_LineUp.push(dataLineUp[y]._id.toString());
+                            }
+                            // then get points...
+                            Points.find({ "lineupID": { $in: array_LineUp } }, function (err, dataPoints) {
+                                //console.log(dataPoints);
+                                if (err) {
+                                    console.log("error in Points.find");
+                                    console.log(err);
+                                    callback(res, errorhandlingResponse);
+                                }
+                                else {
+                                    var array_UserXLeague_userID = [];
+                                    for (var y = 0; y < dataUserXLeague.length; y++) {
+                                        array_UserXLeague_userID.push(dataUserXLeague[y].userID.toString());
+                                    }
+
+                                    // then get Users...
+                                    User.find({ "_id": { $in: array_UserXLeague_userID } }, function (err, dataUser) {
+                                        if (err) {
+                                            console.log("error in User.find");
+                                            console.log(err);
+                                            callback(res, errorhandlingResponse);
+                                        }
+                                        else {
+                                            var PointsEarned = 0;
+                                            var output = [];
+                                            //console.log(dataUser.length);
+                                            //now we build up this elaborate matrix of the user, points (confirmed)
+                                            for (var a = 0; a < dataUser.length; a++) {
+                                                PointsEarned = 0;
+                                                for (var b = 0; b < dataPoints.length; b++) {
+                                                    for (var c = 0; c < dataLineUp.length; c++) {
+                                                        for (var d = 0; d < dataUserXLeague.length; d++) {
+                                                            //points need to be :
+                                                            // confirmed
+                                                            // attached to a lineup which is attached to a league which is attached to this user
+                                                            if (dataPoints[b].lineupID.toString() == dataLineUp[c]._id.toString() && dataLineUp[c].userxleagueID.toString() == dataUserXLeague[d]._id.toString() && dataUserXLeague[d].userID.toString() == dataUser[a]._id.toString()) {
+                                                                if (dataPoints[b].confirmationuserID) {
+                                                                    PointsEarned += dataPoints[b].score;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                //console.log(dataUser[a].fname + " " + dataUser[a].lname);
+                                                output.push({ "name": dataUser[a].fname + " " + dataUser[a].lname, "score": PointsEarned });
+                                            }
+                                            //var sampleoutput = [{ "userName": "Mary Butz", "points": 24 },{ "userName": "Mary Butz", "points": 44} ]
+                                            //then sort it by points.
+                                            output.sort(function (a, b) {
+                                                return parseFloat(b.score) - parseFloat(a.score);
+                                            });
+                                            callback(res, { "success": true, "outputarray": output });
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        });
     }
     
     ViewController.getNeededConfirmations = function (req, res, leagueID, userID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
-        var showmyownpoints = true;
+        var showmyownpoints = false;
         // for these userxleagues
         UserXLeague.find({ "leagueID": leagueID }, function (err, dataUserXLeague) {
             if (err) {
@@ -116,7 +205,7 @@
     ViewController.thresholdOK = function (req, res, lineupID, callback){
         var errorhandlingResponse = { "success": false };
 
-        console.log("calling  db.points.find({'lineupID':'" + lineupID + "'}).sort({ 'datecreated': -1 }).limit(1) yielded nothing...")
+        //console.log("calling  db.points.find({'lineupID':'" + lineupID + "'}).sort({ 'datecreated': -1 }).limit(1) yielded nothing...")
 
         Points.find({ "lineupID": lineupID }).sort({ "datecreated": -1 }).limit(1).exec(function (err, dataPoints) {
             if (err) {
@@ -132,7 +221,7 @@
                     currentDate.setDate(currentDate.getDate());
                     var diffMs = (currentDate - lastDateCreated);
                     var secondselapsed = Math.floor((diffMs / 1000));
-                    console.log(secondselapsed);
+                    //console.log(secondselapsed);
                     if (secondselapsed < 180) {
                         callback(res, errorhandlingResponse);
                     }

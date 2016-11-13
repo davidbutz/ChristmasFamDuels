@@ -52,8 +52,62 @@ var testEmailInvitations = false;
 var testWeekQueries = false;
 var addWeeks = false;
 var testlikequery = false;
-var testgetConfirmations = true;
-var testsummarize = true;
+var testgetConfirmations = false;
+var testsummarize = false;
+var testwlif = false;
+var teststandings = true;
+
+if (teststandings) {
+    console.log("testing standings");
+    viewcontroller.viewPoints(req, res, leagueID, "", function (err, resp) {
+        console.log(resp);
+    });
+}
+
+if (testwlif) {
+    var https = require('http');
+    sendWebRequest("todays1019.cbslocal.com", "/?action=now-playing&type=json", "GET", "80", "", function (error, response) {
+        if (error) {
+            console.log(error);
+        }
+        else {
+            var json = JSON.parse(response.message);
+            //console.log(response.message);
+            console.log(json[0].title);
+            if (json[0].title.toLowerCase().indexOf("best day of".toLowerCase()) > -1) {
+                console.log("confirmed hit?");
+            }
+        }
+    });
+    
+
+    function sendWebRequest(_url, _path, _method, _port, _body, callback) {
+        var options = {
+            host: _url,
+            path: _path,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Cache -Control': 'no-cache'
+            }
+        };
+        //console.log(options);
+        var req2 = https.request(options, function (res) {
+            res.setEncoding('utf8');
+            res.on('data', function (chunk) {
+                //console.log("123");
+                callback(null, { "success": true, "message": chunk });
+            });
+        });
+        req2.on('error', function (e) {
+            console.log("error Man!s: " + e);
+            callback(e, { "success": false, "message": "error" });
+        });
+        //console.log(_body);
+        req2.write(_body);
+        //console.log("when is the error happening?");
+        req2.end();
+    }
+}
 
 if (testsummarize) {
     viewcontroller.summarizePoints(res, res, lineupID, function (err, resp) {
@@ -66,6 +120,7 @@ if (testgetConfirmations) {
         console.log(resp);
     });
 }
+
 if (testlikequery) {
     
     var title = "my name is dave";
@@ -100,6 +155,7 @@ if (testlikequery) {
     });
 
 }
+
 if (testthresholdOK) {
     console.log("testing threhold ok");
     var lineupID = "5820b611d2641d08242551e7";
