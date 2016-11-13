@@ -105,7 +105,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = initialViewControlleripad
         self.window?.makeKeyAndVisible()
 
-        
+        //let notificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
+        //let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         
         application.registerUserNotificationSettings(settings)
@@ -194,6 +196,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        _ = userInfo["aps"] as! [String: AnyObject]
+        NSNotificationCenter.defaultCenter().postNotificationName("myNotif", object: nil, userInfo: userInfo as [NSObject : AnyObject])
+
+    }
     
     func application(application: UIApplication,didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData){
         //send this device token to server

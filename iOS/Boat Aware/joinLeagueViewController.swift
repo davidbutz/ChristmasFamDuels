@@ -8,7 +8,7 @@
 
 import UIKit
 
-class joinLeagueViewController: FormViewController {
+class joinLeagueViewController: UIViewController {
 
     @IBOutlet weak var txtLeagueName: UITextField!
     
@@ -21,10 +21,10 @@ class joinLeagueViewController: FormViewController {
     
     @IBAction func onClickJoinLeague(sender: AnyObject) {
         let leagueName = txtLeagueName.text;
-        onClick(leagueName!);
+        onClickXYZ(leagueName!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!);
     }
     
-    func onClick(leagueName:String){
+    func onClickXYZ(leagueName:String){
         
         api.apicallout("/api/setup/league/findinvitation/" + appvar.userid + "/" + leagueName + "/" + appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: JSONObject, callback: { (response) -> () in
             
@@ -32,7 +32,7 @@ class joinLeagueViewController: FormViewController {
             if(success){
                 // not only did it find it... but it added them... take them to viewLaunch..
                 dispatch_async(dispatch_get_main_queue()) {
-                    let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                    let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("viewLoadingApp");
                     self.presentViewController(inviteFriends!, animated: true, completion: nil);
                 }
             }
@@ -46,19 +46,9 @@ class joinLeagueViewController: FormViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.txtLeagueName.delegate = self;
-        
-        txtLeagueName.resignFirstResponder();
-
         // Do any additional setup after loading the view.
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if (textField == self.txtLeagueName) {
-            let leagueName = txtLeagueName.text;
-            onClick(leagueName!);
-        }
-        return false;
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+class ConfirmationVariable {
+    var confirmations: Confirmations?
+    init(confirmations: Confirmations?){
+        self.confirmations = confirmations;
+    }
+}
+
+struct ConfirmationVariables{
+    static var confirmationvariables = ConfirmationVariable(confirmations: Confirmations(json: Dictionary<String, AnyObject>()));
+}
+
 class LineUpVariable {
     var lineupID:String;
     var songID:String;

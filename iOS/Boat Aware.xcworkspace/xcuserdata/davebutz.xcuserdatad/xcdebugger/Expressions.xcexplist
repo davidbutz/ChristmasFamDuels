@@ -98,6 +98,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "confirmTableViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:confirmTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contentObject?.datecreated">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Devices.init(devices_array : [AnyObject]) -&gt; Devices?:BoatAwareData.swift">
       </ContextState>
       <ContextState

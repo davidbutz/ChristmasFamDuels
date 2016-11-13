@@ -106,6 +106,14 @@ class LoginPageViewController: FormViewController {
                                 self.presentViewController(settingview!, animated: true, completion: nil)
                             }
                         }
+                        if(leaguecount == 0){
+                            //take them to add a league page.
+                            dispatch_async(dispatch_get_main_queue()) {
+                                //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
+                                let setupRemo = self.storyboard?.instantiateViewControllerWithIdentifier("createLeague");
+                                self.presentViewController(setupRemo!, animated: true, completion: nil)
+                            }
+                        }
                         else{
                             print("they belong to more than one league, which i dont handle");
                         }

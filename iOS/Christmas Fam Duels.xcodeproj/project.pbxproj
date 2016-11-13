@@ -24,6 +24,7 @@
 		616F9DDC1DC14C8F004CADD2 /* BoatAwareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */; };
 		616F9DE71DC14CE7004CADD2 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */; };
 		616F9DE81DC14CE7004CADD2 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */; };
+		6197EA571DD4C51100BA179B /* confirmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6197EA561DD4C51100BA179B /* confirmTableViewController.swift */; };
 		61B437A61C93213F00B0DCC2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B437A51C93213F00B0DCC2 /* SWRevealViewController.m */; };
 		666CE7BF1C974127005863A9 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666CE7BE1C974127005863A9 /* FormViewController.swift */; };
 		66AEAE8F1CEA616B00A4A863 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AEAE8C1CEA616B00A4A863 /* AWSCore.framework */; };
@@ -85,6 +86,7 @@
 		616F9DDB1DC14C8F004CADD2 /* BoatAwareData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatAwareData.swift; sourceTree = "<group>"; };
 		616F9DE51DC14CE7004CADD2 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		616F9DE61DC14CE7004CADD2 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
+		6197EA561DD4C51100BA179B /* confirmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirmTableViewController.swift; sourceTree = "<group>"; };
 		61B437A41C93213F00B0DCC2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		61B437A51C93213F00B0DCC2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		666CE7BE1C974127005863A9 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				6117B0521DCB850700918C5B /* joinLeagueViewController.swift */,
 				6121DC4E1DCECA3300D31B76 /* cfdNavigationController.swift */,
 				6121DC521DCED08200D31B76 /* selectorViewController.swift */,
+				6197EA561DD4C51100BA179B /* confirmTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6197EA571DD4C51100BA179B /* confirmTableViewController.swift in Sources */,
 				6165C8721D0F014500F1F235 /* ResetPasswordFormViewController.swift in Sources */,
 				66B678EB1C6A875E007963AA /* DeviceCapabilityViewController.swift in Sources */,
 				616F9DDA1DC14C6F004CADD2 /* LoadingView.swift in Sources */,

@@ -227,7 +227,7 @@ class RegisterPageViewController: FormViewController
                                 else{
                                     dispatch_async(dispatch_get_main_queue()) {
                                         //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
-                                        let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                                        let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("createLeague");
                                         self.presentViewController(settingview!, animated: true, completion: nil)
                                     }
                                 }
@@ -237,7 +237,7 @@ class RegisterPageViewController: FormViewController
                         else{
                             dispatch_async(dispatch_get_main_queue()) {
                                 //self.displayAlert("Successfully authenticated", fn: {self.switchView("viewLaunch")});
-                                let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
+                                let settingview = self.storyboard?.instantiateViewControllerWithIdentifier("createLeague");
                                 self.presentViewController(settingview!, animated: true, completion: nil)
                             }
                         }

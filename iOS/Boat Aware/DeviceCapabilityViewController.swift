@@ -125,6 +125,8 @@ class DeviceCapabilityViewController : UIViewController {
     func loadWeeklyPlaySheet() {
         
         // get lineup
+        LoadingOverlay.shared.showOverlay(self.view);
+        LoadingOverlay.shared.setCaption("Getting Lineup...");
         self.api.apicallout("/api/view/getLineUp/" + self.nextweekvar.weekID + "/" + self.leaguevar.userxleagueID + "/" + self.appvar.logintoken , iptype: "localIPAddress", method: "GET", JSONObject: self.JSONObject, callback: { (lineupresponse) -> () in
             let success =  (lineupresponse as! NSDictionary)["success"] as! Bool;
             if(success){
@@ -152,6 +154,7 @@ class DeviceCapabilityViewController : UIViewController {
     
     func provisionScreen(){
         dispatch_async(dispatch_get_main_queue()) {
+            LoadingOverlay.shared.hideOverlayView();
             self.lblSong.text = self.lineupvar.song;
             self.lblSongData.text = self.lineupvar.songID;
             self.lblArtist.text = self.lineupvar.artist;

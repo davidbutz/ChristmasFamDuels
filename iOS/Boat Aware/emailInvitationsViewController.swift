@@ -58,7 +58,7 @@ class emailInvitationsViewController: FormViewController {
             };
             let JSONResponse = response as! JSONDictionary;
             if(JSONResponse["success"] as! Bool){
-                let leagueID = JSONResponse["leagueID"] as! String;
+                /*let leagueID = JSONResponse["leagueID"] as! String;
                 let leagueName = JSONResponse["leagueName"] as! String;
                 let leagueOwnerID = JSONResponse["leagueOwnerID"] as! String;
                 //store these deep.
@@ -66,7 +66,7 @@ class emailInvitationsViewController: FormViewController {
                 leaguevar.leagueID = leagueID;
                 leaguevar.leagueName = leagueName;
                 leaguevar.leagueOwnerID = leagueOwnerID;
-                
+                */
                 //move them along to game play
                 dispatch_async(dispatch_get_main_queue()) {
                     let inviteFriends = self.storyboard?.instantiateViewControllerWithIdentifier("viewLaunch");
