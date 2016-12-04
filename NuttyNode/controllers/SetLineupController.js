@@ -131,7 +131,8 @@
         var year = currentDate.getFullYear();
         console.log(queryDate);
         console.log(new Date(queryDate));
-        var collection = db.collection('weeks').find({ "weekYear": year , $and : [{ "weekStart" : { $lte : new Date(queryDate) } }, { "weekEnd": { $gte : new Date(queryDate) } }] });
+        //var collection = db.collection('weeks').find({ "weekYear": year , $and : [{ "weekStart" : { $lte : new Date(queryDate) } }, { "weekEnd": { $gte : new Date(queryDate) } }] });
+        var collection = db.collection('weeks').find({ "weekYear": year , "weekStart" : { $lte : new Date(queryDate) } }).sort({ "weekStart": -1 }).limit(1);
         collection.toArray(function (err, docs) {
             if (docs) {
                 if (docs.length > 0) {

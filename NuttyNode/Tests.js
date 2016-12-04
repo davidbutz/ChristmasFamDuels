@@ -321,4 +321,32 @@ if (addWeeks) {
         console.log("here i am");
         console.log(err, data);
     });
+    newWeek = { "weekStart": "12/4/2016", "weekEnd": "12/10/2016", "weekYear": 2016 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/11/2016", "weekEnd": "12/17/2016", "weekYear": 2016 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/18/2016", "weekEnd": "12/24/2016", "weekYear": 2016 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/25/2016", "weekEnd": "12/31/2016", "weekYear": 2016 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
 }

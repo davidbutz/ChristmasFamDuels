@@ -3,7 +3,7 @@
     var LineUp = require('../models/LineUp.js');
     var Points = require('../models/Points.js');
     var https = require('http');
-    var testingWLIF = true;
+    var testingWLIF = false;
 
     ScoringController.heardSong = function (req, res, lineupID, leagueID, userName, song, songID, userID, callback) {
         var errorhandlingResponse = { "success": false };
@@ -65,7 +65,7 @@
             path: _path,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                'Cache -Control': 'no-cache'
+                'Cache-control': 'no-cache'
             }
         };
         //console.log(options);
