@@ -55,7 +55,31 @@ var testlikequery = false;
 var testgetConfirmations = false;
 var testsummarize = false;
 var testwlif = false;
-var teststandings = true;
+var teststandings = false;
+var testreleasev2 = true
+
+if (testreleasev2) {
+    var title = "Josh Groban - O Holy Night";
+    var release = "Josh Groban-O holy";
+    //var artistsongArray = json[0].title.split("-");
+    var artistsongArray = title.split("-");
+    var releaseArray = release.split("-");
+    var artist1 = artistsongArray[0].toLowerCase();
+    artist1 = artist1.replace(/^\s+|\s+$/g, '')
+    console.log(artist1);
+    var artist2 = releaseArray[0].toLowerCase();
+    artist2 = artist2.replace(/^\s+|\s+$/g, '')
+    console.log(artist2);
+    var song1 = artistsongArray[1].toLowerCase();
+    song1 = song1.replace(/^\s+|\s+$/g, '')
+    console.log(song1);
+    var song2 = releaseArray[1].toLowerCase();
+    song2 = song2.replace(/^\s+|\s+$/g, '')
+    console.log(song2);
+    if (artist1.indexOf(artist2) > -1 && song1.indexOf(song2) > -1) {
+        console.log("score");
+    }
+}
 
 if (teststandings) {
     console.log("testing standings");

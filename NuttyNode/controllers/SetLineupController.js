@@ -1,5 +1,5 @@
 ﻿(function (SetLineupController) {
-
+    
     //DB models used.
     var League = require('../models/League.js');
     var UserXLeague = require('../models/UserXLeague.js');
@@ -26,7 +26,7 @@
     var settings = {
         config: config
     };
-
+    
     var MongoClient = require('mongodb').MongoClient;
     var db;
     MongoClient.connect(settings.config().MONGOCONNMONGDB, function (err, database) {
@@ -61,7 +61,7 @@
             timeout: 480000
         }
     });
-
+    
     function mongocallback(err, numAffected) {
         // numAffected is the number of updated documents
         if (err) {
@@ -93,7 +93,7 @@
         consumerSecret: settings.config().discogsconsumerSecret
     }).database();
     
-
+    
     SetLineupController.getNextWeekID = function (res, callback) {
         var currentDate = new Date();
         console.log(currentDate.getDay());
@@ -123,7 +123,7 @@
             }
         });
     }
-
+    
     SetLineupController.getCurrentWeekID = function (res, callback) {
         var currentDate = new Date();
         var queryDate = dateFormat(new Date(currentDate), "%Y-%m-%d ", false);
@@ -131,26 +131,30 @@
         var year = currentDate.getFullYear();
         console.log(queryDate);
         console.log(new Date(queryDate));
-        //var collection = db.collection('weeks').find({ "weekYear": year , $and : [{ "weekStart" : { $lte : new Date(queryDate) } }, { "weekEnd": { $gte : new Date(queryDate) } }] });
+        //var collection = db.collection('weeks').find({ "weekYear": year , $and : [{ "weekStart" : { $lte : new Date(queryDate) } }, { "weekEnd": { $gte : new Date(queryDate) } }] }).limit(1);
         var collection = db.collection('weeks').find({ "weekYear": year , "weekStart" : { $lte : new Date(queryDate) } }).sort({ "weekStart": -1 }).limit(1);
+        
         collection.toArray(function (err, docs) {
             if (docs) {
                 if (docs.length > 0) {
                     callback(res, { "success": true , "_id": docs[0]._id, "weekStart": dateFormat(docs[0].weekStart, "%Y-%m-%d %H:%M:%S", false), "weekEnd": dateFormat(docs[0].weekEnd, "%Y-%m-%d %H:%M:%S", false) });
                 }
                 else {
-                    callback(res, { "success": false, "message":"docs.length > 0" });
+                    console.log("docs> 0");
+                    console.log(docs);
+                    callback(res, { "success": false, "message": "docs.length > 0" });
                 }
             }
             else {
+                console.log("if docs");
                 callback(res, { "success": false, "message" : "if (docs)" });
             }
         });
     }
-
-    SetLineupController.addSong = function (res, title, callback){
+    
+    SetLineupController.addSong = function (res, title, callback) {
         var errorhandlingResponse = { "success": false };
-        Song.findOne({ "title" : { $regex: new RegExp('^' + title.toLowerCase(), 'i') }}, function (err, dataSong) {
+        Song.findOne({ "title" : { $regex: new RegExp('^' + title.toLowerCase(), 'i') } }, function (err, dataSong) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
@@ -216,13 +220,13 @@
             }
         });
     }
-
+    
     SetLineupController.searchSong = function (res, searchterm, userID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
         // Researching for "song" is harder than i thought , as the song databases out there really dont search and return a single Title.
         // So instead, i am going to store this "internally"
         //({'name': {'$regex': 'sometext'}})
-        Song.findOne({ "title" : { $regex: new RegExp('^' + searchterm.toLowerCase(), 'i') }}, function (err, dataSong) {
+        Song.findOne({ "title" : { $regex: new RegExp('^' + searchterm.toLowerCase(), 'i') } }, function (err, dataSong) {
             if (err) {
                 callback(res, errorhandlingResponse);
             }
@@ -234,8 +238,8 @@
             }
         });
     }
-
-    SetLineupController.searchArtist = function (res, searchterm, userID, weekID, callback){
+    
+    SetLineupController.searchArtist = function (res, searchterm, userID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
         discogs_db.search(searchterm , { "type": "artist" } , function (err, data) {
             if (err) {
@@ -429,7 +433,7 @@
             }
         });
     }
-
+    
     function getImagefromRelease(url, userID, weekID, searchtype, res, buildJSON, callback) {
         var errorhandlingResponse = { "success": false };
         discogs_db.getImage(url, function (err, data, rateLimit) {
@@ -465,7 +469,7 @@
             });
         });
     }
-
+    
     SetLineupController.setLineUpArtist = function (res, leagueID, artistID, userxleagueID, weekID, callback) {
         var errorhandlingResponse = { "success": false };
         LineUp.findOne({ "weekID": weekID, "userxleagueID": userxleagueID }, function (err, dataLineUp) {
@@ -558,8 +562,8 @@
             }
         });
     }
-
-
+    
+    
     function mongocallback(err, numAffected) {
         // numAffected is the number of updated documents
         if (err) {

@@ -6,11 +6,11 @@
     var User = require('../models/User.js');
     var PasswordResetRequest = require("../models/PasswordResetRequest.js");
     var NotificationToken = require("../models/NotificationToken.js");
-
+    
     //controls used.
     var crypto = require("crypto");
     ObjectID = require('mongodb').ObjectID;
-
+    
     //3rd party librarys used.
     var mongoosesync = require('mongoose');
     
@@ -49,8 +49,8 @@
             console.log(err);
         }
     }
-
-
+    
+    
     //user has requested a password reset, they know their email, but not their password.
     ChristmasFamDuelsController.resetPassword = function (req, res, email, platform, callback) {
         
@@ -194,7 +194,7 @@
                                 });
                             }
                             else {
-                                callback(res, { "success": false , "error": err.stack });
+                                callback(res, { "success": true, "error": "err.stack" });
                             }
                         });
                         //callback(res, { "success": false , "error": err.stack});
