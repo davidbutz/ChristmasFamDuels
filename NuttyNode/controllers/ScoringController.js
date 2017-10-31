@@ -14,10 +14,11 @@
                 callback(res, errorhandlingResponse);
             }
             else {
-                var notificationMessage = userName + ":" +  song;
+                var notificationMessage = userName + ":" + song;
                 //try to confirm against http://todays1019.cbslocal.com/?action=now-playing&type=json
                 sendWebRequest("todays1019.cbslocal.com", "/?action=now-playing&type=json", "GET", "80", "", function (error, response) {
                     if (error) {
+                        console.log("there was an error on sendWebRequest");
                         sendLeagueNotification(leagueID, notificationMessage, userID);
                         callback(res, { "success": true });
                     }
@@ -25,8 +26,14 @@
                         if (response) {
                             if (response.message) {
                                 var json = JSON.parse(response.message);
-                                if (json[0].title) {
-                                    if (json[0].title.toLowerCase().indexOf(song.toLowerCase()) > -1 || testingWLIF == true) {
+                                //console.log("This is what WLIF said was on...");
+                                //console.log(json.title);
+                                if (json.title) {
+                                    console.log("This is what WLIF said was on...");
+                                    console.log(json.title.toLowerCase());
+                                    console.log("And this is what we tested for...");
+                                    console.log(song.toLowerCase());
+                                    if (json.title.toLowerCase().indexOf(song.toLowerCase()) > -1 || testingWLIF == true) {
                                         console.log("confirmed song hit!");
                                         //update the datanewPoints just saved.
                                         ScoringController.confirmed(null, null, datanewPoints._id.toString(), "1", function (err, resp) {
@@ -104,8 +111,8 @@
                         if (response) {
                             if (response.message) {
                                 var json = JSON.parse(response.message);
-                                if (json[0].title) {
-                                    if (json[0].title.toLowerCase().indexOf(artist.toLowerCase()) > -1 || testingWLIF == true) {
+                                if (json.title) {
+                                    if (json.title.toLowerCase().indexOf(artist.toLowerCase()) > -1 || testingWLIF == true) {
                                         console.log("confirmed artist hit!");
                                         //update the datanewPoints just saved.
                                         ScoringController.confirmed(null, null, datanewPoints._id.toString(), "1", function (err, resp) {
@@ -158,10 +165,10 @@
                         if (response) {
                             if (response.message) {
                                 var json = JSON.parse(response.message);
-                                if (json[0].title) {
-                                    if (json[0].title.indexOf("-") > -1 && release.indexOf("-") > -1) {
+                                if (json.title) {
+                                    if (json.title.indexOf("-") > -1 && release.indexOf("-") > -1) {
                                         
-                                        var artistsongArray = json[0].title.split("-");
+                                        var artistsongArray = json.title.split("-");
                                         var releaseArray = release.split("-");
                                         var artist1 = artistsongArray[0].toLowerCase();
                                         artist1 = artist1.replace(/^\s+|\s+$/g, '')
@@ -189,7 +196,7 @@
                                         }
                                     }
                                     else {
-                                        if (json[0].title.toLowerCase().indexOf(release.toLowerCase()) > -1 || testingWLIF == true) {
+                                        if (json.title.toLowerCase().indexOf(release.toLowerCase()) > -1 || testingWLIF == true) {
                                             console.log("confirmed release hit!");
                                             //update the datanewPoints just saved.
                                             ScoringController.confirmed(null, null, datanewPoints._id.toString(), "1", function (err, resp) {

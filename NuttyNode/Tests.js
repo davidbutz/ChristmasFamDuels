@@ -3,6 +3,7 @@ var req = "";
 var Week = require("./models/Week.js");
 var Points = require("./models/Points.js");
 var League = require('./models/League.js');
+var SongsStandard = require('./models/SongsStandard.js');
 var LeagueInvitation = require('./models/LeagueInvitation.js');
 
 var setlineupcontroller = require("./controllers/SetLineupController");
@@ -22,11 +23,11 @@ mongoose.connect(settings.config().MONGOCONN);
 //test variables.
 var email = "cfd1@nuttyrobot.com;cfd2@nuttyrobot.com";
 var invitation_token = "xxx";
-var artistsearchterm = "john denver";
+var artistsearchterm = "pentat";//"john denver";
 var artistDiscogsID = 342;
-var songsearchterm = "Have Yourself a merry little christmas";
+var songsearchterm = "Have Yourself a merry";
 var release_search_song_term = "all i want for christmas";
-var release_search_artist_term = "mariah carey";
+var release_search_artist_term = "penta";//"mariah carey";
 var releaseDiscogsID = 222;
 var leagueID = "581a932124cd41302ad6ce61";
 var userID = "58239632c27b8ac4219c99df";//"581a73bf6dcd47a00233328e";
@@ -38,7 +39,7 @@ var testthresholdOK = false;
 
 //adding and searching artists/songs/releases
 var testAddArtist = false;
-var testArtistSearch = false;
+var testArtistSearch = true;
 var testAddSong = false;
 var testSongSearch = false;
 var testAddRelease = false;
@@ -54,10 +55,11 @@ var addWeeks = false;
 var testlikequery = false;
 var testgetConfirmations = false;
 var testsummarize = false;
-var testwlif = false;
+var testwlif = true;
 var teststandings = false;
-var testreleasev2 = true
-
+var testreleasev2 = false
+var add2017Weeks = false;
+var addStandardSongs = false;
 if (testreleasev2) {
     var title = "Josh Groban - O Holy Night";
     var release = "Josh Groban-O holy";
@@ -307,7 +309,123 @@ if (testEmailInvitations) {
 function callback(res, json) {
     console.log(json);
 }
+if (add2017Weeks_more) {
 
+    newWeek = { "weekStart": "10/22/2017", "weekEnd": "10/28/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "10/29/2017", "weekEnd": "11/04/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "11/05/2017", "weekEnd": "11/11/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "11/12/2017", "weekEnd": "11/23/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "11/24/2017", "weekEnd": "11/25/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "11/26/2017", "weekEnd": "12/02/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/03/2017", "weekEnd": "12/09/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/10/2017", "weekEnd": "12/16/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/17/2017", "weekEnd": "12/23/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "12/24/2017", "weekEnd": "01/03/2018", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "01/04/2018", "weekEnd": "01/10/2018", "weekYear": 2018 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+
+}
+if (add2017Weeks) {
+    newWeek = { "weekStart": "07/02/2017", "weekEnd": "07/08/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "07/09/2017", "weekEnd": "07/15/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "07/16/2017", "weekEnd": "07/22/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    }); newWeek = { "weekStart": "07/23/2017", "weekEnd": "07/29/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+    newWeek = { "weekStart": "07/30/2017", "weekEnd": "08/05/2017", "weekYear": 2017 };
+    newWeekObj = new Week(newWeek);
+    console.log("about to save...");
+    newWeekObj.save(function (err, data) {
+        console.log("here i am");
+        console.log(err, data);
+    });
+}
 if (addWeeks) {
     var newWeek = { "weekStart": "10/30/2016", "weekEnd": "11/5/2016", "weekYear": 2016 };
     var newWeekObj = new Week(newWeek);
@@ -373,4 +491,183 @@ if (addWeeks) {
         console.log("here i am");
         console.log(err, data);
     });
+}
+
+if (addStandardSongs) {
+    var SongsArray = [{ "song": " 2000 Miles " },
+        { "song": " A Marshmallow World " },
+        { "song": " All I Want For Christmas is You " },
+        { "song": " Baby It's Cold Outside " },
+        { "song": " Baby's First Christmas " },
+        { "song": " Back Door Santa " },
+        { "song": " Blue Christmas " },
+        { "song": " Celebrate Me Home " },
+        { "song": " Christmas " },
+        { "song": " Christmas Auld Lang Syne " },
+        { "song": " Christmas Eve " },
+        { "song": " Christmas in Dixie " },
+        { "song": " Christmas in Hollis " },
+        { "song": " Christmas in Jail " },
+        { "song": " Christmas Is the Time to Say I Love You " },
+        { "song": " Christmas Rappin' " },
+        { "song": " Christmas Wrapping " },
+        { "song": " Deck the Halls " },
+        { "song": " Do They Know It's Christmas? " },
+        { "song": " Do You Hear What I Hear " },
+        { "song": " Don't Believe In Christmas " },
+        { "song": " Fairytale of New York " },
+        { "song": " Father Christmas " },
+        { "song": " Feliz Navidad " },
+        { "song": " Frosty The Snowman " },
+        { "song": " Give Love on Christmas Day " },
+        { "song": " Grandma Got Run Over by a Reindeer " },
+        { "song": " Grown-Up Christmas List " },
+        { "song": " Happy Holiday " },
+        { "song": " Happy Xmas " },
+        { "song": " Hark The Herald Angels Sing " },
+        { "song": " Here Comes Santa Claus " },
+        { "song": " Hey Santa Claus " },
+        { "song": " Hey Santa " },
+        { "song": " I Believe in Father Christmas " },
+        { "song": " I Saw Mommy Kissing Santa Claus " },
+        { "song": " I Wish It Could Be Christmas Everyday " },
+        { "song": " If We Make It Through December " },
+        { "song": " It Doesn't Have To Be That Way " },
+        { "song": " It's The Most Wonderful Time of the Year " },
+        { "song": " Jingle Bell Rock " },
+        { "song": " Jingle Bells " },
+        { "song": " Last Christmas " },
+        { "song": " Little Drummer Boy/Peace On Earth " },
+        { "song": " Little Saint Nick " },
+        { "song": " Lonesome Christmas " },
+        { "song": " Mary's Boy Child/O My Lord " },
+        { "song": " Merry Christmas All " },
+        { "song": " Merry Christmas Baby " },
+        { "song": " Merry Christmas Darling " },
+        { "song": " Merry Christmas Everyone " },
+        { "song": " Merry Xmas Everybody " },
+        { "song": " O Holy Night " },
+        { "song": " Please Come Home For Christmas " },
+        { "song": " Pretty Paper " },
+        { "song": " River " },
+        { "song": " Rock and Roll Christmas " },
+        { "song": " Rockin' Around the Christmas Tree " },
+        { "song": " Rudolph The Red-Nosed Reindeer " },
+        { "song": " Run Rudolph Run " },
+        { "song": " Same Old Lang Syne " },
+        { "song": " Santa Baby " },
+        { "song": " Santa Claus Go Straight to the Ghetto " },
+        { "song": " Santa Claus Is Back In Town " },
+        { "song": " Santa Claus Is Coming To Town " },
+        { "song": " Santa, Bring My Baby Back To Me " },
+        { "song": " Silent Night " },
+        { "song": " Sleigh Ride " },
+        { "song": " Snoopy's Christmas " },
+        { "song": " Someday At Christmas " },
+        { "song": " Step Into Christmas " },
+        { "song": " The Christmas Shoes " },
+        { "song": " The Man With All the Toys " },
+        { "song": " There's a New Kid in Town " },
+        { "song": " This Christmas " },
+        { "song": " This Time of the Year " },
+        { "song": " Up On the Housetop " },
+        { "song": " What Christmas Means To Me " },
+        { "song": " White Christmas " },
+        { "song": " Winter Wonderland " },
+        { "song": " Wonderful Christmastime " },
+        { "song": "(Sleep in Heavenly Peace) Silent Night" },
+        { "song": "A Christmas Long Ago" },
+        { "song": "All I Want For Christmas is My Two Front Teeth" },
+        { "song": "Amen" },
+        { "song": "Baby's First Christmas" },
+        { "song": "Bells of St. Mary" },
+        { "song": "Blue Christmas" },
+        { "song": "Chrissy, The Christmas Mouse" },
+        { "song": "Christmas (Baby Please Come Home)" },
+        { "song": "Christmas Ain't Christmas" },
+        { "song": "Christmas Auld Lang Syne" },
+        { "song": "Christmas Dragnet" },
+        { "song": "Christmas Serenade" },
+        { "song": "Do They Know It's Christmas" },
+        { "song": "Do You Hear What I Hear" },
+        { "song": "Dominick, The Italian Christmas Donkey" },
+        { "song": "Donde Esta Santa Claus" },
+        { "song": "Feliz Navidad" },
+        { "song": "Frosty the Snowman" },
+        { "song": "Gee Whiz, It's Christmas" },
+        { "song": "Give Love on Christmas Day" },
+        { "song": "Grandma Got Run Over By A Reindeer" },
+        { "song": "Happy Christmas (War is Over)" },
+        { "song": "Happy Holidays" },
+        { "song": "Have Yourself A Merry Little Christmas" },
+        { "song": "Here Comes Santa Claus" },
+        { "song": "Holly Jolly Christmas" },
+        { "song": "Home For The Holidays" },
+        { "song": "I Believe in Father Christmas" },
+        { "song": "I Saw Mommy Kissing Santa Claus" },
+        { "song": "If It Doesn't Snow on Christmas" },
+        { "song": "It's Beginning to Look A Lot Like Christmas" },
+        { "song": "It's Christmas Everywhere" },
+        { "song": "It's Christmas Once Again" },
+        { "song": "Jingle Bell Rock" },
+        { "song": "Jingle Bells" },
+        { "song": "Kissin' By The Mistletoe" },
+        { "song": "Last Christmas" },
+        { "song": "Let It Snow, Let It Snow, Let It Snow" },
+        { "song": "Little Drummer Boy" },
+        { "song": "Little St. Nick" },
+        { "song": "Marshmallow World" },
+        { "song": "May You Always" },
+        { "song": "Merry Christmas All" },
+        { "song": "Merry Christmas Baby" },
+        { "song": "Merry Christmas Darling" },
+        { "song": "Merry, Merry Christmas Baby" },
+        { "song": "Mistletoe and Holly" },
+        { "song": "Monsters' Holiday" },
+        { "song": "Nuttin' for Christmas" },
+        { "song": "Parade of The Wooden Soldiers" },
+        { "song": "Peace on Earth/Little Drummer Boy" },
+        { "song": "Please Come Home For Christmas" },
+        { "song": "Pretty Paper" },
+        { "song": "Rockin' Around The Christmas Tree" },
+        { "song": "Rudolph, The Red Nosed Reindeer" },
+        { "song": "Run Rudolph Run" },
+        { "song": "Santa Baby" },
+        { "song": "Santa Claus Is Coming To Town" },
+        { "song": "Santa Claus Is Watching You" },
+        { "song": "Silent Night" },
+        { "song": "Silver Bells" },
+        { "song": "Sleigh Ride" },
+        { "song": "Snoopy's Christmas" },
+        { "song": "Someday At Christmas" },
+        { "song": "Step Into Christmas" },
+        { "song": "The Chipmunk Song" },
+        { "song": "The Christmas Song" },
+        { "song": "The Christmas Waltz" },
+        { "song": "The Man With All The Toys" },
+        { "song": "The Most Wonderful Time of The Year" },
+        { "song": "The Twelve Days of Christmas" },
+        { "song": "This Christmas" },
+        { "song": "This Time of Year" },
+        { "song": "Twas The Night Before Christmas" },
+        { "song": "We Need A Little Christmas" },
+        { "song": "We Wish You The Merriest" },
+        { "song": "What Christmas Means To Me" },
+        { "song": "White Christmas" },
+        { "song": "White Christmas " },
+        { "song": "Winter Wonderland" },
+        { "song": "Wonderful Christmastime" },
+        { "song": "You're All I Want For Christmas" },
+        { "song": "You're My Christmas Present" },
+    ];
+    //ArtistsStandard.insertMany(ArtistsArray, function (err, docs) { });
+    SongsStandard.collection.insert(SongsArray, onInsert);
+    
+    function onInsert(err, docs) {
+        if (err) {
+        // TODO: handle error
+        } else {
+            console.info('%d songs were successfully stored.', docs.length);
+        }
+    }
 }

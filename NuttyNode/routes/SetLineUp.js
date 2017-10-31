@@ -11,7 +11,7 @@
     var setlineupcontroller = require("../controllers/SetLineupController");
     
     var debugging = true;
-
+    
     rRouter.use(function (req, res, next) {
         // do logging that any /api call got made 
         if (debugging) {
@@ -22,6 +22,7 @@
     
     ///api/setlineup/week/getcurrent/:logintoken
     rRouter.get("/week/getcurrent/:logintoken", function (req, res) {
+        console.log("getcurrent");
         var login_token = req.params.logintoken;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
@@ -32,9 +33,10 @@
             }
         });
     });
-
+    
     ///api/setlineup/week/getnext/:logintoken
     rRouter.get("/week/getnext/:logintoken", function (req, res) {
+        console.log("getnext");
         var login_token = req.params.logintoken;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
@@ -47,6 +49,7 @@
     });
     
     rRouter.get("/add/song/:title/:logintoken", function (req, res) {
+        console.log("addsong");
         var login_token = req.params.logintoken;
         var title = req.params.title;
         authentication.iftokenvalid(login_token, function (err, valid) {
@@ -58,7 +61,7 @@
             }
         });
     });
-
+    
     ///api/setlineup/search/song/:keywords/:logintoken/:userID/:weekID"
     rRouter.get("/search/song/:keywords/:logintoken/:userID/:weekID", function (req, res) {
         var login_token = req.params.logintoken;
@@ -128,7 +131,7 @@
         var userID = req.params.userID;
         authentication.iftokenvalid(login_token, function (err, valid) {
             if (valid) {
-                setlineupcontroller.searchRelease(res, track, artist,userID, weekID, sendresponse);
+                setlineupcontroller.searchRelease(res, track, artist, userID, weekID, sendresponse);
             }
             else {
                 sendresponse(res, { success: false, message: 'token not valid' });
@@ -169,7 +172,7 @@
         });
     });
     
-
+    
     rRouter.get("/release/:logintoken/:leagueID/:userxleagueID/:releaseID/:weekID", function (req, res) {
         var login_token = req.params.logintoken;
         var leagueID = req.params.leagueID;
@@ -185,7 +188,7 @@
             }
         });
     });
-
+    
     //generic send reponse.
     function sendresponse(res, response) {
         res.json(response);
