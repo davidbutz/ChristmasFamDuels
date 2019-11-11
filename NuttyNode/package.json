@@ -17,7 +17,7 @@
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "mongodb": "^2.2.11",
-    "mongoose": "^4.1.10",
+    "mongoose": "^5.7.9",
     "python-shell": "^0.2.0",
     "underscore": "^1.8.3",
     "vash": "^0.9.3"
