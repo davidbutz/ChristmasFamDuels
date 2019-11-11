@@ -1,0 +1,58 @@
+﻿@html.extend('layout', function(model){
+	@html.block("body", function(model){
+		<img src="assets/fuzzytree.jpg"  height="42" width="42" alt="christmasfamduels logo">
+		<h1>@model.title</h1>
+		if (model.error){
+			<p class="text-error"> Error occurred: @model.error </p>
+		}
+			<div class="row">
+                    <div class="col-sm-12 col-md-12">
+                    <p>
+                        <h4>Nutty Robot Commitment to Privacy</h4>
+                    </p>
+                    <p>
+                        Your privacy is important to Nutty Robot. To better protect your privacy we provide this notice explaining our online information practices.
+                    </p>
+                    <p>
+                        <h4>Data Collection</h4>
+                    </p>
+                    <p>
+                        This notice applies to all information collected or submitted on any website or mobile application owned by Nutty Robot. Information may be gathered registering your application, purchasing a product or service, or subscribing to our newsletter. The types of personal information collected at these pages are:
+                        <ul style="list-style-type:circle">
+                                <li>Name</li>
+                                <li>Email Address</li>
+								<li>Cell Phone Number</li>
+                        </ul>
+                    </p>
+                    <p>
+                        <h4>Utilization of Information</h4>
+                    </p>
+                 
+                     <p>
+                        We use the email address entered through your mobile app for password recovery and support purposes.Such addresses will not be used for any other purpose and are not shared with outside parties. 
+                    </p>
+                     <p>
+                        Finally, we never use or share the personally identifiable information provided to us online in ways unrelated to the ones described above without also providing you an opportunity to opt-out or otherwise prohibit such unrelated uses.
+                    </p>
+                    <p>
+                        <h4>Data Security</h4>
+                    </p>
+                    <p>
+                        To prevent unauthorized access, maintain data accuracy, and ensure the correct use of information, we have put in place appropriate physical, electronic, and managerial procedures to safeguard and secure the information we collect online, such as:
+                         <ul style="list-style-type:circle">
+                                <li>Multiple Firewalls</li>
+                                <li>Limited Availability of Data</li>
+                                <li>Dynamic Filtering</li>
+                        </ul>
+                    </p>
+                    <p>
+                        <h4>Correction of Data</h4>
+                    </p>
+                    <p>
+                         If a detail of your order is wrong you can correct factual errors in your personally identifiable information by sending us a request with your order number that credibly shows error to <a href ="mailto:sales@nuttyrobot.com?Subject=Order%20Clarification">sales@nuttyrobot.com</a>
+                    </p>
+
+                    </div>
+					</div>
+	})
+})

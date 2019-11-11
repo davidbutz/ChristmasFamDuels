@@ -1,0 +1,22 @@
+﻿@html.extend('layout', function(model){
+	@html.block("body", function(model){
+		<img src="assets/Boat-Aware-Logo3x.png"  alt="boataware logo">
+		<h1>@model.title</h1>
+		<p>Get the app from the Apple Store!</p>
+		if (model.error){
+			<p class="text-error"> Error occurred: @model.error </p>
+		}
+		@html.block("scripts", function(model){
+			<script type="text/javascript">
+			if("@model.OS"=="iOS"){
+				//try to launch the app right here!
+				document.location = "christmasfamduels://begin/invitationtoken/@model.token/mode/acceptinvite/end";
+			}
+			</script>
+		})
+		<p>
+		The invitation calls out an action to load the app on their iPhone
+		</p>
+	})
+})
+

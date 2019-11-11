@@ -6,6 +6,7 @@
     <Name>NuttyNode</Name>
     <RootNamespace>NuttyNode</RootNamespace>
     <NameOfLastUsedPublishProfile>AWS</NameOfLastUsedPublishProfile>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -32,48 +33,75 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="cloud\index.js" />
+    <Compile Include="controllers\Authentication.js" />
+    <Compile Include="controllers\ChristmasFamDuelsController.js" />
+    <Compile Include="controllers\LeagueController.js" />
+    <Compile Include="controllers\ScoringController.js" />
+    <Compile Include="controllers\SetLineupController.js" />
+    <Compile Include="controllers\ViewController.js" />
+    <Compile Include="discogs.js" />
+    <Compile Include="models\Artist.js" />
+    <Compile Include="models\SongsStandard.js" />
     <Compile Include="models\League.js" />
+    <Compile Include="models\LeagueInvitation.js" />
     <Compile Include="models\LineUp.js" />
+    <Compile Include="models\Login.js" />
+    <Compile Include="models\NotificationToken.js" />
+    <Compile Include="models\PasswordResetRequest.js" />
     <Compile Include="models\Points.js" />
+    <Compile Include="models\Release.js" />
+    <Compile Include="models\Song.js" />
     <Compile Include="models\User.js" />
     <Compile Include="models\UserXLeague.js" />
     <Compile Include="models\Week.js" />
-    <Compile Include="routes\Accounts.js" />
     <Compile Include="config\index.js" />
     <Compile Include="controllers\homeController.js" />
     <Compile Include="controllers\index.js" />
     <Compile Include="data\index.js" />
-    <Compile Include="data\seedData.js" />
+    <Compile Include="routes\Authentication.js" />
     <Compile Include="routes\index.js" />
-    <Compile Include="routes\Users.js" />
+    <Compile Include="routes\LeagueMaintenance.js" />
+    <Compile Include="routes\RegisterMobilePushService.js" />
+    <Compile Include="routes\Scoring.js" />
+    <Compile Include="routes\SetLineUp.js" />
+    <Compile Include="routes\SetUpActivities.js" />
+    <Compile Include="routes\View.js" />
     <Compile Include="server.js" />
+    <Compile Include="ServerMaintenance.js" />
+    <Compile Include="Tests.js" />
+    <Content Include="Default.html" />
+    <Content Include="public\assets\fuzzytree.jpg" />
+    <Content Include="views\inviteUser\index.vash" />
+    <Content Include="views\inviteUser\layout.vash" />
+    <Content Include="views\privacy\index.vash" />
+    <Content Include="views\privacy\layout.vash" />
+    <Content Include="views\resetPassword\index.vash" />
+    <Content Include="views\resetPassword\layout.vash" />
     <Content Include="web.config" />
     <None Include="AWS.pubxml" />
     <Content Include="package.json" />
     <Content Include="public\css\site.css" />
     <Content Include="README.md" />
-    <Content Include="views\ejs\index.ejs" />
-    <Content Include="views\ejs\layout.ejs" />
     <Content Include="views\index.vash" />
-    <Content Include="views\jade\index.jade" />
-    <Content Include="views\jade\layout.jade" />
     <Content Include="views\layout.vash" />
-    <Content Include="views\vash\index.vash" />
-    <Content Include="views\vash\layout.vash" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="cloud\" />
     <Folder Include="controllers\" />
     <Folder Include="dataw\" />
     <Folder Include="data\" />
     <Folder Include="models\" />
     <Folder Include="config\" />
+    <Folder Include="public\assets\" />
     <Folder Include="routes\" />
     <Folder Include="public\" />
     <Folder Include="public\css\" />
     <Folder Include="views\" />
-    <Folder Include="views\jade\" />
     <Folder Include="views\ejs\" />
-    <Folder Include="views\vash\" />
+    <Folder Include="views\inviteUser\" />
+    <Folder Include="views\privacy\" />
+    <Folder Include="views\resetPassword\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

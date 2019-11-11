@@ -258,3 +258,4 @@ paket-files/
 APNS/CertificateSigningRequest.certSigningRequest
 
 APNS/myapnsappprivatekey.p12
+/NuttyNode/cloud/index.js
